@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+// 사용시 PL과 상의 할 것
+
+.static {
+  position: static;
+}
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.sticky {
+  position: sticky;
+}

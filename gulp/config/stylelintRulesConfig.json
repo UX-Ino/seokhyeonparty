@@ -1,0 +1,40 @@
+[
+  {
+    "ruleName": "plugin/no-block-with-vertical-align",
+    "message": "vertical-align should not be used with display: block",
+    "checkProp": "display",
+    "checkValue": "block",
+    "targetProp": "vertical-align"
+  },
+  {
+    "ruleName": "plugin/no-margin-with-inline",
+    "message": "margin-top and margin-bottom should not be used with display: inline",
+    "checkProp": "display",
+    "checkValue": "inline",
+    "targetProp": "margin-top|margin-bottom"
+  },
+  {
+    "ruleName": "plugin/no-positionless-offsets",
+    "message": "top, left, right, bottom should not be used without setting position",
+    "checkProp": "position",
+    "checkValue": "static",
+    "targetProp": "top|left|right|bottom"
+  },
+  {
+    "ruleName": "plugin/no-invalid-class-suffix",
+    "message": "Class name should not end with one of the specified suffixes",
+    "checkType": "suffix",
+    "checkValues": ["-component", "-widget", "-module", "-wrapper", "-main", "-section", "-article", "-nav", "-text", "-title", "-background", "-00", "-01", "-02", "-03", "-ranking", "-dotted", "-image", "-images", "-delete", "-information", "-number", "-register", "-button"]
+  },
+  {
+    "ruleName": "plugin/no-invalid-class-prefix",
+    "message": "Class name should not end with one of the specified prefixes",
+    "checkType": "prefix",
+    "checkValues": ["widget-", "module-", "section-", "article-", "nav-", "container-", "frame-", "button-", "title-", "background-",  "ranking-", "dotted-", "image-", "images-", "delete-", "information-", "number-", "register-"]
+  },
+  {
+    "ruleName": "plugin/color-no-hex",
+    "message": "Color values should not be in 6-character hex format",
+    "checkValueRegex": "^#[0-9A-Fa-f]{6}$"
+  }
+]

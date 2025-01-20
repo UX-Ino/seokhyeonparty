@@ -1,0 +1,118 @@
+@use "../abstracts" as *;
+#content {
+  @include rem(padding, 0 10);
+  font-family: "omyu_pretty";
+  font-style: normal;
+  font-weight: 400;
+}
+.main-img-wrap {
+  @include rem(margin, 0 -10);
+  .img {
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .bg-gradient {
+      position: absolute;
+      width: 100%;
+      @include rem(height, 80);
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(transparent 30%, #ffffff 70%);
+      z-index: 1;
+    }
+  }
+}
+.contenst01 {
+  text-align: center;
+  .path-1 {
+    animation: path 0.4s linear forwards;
+  }
+  .path-s {
+    animation: path 0.4s linear 0.4s forwards;
+  }
+  .path-t1 {
+    animation: path 0.4s linear 0.8s forwards;
+  }
+  .path-t2 {
+    animation: path 0.2s linear 1s forwards;
+  }
+  .path-b {
+    animation: path 0.5s linear 1.5s forwards;
+  }
+  .path-i1 {
+    animation: path 0.3s linear 1.8s forwards;
+  }
+  .path-i2 {
+    animation: path 0.2s linear 2s forwards;
+  }
+  .path-r {
+    animation: path 0.3s linear 2.3s forwards;
+  }
+  .path-t3 {
+    animation: path 0.3s linear 2.6s forwards;
+  }
+  .path-t4 {
+    animation: path 0.2s linear 2.8s forwards;
+  }
+  .path-h {
+    animation: path 0.3s linear 3.1s forwards;
+  }
+  .path-d1 {
+    animation: path 0.3s linear 3.4s forwards;
+  }
+  .path-d2 {
+    animation: path 0.2s linear 3.6s forwards;
+  }
+  .path-a {
+    animation: path 0.3s linear 3.9s forwards;
+  }
+  .path-y {
+    animation: path 0.3s linear 4.2s forwards;
+  }
+
+  @keyframes path {
+    to {
+      stroke-dashoffset: 0px;
+    }
+  }
+}
+
+.contenst02 {
+  @include rem(margin-top, 30);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #6ac977;
+  .name {
+    @include rem(font-size, 27);
+    font-weight: 600;
+  }
+  .parent {
+    @include rem(margin-top, 5);
+    display: flex;
+    > div {
+      display: flex;
+      align-items: center;
+      span {
+        @include rem(margin-right, 5);
+      }
+    }
+    .mon {
+      @include rem(margin-left, 20);
+    }
+    span {
+      @include rem(font-size, 15);
+    }
+    @include rem(font-size, 19);
+  }
+  .date {
+    @include rem(margin-top, 15);
+    @include rem(font-size, 19);
+  }
+  .palce {
+    @include rem(font-size, 19);
+  }
+}

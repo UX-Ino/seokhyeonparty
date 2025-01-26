@@ -23,7 +23,7 @@ function SwiperComp() {
    * data-props 리스트
    */
 
-    // constant
+  // constant
   const MARGIN = 20;
 
   // variable
@@ -109,23 +109,23 @@ function SwiperComp() {
       navigationEl = createHTMLElement("swiper-navigation", $templateHTML.navigation());
       $target.querySelector(".swiper-wrapper").after(navigationEl);
       typeof navigation === "boolean" &&
-      setProps({
-        navigation: {
-          prevEl: ".swiper-button-prev",
-          nextEl: ".swiper-button-next",
-        },
-      });
+        setProps({
+          navigation: {
+            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+          },
+        });
     }
 
     if (pagination) {
       paginationEl = createHTMLElement("swiper-pagination-wrap", $templateHTML.pagination());
       $target.querySelector(".swiper-wrapper").after(paginationEl);
       typeof pagination === "boolean" &&
-      setProps({
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
+        setProps({
+          pagination: {
+            el: ".swiper-pagination",
+          },
+        });
     }
 
     if (autoplay) {

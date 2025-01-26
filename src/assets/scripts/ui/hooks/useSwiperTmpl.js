@@ -16,6 +16,7 @@ function useSwiperTmpl() {
       <button type="button" class="swiper-autoplay play"></button>
       `;
     },
+
   };
 
   return {

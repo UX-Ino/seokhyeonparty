@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main code-guide">
+      <h1 class="uid-title01">Button</h1>
+      <div class="uid-desc">
+        <span class="desc-tit">바로가기: </span>
+        <a href="#uid-title-id01">#버튼</a>
+        <a href="#uid-title-id02">#링크버튼</a>
+        <a href="#uid-title-id03">#커스텀버튼</a>
+        <a href="#uid-title-id04">#버튼그룹</a>
+      </div>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">공통 가이드</h2>
+        <ul class="uid-list">
+          <li>공통 클래스의 개념은 컴포넌트의 default 클래스 입니다.</li>
+          <li>옵션 클래스의 개념은 컴포넌트의 크기, 스타일등에 따라 선택적으로 사용 합니다.</li>
+          <li>옵션 클래스의 종류에는 크기, 스타일, 정렬, 상태등이 있습니다. </li>
+          <li>디자인 스타일 가이드에 따라 클래스는 수정 및 추가 될 수 있습니다.</li>
+          <li>구성 요소는 자식요소로 배치 될 수 있는 것들을 말합니다.</li>
+          <li>구성 요소 항목에서 (컴포넌트) 표시가 있는 것들은 기존 컴포넌트를 자식요소로 사용 하며, 표시가 없는 것들은 해당 컴포넌트에 귀속된 요소들 입니다.</li>
+          <li>컴포넌트에서 사용하는 ID는 퍼블용 임시 ID입니다.</li>
+          <li>컴포넌트에서 데이터가 없는 영역은 영역을 제거 해주세요.</li>
+          <li><code class="uid-codeblock">.hide-txt</code>는 대체텍스트(숨김텍스트)를 위한 접근성 클래스 입니다.</li>
+          <li>대체텍스트는 비장애인 눈에는 보이지 않지만 시각장애인을 위해 소리로 들을 수 있도록 처리 됩니다.</li>
+          <li>aria- 속성은 접근성 관련 속성 입니다.</li>
+        </ul>
+      </section>
+
+
+      <section class="uid-component">
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02" id="uid-title-id01">버튼</h2>
+          <!-- <ul class="uid-list">
+              <li>기본 <code class="uid-codeblock">&lt;button&gt;</code> </li>
+              <li>
+                기본 속성 :
+                <code class="uid-codeblock">type="button"</code>
+              </li>
+              <li>상태 클래스 :</li>
+              <li>스타일 클래스 :</li>
+            </ul> -->
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+            <div class="code-tab">
+              <button type="button" class="code-btn is-active">
+                <span class="tab-label">Html</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">Css</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">JavaScript</span>
+              </button>
+            </div>
+            <div class="code-group is-active">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+&lt;!-- 텍스트 버튼 --&gt;
+<button type="button" class="btn">
+  <span class="btn-txt">텍스트버튼</span>
+</button>
+
+&lt;!-- 버튼 + 아이콘 --&gt;
+<button type="button" class="btn">
+  <i class="ico-search ico-normal" aria-hidden="true"></i>
+  <span class="btn-txt">버튼 + 아이콘</span>
+  <i class="ico-spinner ico-normal" aria-hidden="true"></i>
+</button>
+
+&lt;!-- 아이콘 버튼 --&gt;
+<button type="button" class="btn">
+  <i class="ico-search ico-normal" aria-hidden="true"></i>
+  <span class="hide-txt">아이콘버튼</span>
+</button>
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02" id="uid-title-id02">링크 버튼</h2>
+          <!-- <ul class="uid-list">
+              <li>
+                기본 클래스 :
+                <code class="uid-codeblock">.btn</code>
+              </li>
+              <li>
+                기본 속성 :
+                <code class="uid-codeblock">href=""</code>
+              </li>
+              <li>선택 속성 : <code class="uid-codeblock">target="_blank"</code>(새창 열림) </li>
+              <li>상태 클래스 :</li>
+              <li>스타일 클래스 :</li>
+            </ul> -->
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+            <div class="code-tab">
+              <button type="button" class="code-btn is-active">
+                <span class="tab-label">Html</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">Css</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">JavaScript</span>
+              </button>
+            </div>
+            <div class="code-group is-active">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<a href="" class="btn">
+  <i class="ico-search ico-normal" aria-hidden="true"></i>
+  <span class="btn-txt">링크버튼</span>
+  <i class="ico-refresh ico-normal" aria-hidden="true"></i>
+</a>
+
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02" id="uid-title-id03">커스텀 버튼</h2>
+          <!-- <ul class="uid-list">
+              <li>
+                기본 클래스 :
+                <code class="uid-codeblock">.btn</code>
+              </li>
+              <li>
+                기본 속성 :
+                <code class="uid-codeblock">href=""</code>
+              </li>
+              <li>선택 속성 : <code class="uid-codeblock">target="_blank"</code>(새창 열림) </li>
+              <li>상태 클래스 :</li>
+              <li>스타일 클래스 :</li>
+            </ul> -->
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+            <div class="code-tab">
+              <button type="button" class="code-btn is-active">
+                <span class="tab-label">Html</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">Css</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">JavaScript</span>
+              </button>
+            </div>
+            <div class="code-group is-active">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+<div class="btn" role="button" tabindex="0" onclick="handleClick()" onkeydown="handleKeyDown(event)" onkeyup="handleKeyUp(event)">
+  <i class="ico-search ico-normal" aria-hidden="true"></i>
+  <span class="btn-txt">커스텀버튼</span>
+  <i class="ico-close ico-normal" aria-hidden="true"></i>
+</div>
+
+<script>
+  function handleClick() {
+    alert('버튼 클릭됨');
+  }
+
+  function handleKeyDown(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault(); // Enter 키와 Space 키가 눌렸을 때 페이지가 스크롤되지 않도록 방지
+      handleClick();
+    }
+  }
+
+  function handleKeyUp(event) {
+    if (event.key === ' ') {
+      event.preventDefault(); // Space 키가 눌렸을 때 페이지가 스크롤되지 않도록 방지
+    }
+  }
+</script>
+
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력
+          <article>
+            <h2 class="uid-title02">Button Full</h2>
+            <ul class="uid-list">
+              <li>
+                Button 공통 클래스 :
+                <code class="uid-codeblock">.btn</code>
+                <code class="uid-codeblock">.btn-full</code>
+              </li>
+              <li>
+                Button 공통 자식 클래스 :
+                <code class="uid-codeblock">.btn-txt</code>
+              </li>
+            </ul>
+            <div class="code-wrap">
+              <div class="code_preview uid-demo">
+                <iframe class="preview"></iframe>
+              </div>
+              <div class="code-tab">
+                <button type="button" class="code-btn is-active">
+                  <span class="tab-label">Html</span>
+                </button>
+                <button type="button" class="code-btn">
+                  <span class="tab-label">Css</span>
+                </button>
+                <button type="button" class="code-btn">
+                  <span class="tab-label">JavaScript</span>
+                </button>
+              </div>
+              <div class="code-group is-active">
+                <div class="code_info">
+                  <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+                </div>
+                <textarea class="code_content html ui_code_content" data-code="html">
+<button type="button" class="btn btn-full">
+  <span class="btn-txt">Default Full(button)</span>
+</button>
+<br>
+<br>
+<a href="#" class="btn btn-full">
+  <span class="btn-txt">Default Full(a)</span>
+</a>
+<br>
+<br>
+
+<button type="button" class="btn btn-primary btn-full">
+  <span class="btn-txt">Primary Full(button)</span>
+</button>
+<br>
+<br>
+<a href="#" class="btn btn-primary btn-full">
+  <span class="btn-txt">Primary Full(a)</span>
+</a>
+
+
+                </textarea>
+              </div>
+              <div class="code-group">
+                <div class="code_info">
+                  <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+                </div>
+                <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+              </div>
+              <div class="code-group">
+                <div class="code_info">
+                  <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+                </div>
+                <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+              </div>
+            </div>
+          </article>
+          E : 작성 단위 / 추가는 article 단위로 입력  -->
+
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02" id="uid-title-id04">버튼 그룹</h2>
+          <ul class="uid-list">
+            <li>
+              Button 공통 클래스 :
+              <code class="uid-codeblock">.component-btns</code>
+              <code class="uid-codeblock">.align-left</code>
+              <code class="uid-codeblock">.align-right</code>
+            </li>
+            <li>
+              Button 공통 자식 클래스 :
+              <code class="uid-codeblock">.btn-txt</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+            <div class="code-tab">
+              <button type="button" class="code-btn is-active">
+                <span class="tab-label">Html</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">Css</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">JavaScript</span>
+              </button>
+            </div>
+            <div class="code-group is-active">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+<!-- 버튼 가운데 정렬 -->
+<div class="component-btns">
+  <div class="btns-row">
+    <button type="button" class="btn">
+      <span class="btn-txt">button</span>
+    </button>
+    <button type="button" class="btn">
+      <span class="btn-txt">button</span>
+    </button>
+  </div>
+</div>
+
+<br><br>
+
+<!-- 버튼 왼쪽 정렬 -->
+<div class="component-btns">
+  <div class="btns-row align-left">
+    <button type="button" class="btn">
+      <span class="btn-txt">button</span>
+    </button>
+    <button type="button" class="btn">
+      <span class="btn-txt">button</span>
+    </button>
+  </div>
+</div>
+
+<br><br>
+
+<!-- 버튼 오른쪽 정렬 -->
+<div class="component-btns">
+  <div class="btns-row align-right">
+    <button type="button" class="btn">
+      <span class="btn-txt">button</span>
+    </button>
+    <button type="button" class="btn">
+      <span class="btn-txt">button</span>
+    </button>
+  </div>
+</div>
+
+<br><br>
+
+<!-- 2단 레이아웃 버튼 좌우 정렬 -->
+<div class="component-btns">
+  <div class="btns-row two-col">
+    <div class="btns-col-1">
+      <button type="button" class="btn">
+        <span class="btn-txt">확인</span>
+      </button>
+      <button type="button" class="btn">
+        <span class="btn-txt">취소</span>
+      </button>
+    </div>
+    <div class="btns-col-2 align-right">
+      <button type="button" class="btn">
+        <span class="btn-txt">저장</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<!-- 3단 레이아웃 버튼 균등 정렬 -->
+<div class="component-btns">
+  <div class="btns-row three-col">
+    <div class="btns-col-1">
+      <button type="button" class="btn btn-full">
+        <span class="btn-txt">button</span>
+      </button>
+    </div>
+    <div class="btns-col-2">
+      <button type="button" class="btn btn-full">
+        <span class="btn-txt">button</span>
+      </button>
+    </div>
+    <div class="btns-col-3">
+      <button type="button" class="btn btn-full">
+        <span class="btn-txt">button</span>
+      </button>
+    </div>
+  </div>
+</div>
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+      </section>
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script></script>
+</body>
+
+</html>

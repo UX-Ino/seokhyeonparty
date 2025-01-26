@@ -1213,7 +1213,8 @@ const projectPathsBuild = {
   "pathGuideMailform": "guide/pages/mailform",
   "pathGuideInclude": "guide/pages/include",
   "pathPagesInclude": "pages/include",
-  "pathPagesMain": "pages/main"
+  "pathPagesMain": "pages/main",
+  "pathImage": "assets/images"
 };
 // END OF CODINGLIST PATHS BUILD
 

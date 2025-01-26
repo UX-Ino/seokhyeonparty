@@ -1,118 +1,679 @@
-@use "../abstracts" as *;
+@use "../abstracts"as *;
+
+// 공통
 #content {
-  @include rem(padding, 0 10);
+  @include rem(padding, 0 10 20);
   font-family: "omyu_pretty";
   font-style: normal;
   font-weight: 400;
+  background: url(pathImage/background-white.jpg) repeat center / 100% 100%;
+  color: rgb(57, 62, 70);
+  line-height: 1.3;
 }
-.main-img-wrap {
-  @include rem(margin, 0 -10);
-  .img {
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.tit {
+  @include rem(font-size, 22);
+  font-weight: 600;
+  color: rgb(167, 146, 119);
+  text-shadow: rgba(0, 0, 0, 0.06) 1px 1px 1px;
+}
+
+.txt {
+  @include rem(font-size, 19);
+  font-weight: 400;
+  text-align: center;
+}
+
+[class^="ico ico-"] {
+  display: inline-flex;
+  @include rem(width, 20);
+  @include rem(height, 20);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &.ico-naver {
+    background-image: url(pathImage/icon-naver-map.png);
+  }
+
+  &.ico-kakao {
+    background-image: url(pathImage/icon-kakao-navi.webp);
+  }
+
+  &.ico-copy {
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='12' viewBox='0 0 10 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.28564 0H2.10707C2.04814 0 1.99993 0.0482143 1.99993 0.107143V0.857143C1.99993 0.916071 2.04814 0.964286 2.10707 0.964286H8.74993V10.1786C8.74993 10.2375 8.79814 10.2857 8.85707 10.2857H9.60707C9.666 10.2857 9.71422 10.2375 9.71422 10.1786V0.428571C9.71422 0.191518 9.5227 0 9.28564 0ZM7.57136 1.71429H0.714216C0.477162 1.71429 0.285645 1.9058 0.285645 2.14286V9.25045C0.285645 9.36429 0.33118 9.47277 0.411537 9.55313L2.73252 11.8741C2.76198 11.9036 2.79547 11.9277 2.83163 11.9478V11.9732H2.88788C2.93475 11.9906 2.98431 12 3.0352 12H7.57136C7.80841 12 7.99993 11.8085 7.99993 11.5714V2.14286C7.99993 1.9058 7.80841 1.71429 7.57136 1.71429ZM2.83029 10.6098L1.67716 9.45536H2.83029V10.6098ZM7.03564 11.0357H3.68743V9.13393C3.68743 8.83795 3.4477 8.59821 3.15172 8.59821H1.24993V2.67857H7.03564V11.0357Z' fill='black'/%3E%3C/svg%3E%0A");
+    @include rem(width, 16);
+    @include rem(height, 16);
+    background-size: auto 100%;
+  }
+
+  &.ico-kakaopay {
+    background-image: url(pathImage/icon-kakao-pay.png);
+    @include rem(width, 16);
+    @include rem(height, 16)
+  }
+
+  &.ico-kakao {
+    background-image: url(pathImage/icon-kakao.webp);
+    @include rem(width, 16);
+    @include rem(height, 16)
+  }
+
+  &.ico-del {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.96432 1.60735H3.85718C3.91611 1.60735 3.96432 1.55914 3.96432 1.50021V1.60735H8.03575V1.50021C8.03575 1.55914 8.08396 1.60735 8.14289 1.60735H8.03575V2.57164H9.00003V1.50021C9.00003 1.02744 8.61566 0.643066 8.14289 0.643066H3.85718C3.38441 0.643066 3.00003 1.02744 3.00003 1.50021V2.57164H3.96432V1.60735ZM10.7143 2.57164H1.28575C1.0487 2.57164 0.857178 2.76316 0.857178 3.00021V3.42878C0.857178 3.48771 0.905392 3.53592 0.964321 3.53592H1.77325L2.10405 10.5404C2.12548 10.9971 2.50316 11.3574 2.95986 11.3574H9.04021C9.49825 11.3574 9.87459 10.9984 9.89602 10.5404L10.2268 3.53592H11.0357C11.0947 3.53592 11.1429 3.48771 11.1429 3.42878V3.00021C11.1429 2.76316 10.9514 2.57164 10.7143 2.57164ZM8.93709 10.3931H3.06298L2.73887 3.53592H9.2612L8.93709 10.3931Z' fill='%23C8CAD2'/%3E%3C/svg%3E%0A");
+    @include rem(width, 14);
+    @include rem(height, 14)
+  }
+
+  &.ico-link {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_27_5)'%3E%3Cpath d='M6.83033 8.05444C6.81019 8.0345 6.783 8.02331 6.75466 8.02331C6.72632 8.02331 6.69913 8.0345 6.67899 8.05444L5.12274 9.61069C4.4022 10.3312 3.18613 10.4076 2.3906 9.61069C1.59372 8.81381 1.67006 7.59908 2.3906 6.87854L3.94685 5.32229C3.98837 5.28078 3.98837 5.21247 3.94685 5.17095L3.41381 4.63792C3.39367 4.61798 3.36648 4.60679 3.33814 4.60679C3.3098 4.60679 3.28261 4.61798 3.26247 4.63792L1.70622 6.19417C0.573186 7.3272 0.573186 9.16069 1.70622 10.2924C2.83926 11.4241 4.67274 11.4254 5.80444 10.2924L7.36069 8.73613C7.4022 8.69461 7.4022 8.62631 7.36069 8.58479L6.83033 8.05444ZM10.2937 1.70622C9.16069 0.573186 7.3272 0.573186 6.19551 1.70622L4.63792 3.26247C4.61798 3.28261 4.60679 3.3098 4.60679 3.33814C4.60679 3.36648 4.61798 3.39367 4.63792 3.41381L5.16962 3.94551C5.21113 3.98703 5.27944 3.98703 5.32095 3.94551L6.8772 2.38926C7.59774 1.66872 8.81381 1.59238 9.60935 2.38926C10.4062 3.18613 10.3299 4.40087 9.60935 5.1214L8.0531 6.67765C8.03316 6.69779 8.02197 6.72498 8.02197 6.75332C8.02197 6.78166 8.03316 6.80885 8.0531 6.82899L8.58613 7.36203C8.62765 7.40354 8.69595 7.40354 8.73747 7.36203L10.2937 5.80578C11.4254 4.67274 11.4254 2.83926 10.2937 1.70622ZM7.31381 4.12899C7.29367 4.10905 7.26648 4.09786 7.23814 4.09786C7.2098 4.09786 7.18261 4.10905 7.16247 4.12899L4.12899 7.16113C4.10905 7.18127 4.09786 7.20846 4.09786 7.2368C4.09786 7.26514 4.10905 7.29234 4.12899 7.31247L4.65935 7.84283C4.70087 7.88435 4.76917 7.88435 4.81069 7.84283L7.84283 4.81069C7.88435 4.76917 7.88435 4.70087 7.84283 4.65935L7.31381 4.12899Z' fill='black'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_27_5'%3E%3Crect width='12' height='12' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+  }
+
+  span+&,
+  &+span {
+    @include rem(margin-left, 7);
+  }
+}
+
+// 간격
+.layer-wrap {
+  >.tit {
+    text-align: center;
+  }
+
+  &+.layer-wrap {
+    @include rem(margin-top, 50);
+    ;
+  }
+}
+
+
+
+
+.top-img-wrap {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .badge {
+    @include rem(width, 140);
     position: relative;
+    z-index: 1;
+  }
+
+  .photo {
+    @include rem(margin-top, -25);
+    position: relative;
+    @include rem(width, 220);
+    @include rem(height, 290);
+    @include rem(border-radius, 120);
+    overflow: hidden;
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .point {
+    position: relative;
+    @include rem(top, -24);
+    @include rem(right, -70);
+    @include rem(width, 80);
+    @include rem(height, 80);
+    z-index: 1;
+  }
+}
+
+.info-wrap {
+  @include rem(margin-top, -46);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .name {
+    @include rem(font-size, 27);
+    font-weight: 600;
+  }
+
+  .parent {
+    @include rem(margin-top, 5);
+    @include rem(font-size, 19);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+
+    .mon {
+      @include rem(margin-left, 20);
+    }
+
+    span {
+      display: inline-block;
+      @include rem(font-size, 15);
+      font-weight: 400;
+      @include rem(margin-right, 5);
+    }
+  }
+
+  .date {
+    @include rem(margin-top, 15);
+    @include rem(font-size, 19);
+    font-weight: 400;
+  }
+
+  .palce {
+    @include rem(font-size, 19);
+    font-weight: 400;
+  }
+}
+
+.bg-area {
+  @include rem(margin, 0 -10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  [class^="bg-"] {
+    @include rem(width, 100);
+  }
+}
+
+.txt-wrap {
+  @include rem(padding-top, 80);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(pathImage/img-balloon.webp) no-repeat center top/ auto 5.5rem;
+
+  .tit {}
+
+  .txt {
+    @include rem(margin-top, 17);
+    @include rem(width, 270);
+    line-height: 2;
+  }
+}
+
+.btn-call {
+  @include rem(margin, 17 auto 0);
+  @include rem(padding, 6 40);
+  display: flex;
+  justify-content: center;
+  background-color: rgb(244, 241, 238);
+  border: 1px solid rgb(244, 241, 238);
+  width: fit-content;
+  @include rem(min-width, 64);
+  @include rem(font-size, 17);
+  font-weight: 400;
+  color: rgb(33, 34, 36);
+  @include rem(border-radius, 10);
+}
+
+.parent-wrap {
+  display: flex;
+  @include rem(padding-bottom, 24);
+
+  [class*="-box"] {
+    width: 50%;
+
+    .img {
+      &+.txt {
+        @include rem(margin-top, 10);
+      }
+    }
+  }
+
+  .dad-box {
+    span {
+      background-color: rgb(204, 224, 245)
+    }
+  }
+
+  .mom-box {
+    @include rem(margin-left, 10);
+
+    span {
+      background-color: rgb(250, 204, 204)
+    }
+  }
+
+  .img {
+    width: 100%;
+    @include rem(height, 150);
+    background-color: rgb(244, 241, 238);
+  }
+}
+
+.calendar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-img {
+  @include rem(margin, 20 0);
+}
+
+.calendar {
+  @include rem(margin, 20 0);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  // grid-row-gap: 1rem;
+  width: fit-content;
+  border-top: 1px solid #c8cad2;
+  border-bottom: 1px solid #c8cad2;
+
+  .day,
+  .date {
+    justify-self: center;
+  }
+
+  .day {
+    @include rem(width, 40);
+    @include rem(height, 40);
+    color: rgb(48, 52, 65);
+    @include rem(font-size, 12);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .date {
+    border: 0;
+    padding: 0;
+    @include rem(width, 40);
+    @include rem(height, 40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    @include rem(font-size, 12);
+
+    font-weight: 600;
+    border: 2px solid transparent;
+    background-color: transparent;
+  }
+
+
+  .current-day {
+    background-color: rgb(236, 226, 213);
+    border-radius: 999px;
+
+  }
+}
+
+.dday-box {
+  @include rem(padding, 5 40);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  >div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    @include rem(border-radius, 10);
+    @include rem(padding, 2);
+    background-color: rgba(241, 243, 245, 0.5);
+    box-shadow: rgba(0, 0, 0, 0.06) 1px 1px 1px;
+
+    &+div {
+      @include rem(margin-left, 5);
+    }
+  }
+
+
+  .num {
+    @include rem(font-size, 19);
+    font-weight: 400;
+  }
+
+  .tit {
+    @include rem(font-size, 10);
+    font-weight: 400;
+    color: #a79277;
+  }
+}
+
+.dday-desc {
+  @include rem(margin-top, 20);
+  @include rem(font-size, 19);
+  font-weight: 400;
+  text-align: center;
+}
+
+.tit-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .txt {
+    @include rem(margin, 20 0);
+  }
+}
+
+.map-wrap {
+  .map {
+    >div {
+      width: 100%;
+    }
+
+    .wrap_controllers {
+      display: none;
+    }
+  }
+
+  .btn-box {
+    display: flex;
+    width: 100%;
+    @include rem(padding, 6 16);
+    @include rem(border-bottom-right-radius, 5);
+    @include rem(border-bottom-left-radius, 5);
+    background-color: rgb(244, 241, 238);
+
+
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include rem(padding, 6 16);
+      width: 100%;
+      text-align: center;
+      line-height: 1.75;
+      flex: 1 1 0%;
+      @include rem(padding, 6 16);
+      border: none;
+      background-color: transparent;
+
+      span {
+        @include rem(font-size, 17);
+        font-weight: 400;
+      }
+
+      &+.btn {
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          width: 1px;
+          @include rem(height, 20);
+          background-color: #a79277;
+        }
+      }
+    }
+  }
+
+  .info-txt {
+    @include rem(margin-top, 15);
+
+    .txt {
+      @include rem(margin-top, 15);
+      text-align: start;
+    }
+  }
+}
+
+.gallery-wrap {
+  @include rem(margin-top, 20);
+  position: relative;
+  @include rem(padding-bottom, 20);
+
+  .swiper-slide {
+    @include rem(border-radius, 5);
+
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
     }
-    .bg-gradient {
-      position: absolute;
+  }
+
+  .swiper-pagination-fraction,
+  .swiper-pagination-custom,
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    bottom: 0;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: #000;
+    opacity: .25;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  &.type02 {
+    .swiper-slide {
+      display: flex;
+      position: relative;
+      background-color: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgb(233, 236, 239);
+      @include rem(padding, 20 20 40 20);
       width: 100%;
-      @include rem(height, 80);
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(transparent 30%, #ffffff 70%);
-      z-index: 1;
+      @include rem(border-radius, 10);
     }
-  }
-}
-.contenst01 {
-  text-align: center;
-  .path-1 {
-    animation: path 0.4s linear forwards;
-  }
-  .path-s {
-    animation: path 0.4s linear 0.4s forwards;
-  }
-  .path-t1 {
-    animation: path 0.4s linear 0.8s forwards;
-  }
-  .path-t2 {
-    animation: path 0.2s linear 1s forwards;
-  }
-  .path-b {
-    animation: path 0.5s linear 1.5s forwards;
-  }
-  .path-i1 {
-    animation: path 0.3s linear 1.8s forwards;
-  }
-  .path-i2 {
-    animation: path 0.2s linear 2s forwards;
-  }
-  .path-r {
-    animation: path 0.3s linear 2.3s forwards;
-  }
-  .path-t3 {
-    animation: path 0.3s linear 2.6s forwards;
-  }
-  .path-t4 {
-    animation: path 0.2s linear 2.8s forwards;
-  }
-  .path-h {
-    animation: path 0.3s linear 3.1s forwards;
-  }
-  .path-d1 {
-    animation: path 0.3s linear 3.4s forwards;
-  }
-  .path-d2 {
-    animation: path 0.2s linear 3.6s forwards;
-  }
-  .path-a {
-    animation: path 0.3s linear 3.9s forwards;
-  }
-  .path-y {
-    animation: path 0.3s linear 4.2s forwards;
-  }
 
-  @keyframes path {
-    to {
-      stroke-dashoffset: 0px;
+    .txt-box {
+      @include rem(margin-top, 10);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
+    .date {
+      @include rem(font-size, 19);
+    }
+
+    .desc {
+      @include rem(margin-top, 5);
+      @include rem(font-size, 19);
+      font-weight: 600;
+    }
+
+    .swiper-pagination-fraction,
+    .swiper-pagination-custom,
+    .swiper-horizontal>.swiper-pagination-bullets,
+    .swiper-pagination-bullets.swiper-pagination-horizontal {
+      @include rem(bottom, 30);
+    }
+
   }
 }
 
-.contenst02 {
-  @include rem(margin-top, 30);
+.component-accordion {
+  border: 0;
+  @include rem(margin-top, 20);
+
+  .accordion-tit {
+    @include rem(font-size, 18);
+    text-align: center;
+    background-color: rgb(244, 241, 238) !important
+  }
+
+  .accordion-item {
+    border: 0
+  }
+
+  .accordion-item.show {
+    .accordion-content {
+      border: 0;
+      @include rem(padding, 8 16 16);
+    }
+  }
+
+  .accordion-content {
+    border: 0;
+    background-color: #fff;
+    @include rem(padding, 0 16);
+  }
+}
+
+.bank-account-wrap {
+  @include rem(margin-top, 10);
+
+  .flex-box {
+    @include rem(padding-bottom, 10);
+    display: flex;
+    align-items: center;
+
+    >* {
+      width: 100%;
+      text-align: start;
+
+      &+* {
+        @include rem(margin-left, 8);
+      }
+    }
+  }
+
+  .txt {
+    @include rem(font-size, 15);
+    font-weight: 400;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include rem(border-radius, 2.5);
+    @include rem(padding, 2.5 5);
+    @include rem(min-width, 110);
+    @include rem(height, 26);
+    min-height: initial;
+    border: 1px solid rgb(154, 155, 167);
+
+    span {
+      @include rem(font-size, 13);
+    }
+  }
+}
+
+.messages-wrap {
+  @include rem(margin-top, 20);
+  @include rem(max-height, 300);
+  overflow-y: auto;
+
+  .messages-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid rgb(250, 250, 252);
+    @include rem(border-radius, 10);
+    @include rem(padding, 10);
+    background-color: rgb(255, 255, 255);
+    @include rem(font-size, 17);
+
+    .top {
+      display: flex;
+      align-items: center;
+    }
+
+    .btn-del {
+      display: inline-flex;
+      @include rem(width, 26);
+      @include rem(height, 26);
+      @include rem(margin-left, 10);
+      background-color: rgb(242, 243, 247);
+      align-items: center;
+      justify-content: center;
+      @include rem(border-radius, 10);
+
+      .ico-del {
+        margin-left: 0;
+      }
+    }
+
+    .time {
+      margin-left: auto;
+      color: rgb(114, 117, 133);
+    }
+
+    &+.messages-box {
+      @include rem(margin-top, 5);
+    }
+  }
+}
+
+.messages-btn-box {
+  display: flex;
+  align-items: center;
+  ;
+}
+
+.btn-messages {
+  @include rem(margin-top, 20);
+  margin-left: auto;
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: rgb(244, 241, 238);
+  @include rem(min-width, 64);
+  @include rem(padding, 6 40);
+  @include rem(border-radius, 10);
+  border: 1px solid rgb(244, 241, 238);
+  @include rem(font-size, 17);
+}
+
+.share-wrap {
+  @include rem(padding, 20 0 10);
+  background-color: rgb(250, 250, 252);
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #6ac977;
-  .name {
-    @include rem(font-size, 27);
-    font-weight: 600;
-  }
-  .parent {
-    @include rem(margin-top, 5);
+
+  .btn-kakao,
+  .btn-link {
+    @include rem(padding, 4 15);
+    @include rem(font-size, 14);
+    @include rem(height, 32);
+
     display: flex;
-    > div {
-      display: flex;
-      align-items: center;
-      span {
-        @include rem(margin-right, 5);
-      }
-    }
-    .mon {
-      @include rem(margin-left, 20);
-    }
-    span {
-      @include rem(font-size, 15);
-    }
-    @include rem(font-size, 19);
+    align-items: center;
+    justify-content: center;
   }
-  .date {
-    @include rem(margin-top, 15);
-    @include rem(font-size, 19);
-  }
-  .palce {
-    @include rem(font-size, 19);
-  }
+}
+
+.tit02 {
+  @include rem(margin-top, 20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0px 10px;
+  color: rgb(48, 52, 65);
+  @include rem(font-size, 20);
+  opacity: 0.5;
+}
+
+.copyright {
+  @include rem(margin-top, 5);
+  @include rem(font-size, 14);
+  color: rgb(48, 52, 65);
+  text-align: left;
+  width: 100%;
+  text-align: center;
+
 }

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main code-guide">
+      <h1 class="uid-title01">New Form Group</h1>
+      <p class="uid-desc">가이드 모음</p>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">기본 가이드</h2>
+        <ul class="uid-list">
+          <li> 설계 단계의 특별한 UX 요청이나 개발 환경에 따른 제약으로 개발 요청 사항이 없다면 <strong>테스트 완료된 코드</strong>를 <strong>복사 붙여 넣기</strong>를 <strong>기본</strong>으로 합니다. </li>
+          <li>
+            <a href="http://www.naver.com"> 링크스타일은 아이콘이 자동으로 붙습니다. </a>
+          </li>
+          <li> &#60;a href="#">&#60;/a> 태그 사용 할 때는 이렇게 작성하면 됩니다. </li>
+        </ul>
+      </section>
+
+      <!-- <section class="uid-component">
+          <h2 class="uid-title02">테스트된 브라우저(최신 버전 기준)</h2>
+          <div class="uid-table">
+            <table class="table-fixed">
+              <caption>테스트된 브라우저 테이블 : Chrome, Chrome(모바일), Safari, Firefox</caption>
+<thead>
+  <tr>
+    <th scope="row" class="chrome-pc">
+      <p>Chrome(버전정보)</p>
+    </th>
+    <th scope="row" class="chrome-mb">
+      <p>Chrome Mobile(버전정보)</p>
+    </th>
+    <th scope="row" class="safari">
+      <p>Safari(버전정보)</p>
+    </th>
+    <th scope="row" class="firefox">
+      <p>Firefox(버전정보)</p>
+    </th>
+  </tr>
+</thead>
+
+              <tbody>
+                <tr>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                  <td>&check;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section> -->
+
+      <!-- <section class="uid-component">
+          <h2 class="uid-title02">테스트된 스크린 리더</h2>
+          <div class="uid-table">
+            <table class="table-fixed">
+              <caption>테스트된 스크린 리더 : 센스리더, VoiceOver (iOS), TalkBack (Android), NVDA</caption>
+<thead>
+  <tr>
+    <th scope="row" class="chrome-pc">
+      <p>센스리더</p>
+    </th>
+    <th scope="row" class="chrome-mb">
+      <p>VoiceOver (iOS)</p>
+    </th>
+    <th scope="row" class="safari">
+      <p>TalkBack (Android)</p>
+    </th>
+    <th scope="row" class="firefox">
+      <p>NVDA</p>
+    </th>
+  </tr>
+</thead>
+
+              <tbody>
+                <tr>
+                  <td>none</td>
+                  <td>supported</td>
+                  <td>supported</td>
+                  <td>partial</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section> -->
+
+      <section class="uid-component">
+        <h2 class="uid-title02">협의 할 점</h2>
+        <ul class="uid-list">
+          <li>가이드를 작성 합니다.</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">접근성 가이드</h2>
+        <ul class="uid-list">
+          <li>가이드를 작성 합니다.</li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <!-- S : 작성 단위 / 추가는 article 단위로 입력  -->
+        <article>
+          <h2 class="uid-title02">Form - 균등 분할 레이아웃</h2>
+          <ul class="uid-list">
+            <li>
+              컴포넌트 클래스 :
+              <code class="uid-codeblock">.component-form-element</code>
+            </li>
+          </ul>
+          <div class="code-wrap">
+            <div class="code_preview uid-demo">
+              <iframe class="preview"></iframe>
+            </div>
+            <div class="code-tab">
+              <button type="button" class="code-btn is-active">
+                <span class="tab-label">Html</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">Css</span>
+              </button>
+              <button type="button" class="code-btn">
+                <span class="tab-label">JavaScript</span>
+              </button>
+            </div>
+            <div class="code-group is-active">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content html ui_code_content" data-code="html">
+
+<div class="component-form-field">
+  <!-- 아이디 -->
+  <div class="form-field-element">
+    <label for="temp_input_0001" class="input-label">
+      <span class="label-txt">
+        <i class="ico-required-mark" role="img" aria-label="필수">*</i>
+        아이디
+      </span>
+    </label>
+    <div class="form-group">
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0001" placeholder="아이디를 입력해주세요.">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 비밀번호 -->
+  <div class="form-field-element">
+    <label for="temp_input_0002" class="input-label">
+      <span class="label-txt">
+        <i class="ico-required-mark" role="img" aria-label="필수">*</i>
+        비밀번호
+      </span>
+    </label>
+    <div class="form-group">
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0002" placeholder="비밀번호를 입력해주세요.">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 휴대폰번호(type01) -->
+  <div class="form-field-element">
+    <label for="temp_input_0001" class="input-label">
+      <span class="label-txt">
+        <!-- <i class="ico-required-mark" role="img" aria-label="필수">*</i> -->
+        휴대폰 번호(typye01)
+      </span>
+    </label>
+    <div class="form-group">
+      <div class="component-select">
+        <select class="select-list" required>
+          <option value="" selected hidden>통신사</option>
+          <option value="value1">Option 1</option>
+          <option value="value2">Option 2</option>
+          <option value="value3">Option 3</option>
+          <option value="value4">Option 4</option>
+          <option value="value5">Option 5</option>
+          <option value="value6">Option 6</option>
+          <option value="value7">Option 7</option>
+        </select>
+      </div>
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0001" placeholder="'-' 제외하고 숫자만 입력해주세요">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 휴대폰번호(type02) -->
+  <div class="form-field-element">
+    <label for="temp_input_0002" class="input-label">
+      <span class="label-txt">
+        <!-- <i class="ico-required-mark" role="img" aria-label="필수">*</i> -->
+        휴대폰번호(type02)
+      </span>
+    </label>
+    <div class="form-group">
+      <div class="component-select">
+        <select class="select-list" required>
+          <option value="" selected hidden>통신사</option>
+          <option value="value1">Option 1</option>
+          <option value="value2">Option 2</option>
+          <option value="value3">Option 3</option>
+          <option value="value4">Option 4</option>
+          <option value="value5">Option 5</option>
+          <option value="value6">Option 6</option>
+          <option value="value7">Option 7</option>
+        </select>
+      </div>
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0002" placeholder="휴대폰 번호를 입력해주세요.">
+        </div>
+      </div>
+      <button class="btn-confirm">
+        <span class="btn-txt">인증</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 휴대폰번호(type03) -->
+  <div class="form-field-element">
+    <label for="temp_input_0002" class="input-label">
+      <span class="label-txt">
+        <i class="ico-required-mark" role="img" aria-label="필수">*</i>
+        휴대폰번호(type03)
+      </span>
+    </label>
+    <div class="form-group">
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0002" placeholder="휴대폰 번호를 입력해주세요.">
+        </div>
+      </div>
+      <button class="btn-confirm" disabled>
+        <span class="btn-txt">재전송</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 휴대폰번호(type04) -->
+  <div class="form-field-element">
+    <label for="temp_input_0002" class="input-label">
+      <span class="label-txt">
+        <!-- <i class="ico-required-mark" role="img" aria-label="필수">*</i> -->
+        휴대폰번호(type04)
+      </span>
+    </label>
+    <div class="form-group">
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0002" placeholder="휴대폰 번호를 입력해주세요.">
+        </div>
+      </div>
+      <div class="bar"></div>
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0002" placeholder="휴대폰 번호를 입력해주세요.">
+        </div>
+      </div>
+      <div class="bar"></div>
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0002" placeholder="휴대폰 번호를 입력해주세요.">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 주민등록번호 -->
+  <div class="form-field-element">
+    <label for="temp_input_0002" class="input-label">
+      <span class="label-txt">
+        <!-- <i class="ico-required-mark" role="img" aria-label="필수">*</i> -->
+        주민등록번호
+      </span>
+    </label>
+    <div class="form-group">
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0002" placeholder="앞 6자리">
+        </div>
+      </div>
+      <div class="bar"></div>
+      <div class="resident-number">
+        <div class="component-input resident-input">
+          <div class="input-field">
+            <input type="text" id="temp_input_0002" maxlength="1">
+          </div>
+        </div>
+        <ul class="hidden-list">
+          <li class="hiddeb-num">
+            <span class="hide-txt">hidden-number</span>
+          </li>
+          <li class="hiddeb-num">
+            <span class="hide-txt">hidden-number</span>
+          </li>
+          <li class="hiddeb-num">
+            <span class="hide-txt">hidden-number</span>
+          </li>
+          <li class="hiddeb-num">
+            <span class="hide-txt">hidden-number</span>
+          </li>
+          <li class="hiddeb-num">
+            <span class="hide-txt">hidden-number</span>
+          </li>
+          <li class="hiddeb-num">
+            <span class="hide-txt">hidden-number</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 주소 -->
+  <div class="form-field-element">
+    <label for="temp_input_0002" class="input-label">
+      <span class="label-txt">
+        <i class="ico-required-mark" role="img" aria-label="필수">*</i>
+        주소
+      </span>
+    </label>
+    <div class="form-group">
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0002">
+        </div>
+      </div>
+      <button class="btn-confirm">
+        <span class="btn-txt">우편번호찾기</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 인증번호 -->
+  <div class="form-field-element">
+    <label for="temp_input_0002" class="input-label">
+      <span class="label-txt">
+        <i class="ico-required-mark" role="img" aria-label="필수">*</i>
+        인증번호
+      </span>
+    </label>
+    <div class="form-group">
+      <div class="component-input">
+        <div class="input-field">
+          <input type="text" id="temp_input_0002">
+          <span class="type-time">01:22</span>
+        </div>
+      </div>
+      <button class="btn-confirm">
+        <span class="btn-txt">재전송</span>
+      </button>
+    </div>
+  </div>
+
+</div>
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content css ui_code_content" data-code="css">
+/* css 주석 사용시 이 주석사용 부탁드립니다. */
+                </textarea>
+            </div>
+            <div class="code-group">
+              <div class="code_info">
+                <button class="btn_codecopy ui_btnCodeCopy" data-text-swap="Copy!"> Copy to clipboard </button>
+              </div>
+              <textarea class="code_content javascript ui_code_content" data-code="javascript"></textarea>
+            </div>
+          </div>
+        </article>
+        <!-- E : 작성 단위 / 추가는 article 단위로 입력  -->
+      </section>
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script></script>
+</body>
+
+</html>

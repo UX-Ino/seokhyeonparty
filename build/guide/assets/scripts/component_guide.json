@@ -1,0 +1,215 @@
+[
+  {
+    "depth1": "프로젝트명",
+    "subDepth": [
+      {
+        "depth2": "작업 현황판",
+        "link": "../../cl",
+        "status": ""
+      }
+    ]
+  },
+  {
+    "depth1": "Components",
+    "subDepth": [
+      {
+        "depth2": "컴포넌트 작성법",
+        "link": "../../pages/components/guide",
+        "status": ""
+      },
+      {
+        "depth2": "sample",
+        "link": "../../pages/components/sample",
+        "status": ""
+      },
+      {
+        "depth2": "Icon",
+        "link": "../../pages/components/icon",
+        "status": ""
+      },
+      {
+        "depth2": "Button",
+        "link": "../../pages/components/button",
+        "status": ""
+      },
+      {
+        "depth2": "input",
+        "link": "../../pages/components/input",
+        "status": ""
+      },
+      {
+        "depth2": "Checkbox",
+        "link": "../../pages/components/checkbox",
+        "status": ""
+      },
+      {
+        "depth2": "Radio",
+        "link": "../../pages/components/radio",
+        "status": ""
+      },
+      {
+        "depth2": "Form Group",
+        "link": "../../pages/components/form",
+        "status": ""
+      },
+      {
+        "depth2": "New Form Group",
+        "link": "../../pages/components/newform",
+        "status": ""
+      },
+      {
+        "depth2": "Pagination",
+        "link": "../../pages/components/pagination",
+        "status": ""
+      },
+      {
+        "depth2": "Table",
+        "link": "../../pages/components/table",
+        "status": ""
+      },
+      {
+        "depth2": "Accordion",
+        "link": "../../pages/components/accordion",
+        "status": ""
+      },
+      {
+        "depth2": "Tab",
+        "link": "../../pages/components/Tab",
+        "status": ""
+      },
+      {
+        "depth2": "Swiper",
+        "link": "../../pages/components/swiper",
+        "status": ""
+      },
+      {
+        "depth2": "Select",
+        "link": "../../pages/components/element/select",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "Alert",
+        "link": "../../pages/components/element/alert",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "Modal",
+        "link": "../../pages/components/element/modal",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "Tooltip",
+        "link": "../../pages/components/element/tooltip",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "Snackbar",
+        "link": "../../pages/components/element/snackbar",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "Date Picker",
+        "link": "../../pages/components/date-picker",
+        "status": "disabled"
+      },
+      {
+        "depth2": "Date Range Picker",
+        "link": "../../pages/components/date-range-picker",
+        "status": "disabled"
+      }
+    ]
+  },
+  {
+    "depth1": "Template",
+    "subDepth": [
+      {
+        "depth2": "메일 기본 템플릿",
+        "link": "../../pages/mailform/mailform_template01",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "메일 템플릿 샘플01",
+        "link": "../../pages/mailform/mailform_sample01",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "메일 템플릿 샘플02",
+        "link": "../../pages/mailform/mailform_sample02",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "메일 템플릿 샘플03",
+        "link": "../../pages/mailform/mailform_sample03",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "메일 템플릿 샘플04",
+        "link": "../../pages/mailform/mailform_sample04",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "메일 템플릿 샘플05",
+        "link": "../../pages/mailform/mailform_sample05",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "메일 템플릿 샘플06",
+        "link": "../../pages/mailform/mailform_sample06",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "메일 템플릿 샘플07",
+        "link": "../../pages/mailform/mailform_sample07",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "메일 템플릿 샘플08",
+        "link": "../../pages/mailform/mailform_sample08",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "메일 템플릿 샘플09",
+        "link": "../../pages/mailform/mailform_sample09",
+        "status": "",
+        "newTab": true
+      }
+    ]
+  },
+  {
+    "depth1": "Convention",
+    "subDepth": [
+      {
+        "depth2": "코딩 컨벤션",
+        "link": "../../pages/convention/convention",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "지원되는 상태 및 속성",
+        "link": "../../pages/convention/aria",
+        "status": "",
+        "newTab": true
+      },
+      {
+        "depth2": "역할 모델",
+        "link": "../../pages/convention/role",
+        "status": "",
+        "newTab": true
+      }
+    ]
+  }
+]

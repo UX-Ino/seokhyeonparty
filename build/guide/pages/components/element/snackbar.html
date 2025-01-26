@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>Snackbar</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:description" content="" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link href="../../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../../assets/scripts/common.js"></script>
+  <!-- element head include -->
+  <style>
+    @media screen and (max-width: 1280px) {
+      .element-list {
+        display: none;
+      }
+    }
+
+    .prototype-group.on .prototype-tit {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: red;
+      z-index: 100;
+    }
+
+    .prototype-group .prototype-tit {
+      position: relative;
+      margin: 40px 0 20px 0;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: black;
+      border: 2px solid;
+      box-shadow:
+        rgba(0, 0, 0, 0.25) 1px 6px 8px 0px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      background-color: #fff;
+    }
+
+    .prototype-group .prototype-tit::before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: -10px;
+    }
+
+    .prototype-group .prototype-tit .prototype-desc {
+      position: relative;
+      margin: 15px 0;
+      padding-left: 23px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .prototype-group .prototype-tit .prototype-desc::before {
+      display: block;
+      content: "";
+      width: 8px;
+      height: 23px;
+      background: #e5e5e5;
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+
+    .prototype-group .prototype-item+.prototype-item {
+      padding-top: 10px;
+    }
+
+    .prototype-group+.prototype-group {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .prototype-group h3.prototype-subtit {
+      position: relative;
+      margin: 15px 0;
+      padding-left: 23px;
+      font-size: 19px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.5;
+      color: green;
+    }
+
+    .prototype-group h3.prototype-subtit::before {
+      display: block;
+      content: "";
+      width: 8px;
+      height: 15px;
+      background: green;
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+
+    .prototype-group h3.prototype-subtit span {
+      color: #000;
+      font-weight: 400;
+    }
+
+    .element-list {
+      position: fixed;
+      left: 20px;
+      top: 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      text-transform: capitalize;
+    }
+
+    .element-list li~li {
+      margin-top: 5px;
+    }
+
+    .element-list li~li a {
+      display: block;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+  </style>
+  <!-- //element head include -->
+
+</head>
+
+<body>
+  <div id="wrap" style="max-width: 1440px; margin: 0 auto">
+
+    <!-- element menu include -->
+    <ul class="element-list">
+      <li>
+        <a href="../element/select.html">Select Box</a>
+      </li>
+      <li>
+        <a href="../element/swiper.html">Swiper</a>
+      </li>
+      <li>
+        <a href="../element/tab.html">Tabs</a>
+      </li>
+      <li>
+        <a href="../element/accordion.html">Accordion</a>
+      </li>
+      <li>
+        <a href="../element/alert.html">Alert</a>
+      </li>
+      <li>
+        <a href="../element/modal.html">Modal</a>
+      </li>
+      <li>
+        <a href="../element/tooltip.html">Tooltip</a>
+      </li>
+      <li>
+        <a href="../element/snackbar.html">Snackbar</a>
+      </li>
+      <!--  <li>-->
+      <!--    <a href="../element/date-picker.html">Date Picker</a>-->
+      <!--  </li>-->
+    </ul>
+    <!-- //element menu include -->
+
+
+    <div class="pageClassMain uxg-page-container-main" id="container">
+      <div id="content" role="main" style="font-size: 1.2rem">
+        <div class="prototype-group">
+          <div class="prototype-tit"> Snackbar </div>
+
+          <div class="prototype-item">
+            <h3 class="prototype-subtit">Snackbar : <span>basic</span> </h3>
+
+            <!-- Snackbar -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+            <div style="height: 500px; background: #ccc; overflow: hidden">
+              <button type="button" data-snackbar="snackbar1" class="btn-snackbar"> Show Snackbar1 </button>
+              <button type="button" data-snackbar="snackbar2" class="btn-snackbar"> Show Snackbar2 </button>
+              <button type="button" data-snackbar="snackbar3" class="btn-snackbar"> Show Snackbar3 </button>
+              <button type="button" data-snackbar="snackbar4" class="btn-snackbar"> Show Snackbar4 </button>
+              <button type="button" data-snackbar="snackbar5" class="btn-snackbar"> Show Snackbar5 </button>
+
+              <div class="component-snackbar">
+                <!-- 동적으로 생성된 스낵바가 여기에 추가됩니다. -->
+                <!--
+                    <div class="snackbar-container type01">
+                      <div class="snackbar-content">
+                        <p class="snackbar-txt"></p>
+                      </div>
+                    </div>
+                  -->
+              </div>
+            </div>
+            <!-- Snackbar -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+<script>
+  // Type01
+  document.querySelectorAll(".btn-snackbar").forEach(function(button) {
+    button.addEventListener("click", function() {
+      const snackbarId = button.dataset.snackbar;
+      showSnackbar(snackbarId);
+    });
+  });
+
+  function showSnackbar(snackbarId) {
+    const container = document.querySelector(".component-snackbar");
+
+    // 스낵바 메시지 정의
+    const messages = {
+      snackbar1: "스낵바 팝업에 표시될 문장1입니다.",
+      snackbar2: "스낵바 팝업에 표시될 문장2입니다.",
+      snackbar3: "스낵바 팝업에 표시될 문장3입니다.",
+      snackbar4: "스낵바 팝업에 표시될 문장4입니다.",
+      snackbar5: "스낵바 팝업에 표시될 문장5입니다.",
+      default: "기본 문장입니다.",
+    };
+
+    // 새로운 스낵바 엘리먼트 생성
+    const newSnackbar = document.createElement("div");
+    newSnackbar.className = "snackbar-container type01";
+    const innerSnackbar = document.createElement("div");
+    innerSnackbar.className = "snackbar-content";
+    newSnackbar.appendChild(innerSnackbar);
+
+    // 스낵바 텍스트를 동적으로 설정
+    const snackbarText = document.createElement("p");
+    snackbarText.className = "snackbar-txt";
+    snackbarText.textContent = messages[snackbarId] || messages["default"];
+    innerSnackbar.appendChild(snackbarText);
+
+    // 새로운 스낵바를 컨테이너에 추가
+    container.appendChild(newSnackbar);
+
+    // 스낵바 애니메이션
+    let tl = gsap.timeline();
+    tl.to(newSnackbar, {
+        duration: 0.2,
+      })
+      .to(
+        newSnackbar, {
+          duration: 0.5,
+          y: 0,
+        },
+        "<",
+      )
+      .to(newSnackbar, {
+        duration: 0.5,
+        delay: 3,
+        y: 30,
+      })
+      .to(
+        newSnackbar, {
+          duration: 0.2,
+          opacity: 0.2,
+          onComplete: () => {
+            newSnackbar.remove();
+          },
+        },
+        "-=0.5",
+      );
+  }
+
+</script>
+
+</html>

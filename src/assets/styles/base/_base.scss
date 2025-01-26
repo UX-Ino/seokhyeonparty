@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use "../abstracts"as *;
 
 /* common */
 // .clfix{*zoom:1}
@@ -8,6 +8,7 @@
   line-height: 0;
   content: "";
 }
+
 .clfix::after {
   clear: both;
 }
@@ -55,6 +56,7 @@
     outline: 0;
   }
 }
+
 // [tabindex="-1"]:focus:not(:focus-visible) {
 //   outline: 0 !important;
 // }
@@ -63,6 +65,7 @@
 .mobile-mode-dimm {
   display: none;
 }
+
 @media (max-width: 1023px) {
   .mobile-mode-dimm {
     display: flex;
@@ -79,6 +82,7 @@
     z-index: $zindex-notification;
     background: #000000;
     opacity: 1;
+
     .mobile-mode-box {
       position: relative;
       @include rem(padding, 20);
@@ -98,11 +102,13 @@
   background: #cccccc;
   color: #000000;
   font-size: 1px;
+
   a {
     color: #8d0080;
     font-weight: 700;
     text-decoration: underline;
   }
+
   strong {
     color: #000000;
     font-weight: 700;
@@ -118,6 +124,7 @@
   width: 100%;
   height: 0;
   line-height: 1;
+
   a {
     display: block;
     overflow: hidden;
@@ -127,6 +134,7 @@
     padding: 0;
     font-size: 0;
     line-height: 1;
+
     &:active,
     &:focus,
     &:hover {
@@ -161,6 +169,7 @@
   background: #000000;
   opacity: 0.6;
 }
+
 .dimm img {
   display: block;
 }
@@ -168,14 +177,17 @@
 /* 공통 레이아웃 속성 */
 html,
 body {
-  height: 100%;
+  // height: 100%;
 }
+
 #wrap {
   height: 100%;
 }
+
 #container {
   height: 100%;
 }
+
 #content {
   height: 100%;
 }

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>Select Box</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:description" content="" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link href="../../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <script src="../../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../../assets/scripts/common.js"></script>
+  <!-- element head include -->
+  <style>
+    @media screen and (max-width: 1280px) {
+      .element-list {
+        display: none;
+      }
+    }
+
+    .prototype-group.on .prototype-tit {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: red;
+      z-index: 100;
+    }
+
+    .prototype-group .prototype-tit {
+      position: relative;
+      margin: 40px 0 20px 0;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: black;
+      border: 2px solid;
+      box-shadow:
+        rgba(0, 0, 0, 0.25) 1px 6px 8px 0px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      background-color: #fff;
+    }
+
+    .prototype-group .prototype-tit::before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: -10px;
+    }
+
+    .prototype-group .prototype-tit .prototype-desc {
+      position: relative;
+      margin: 15px 0;
+      padding-left: 23px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .prototype-group .prototype-tit .prototype-desc::before {
+      display: block;
+      content: "";
+      width: 8px;
+      height: 23px;
+      background: #e5e5e5;
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+
+    .prototype-group .prototype-item+.prototype-item {
+      padding-top: 10px;
+    }
+
+    .prototype-group+.prototype-group {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .prototype-group h3.prototype-subtit {
+      position: relative;
+      margin: 15px 0;
+      padding-left: 23px;
+      font-size: 19px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.5;
+      color: green;
+    }
+
+    .prototype-group h3.prototype-subtit::before {
+      display: block;
+      content: "";
+      width: 8px;
+      height: 15px;
+      background: green;
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+
+    .prototype-group h3.prototype-subtit span {
+      color: #000;
+      font-weight: 400;
+    }
+
+    .element-list {
+      position: fixed;
+      left: 20px;
+      top: 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      text-transform: capitalize;
+    }
+
+    .element-list li~li {
+      margin-top: 5px;
+    }
+
+    .element-list li~li a {
+      display: block;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+  </style>
+  <!-- //element head include -->
+
+  <style>
+    [data-component="select-box"] [role="listbox"] li:hover {
+      background-color: #aaa;
+    }
+
+    [data-component="select-box"] .current {
+      background-color: #ccc;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="wrap" style="max-width: 1440px; margin: 0 auto">
+
+    <!-- element menu include -->
+    <ul class="element-list">
+      <li>
+        <a href="../element/select.html">Select Box</a>
+      </li>
+      <li>
+        <a href="../element/swiper.html">Swiper</a>
+      </li>
+      <li>
+        <a href="../element/tab.html">Tabs</a>
+      </li>
+      <li>
+        <a href="../element/accordion.html">Accordion</a>
+      </li>
+      <li>
+        <a href="../element/alert.html">Alert</a>
+      </li>
+      <li>
+        <a href="../element/modal.html">Modal</a>
+      </li>
+      <li>
+        <a href="../element/tooltip.html">Tooltip</a>
+      </li>
+      <li>
+        <a href="../element/snackbar.html">Snackbar</a>
+      </li>
+      <!--  <li>-->
+      <!--    <a href="../element/date-picker.html">Date Picker</a>-->
+      <!--  </li>-->
+    </ul>
+    <!-- //element menu include -->
+
+
+    <div class="pageClassMain uxg-page-container-main" id="container">
+      <div id="content" role="main" style="font-size: 1.2rem">
+        <div class="prototype-group">
+          <div class="prototype-tit"> SelectBox </div>
+
+          <div class="prototype-item">
+            <h3 class="prototype-subtit">Select-base</h3>
+
+            <div class="component-select">
+              <select class="select-list" required>
+                <option value="" selected disabled hidden>선택해주세요.</option>
+                <option value="value1">Option 1</option>
+                <option value="value2">Option 2</option>
+                <option value="value3">Option 3</option>
+                <option value="value4">Option 4</option>
+                <option value="value5">Option 5</option>
+                <option value="value6">Option 6</option>
+                <option value="value7">Option 7</option>
+              </select>
+            </div>
+          </div>
+          <div class="prototype-item">
+            <h3 class="prototype-subtit">Select-optgroup</h3>
+
+            <div class="component-select">
+              <select class="select-list" required>
+                <option value="" selected disabled hidden>선택해주세요.</option>
+                <optgroup label="과일(Fruit)">
+                  <option value="apple">Apple</option>
+                  <option value="banana">Banana</option>
+                  <option value="cherry">Cherry</option>
+                </optgroup>
+                <optgroup label="색깔(Color)">
+                  <option value="red">Red</option>
+                  <option value="blue">Blue</option>
+                  <option value="purple">Purple</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+
+          <div class="prototype-item">
+            <h3 class="prototype-subtit">Select-basic : <span> 데이터 배열로 넣기 </span></h3>
+
+            <!-- SelectBox -->
+            <div id="select1" data-component="select-box" class="component-select" data-init="false"></div>
+            <!-- //SelectBox -->
+          </div>
+
+          <div class="prototype-item">
+            <h3 class="prototype-subtit">Select-custom : <span> 데이터 배열로 넣기 </span></h3>
+
+            <!-- SelectBox -->
+            <div id="select2" data-component="select-box" class="component-select type-custom" data-init="false"></div>
+            <!-- //SelectBox -->
+          </div>
+
+          <div class="prototype-item">
+            <h3 class="prototype-subtit">Select-custom : <span> 데이터 직접 작성해서 넣기 </span></h3>
+
+            <!-- SelectBox -->
+            <div id="select3" data-component="select-box" class="component-select type-custom" data-props-default="Choose a Fruit">
+              <div class="combo-label">select label</div>
+
+              <button type="button" class="select-box">
+                <span style="pointer-events: none"></span>
+              </button>
+
+              <ul class="select-options">
+                <li class="option" data-value="apple">
+                  <div>apple</div>
+                </li>
+                <li class="option" data-value="Banana"> Banana </li>
+                <li class="option" data-value="Blueberry"> Blueberry </li>
+                <li class="option" data-value="Cherry"> Cherry </li>
+                <li class="option" data-value="Durian"> Durian </li>
+                <li class="option" data-value="Guava"> Guava </li>
+                <li class="option" data-value="Eggplant"> Eggplant </li>
+                <li class="option" data-value="Fig"> Fig </li>
+                <li class="option" data-value="Huckleberry"> Huckleberry </li>
+              </ul>
+            </div>
+            <!-- //SelectBox -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const $selectBox1 = document.querySelector("#select1");
+    const selectComponent1 = SelectBox();
+    selectComponent1.core.init($selectBox1, {
+      type: "basic",
+      label: "select label",
+      default: "Choose a Fruit",
+      items: [{
+          value: "apple",
+          text: "<div>apple</div>"
+        },
+        {
+          value: "Banana",
+          text: "Banana"
+        },
+        {
+          value: "Blueberry",
+          text: "Blueberry"
+        },
+        {
+          value: "Cherry",
+          text: "Cherry",
+          disabled: true
+        },
+        {
+          value: "Durian",
+          text: "Durian"
+        },
+        {
+          value: "Guava",
+          text: "Guava",
+          disabled: true
+        },
+        {
+          value: "Eggplant",
+          text: "Eggplant",
+          disabled: true
+        },
+        {
+          value: "Fig",
+          text: "Fig"
+        },
+        {
+          value: "Huckleberry",
+          text: "Huckleberry"
+        },
+      ],
+    });
+
+    setTimeout(() => {
+      const props = {
+        type: "custom",
+        // state: "open",
+        label: "select label",
+        default: "Choose a Fruit",
+        items: [{
+            value: "apple",
+            text: "<div>apple</div>"
+          },
+          {
+            value: "Banana",
+            text: "Banana"
+          },
+          {
+            value: "Blueberry",
+            text: "Blueberry"
+          },
+          {
+            value: "Cherry",
+            text: "Cherry",
+            disabled: true
+          },
+          {
+            value: "Durian",
+            text: "Durian"
+          },
+          {
+            value: "Guava",
+            text: "Guava",
+            disabled: true
+          },
+          {
+            value: "Eggplant",
+            text: "Eggplant",
+            disabled: true
+          },
+          {
+            value: "Fig",
+            text: "Fig"
+          },
+          {
+            value: "Huckleberry",
+            text: "Huckleberry"
+          },
+        ],
+        selectedIndex: 6,
+        // scrollTo: true,
+      };
+
+      const $selectBox2 = document.querySelector("#select2");
+      const selectComponent2 = SelectBox();
+      selectComponent2.core.init($selectBox2, props);
+    }, 500);
+
+    const $selectBox3 = document.querySelector("#select3");
+    const selectComponent3 = SelectBox();
+    selectComponent3.core.init($selectBox3);
+
+  </script>
+</body>
+
+</html>

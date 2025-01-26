@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>components</title>
+  <meta name="keywords" content="@@keywords" />
+  <meta name="description" content="@@description" />
+  <meta property="og:title" content="@@og:title" />
+  <meta property="og:url" content="@@og:url" />
+  <meta property="og:image" content="@@og:image" />
+  <meta property="og:description" content="@@og:description" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link href="../../assets/styles/component_guide.css" type="text/css" rel="stylesheet" />
+  <link href="../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="uid-container">
+    <header class="uid-header" id="top-contents">
+      <div class="uid-header-inner">
+        <div class="uid-header-left">
+          <div class="uid-toggle-btn">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </div>
+          <a href="/guide/pages/components/component.html" class="logo-uxgroup"><strong>컴포넌트 가이드</strong></a>
+        </div>
+
+        <ul class="utillity-menu">
+          <li><a href="../../cl.html">퍼블 리스트 바로가기</a></li>
+        </ul>
+      </div>
+    </header>
+    <aside class="uid-sidebar">
+      <nav class="uid-navigation"></nav>
+    </aside>
+    <div class="uid-navigation-dimm"></div>
+
+
+    <main class="uid-main">
+      <h1 class="uid-title01">Components 작성법</h1>
+      <p class="uid-desc">Components를 작성하는 요령</p>
+      <section class="uid-component">
+        <h2 class="uid-title02">1. sample.html 복사</h2>
+        <ul class="uid-list">
+          <li> sample.html 파일을 복사하여 필요한 컨포넌트 파일명으로 변경하여 사용합니다. </li>
+          <li> sample.html을 복사하여 필요한 컨포넌트를 생성하였으면 component_guide.json 파일로 들어가서 생성한 파일명을 추가 합니다. </li>
+        </ul>
+      </section>
+
+      <section class="uid-component">
+        <h2 class="uid-title02">2. 컨포넌트 파일</h2>
+        <ul class="uid-list">
+          <li>컨포넌트파일.html을 열어 컨포넌트를 작성합니다.</li>
+          <li> 작서하기에 앞서 uid-main 클래스 옆에 code-guide 클래스가 추가 되었는지 확인합니다. </li>
+          <li> 컨포넌트의 내용은 code-wrap 클래스 요소의 하위 각각의 code-group에 html, css, javascript를 작성합니다. </li>
+          <li> css 내용 작성에 주석이 필요할시 /* */을 사용하여 주석을 작성합니다. </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="uid-footer">
+      <!-- top btn -->
+      <a href="#top" class="btn-uid-top">
+        <span>TOP</span>
+      </a>
+      <!-- //top btn -->
+      <small class="copyright">
+        ©
+        <time class="time ui-copyright">2024</time>
+        ETRIBE UX Group, ALL RIGHTS RESERVED
+      </small>
+    </footer>
+
+  </div>
+  <script src="../../assets/scripts/component_guide.js"></script>
+  <script></script>
+</body>
+
+</html>

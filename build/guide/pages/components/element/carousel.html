@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>Carousel</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:description" content="" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link href="../../../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <link href="../../../../assets/styles/swiper-bundle.min.css" type="text/css" rel="stylesheet" />
+  <script src="../../../../assets/scripts/common.ui.plugin.js"></script>
+  <script src="../../../../assets/scripts/common.ui.js" data-init></script>
+  <script src="../../../../assets/scripts/common.js"></script>
+  <!-- element head include -->
+  <style>
+    @media screen and (max-width: 1280px) {
+      .element-list {
+        display: none;
+      }
+    }
+
+    .prototype-group.on .prototype-tit {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: red;
+      z-index: 100;
+    }
+
+    .prototype-group .prototype-tit {
+      position: relative;
+      margin: 40px 0 20px 0;
+      padding: 15px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.5;
+      color: black;
+      border: 2px solid;
+      box-shadow:
+        rgba(0, 0, 0, 0.25) 1px 6px 8px 0px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      background-color: #fff;
+    }
+
+    .prototype-group .prototype-tit::before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: -10px;
+    }
+
+    .prototype-group .prototype-tit .prototype-desc {
+      position: relative;
+      margin: 15px 0;
+      padding-left: 23px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .prototype-group .prototype-tit .prototype-desc::before {
+      display: block;
+      content: "";
+      width: 8px;
+      height: 23px;
+      background: #e5e5e5;
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+
+    .prototype-group .prototype-item+.prototype-item {
+      padding-top: 10px;
+    }
+
+    .prototype-group+.prototype-group {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .prototype-group h3.prototype-subtit {
+      position: relative;
+      margin: 15px 0;
+      padding-left: 23px;
+      font-size: 19px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.5;
+      color: green;
+    }
+
+    .prototype-group h3.prototype-subtit::before {
+      display: block;
+      content: "";
+      width: 8px;
+      height: 15px;
+      background: green;
+      position: absolute;
+      top: 2px;
+      left: 0;
+    }
+
+    .prototype-group h3.prototype-subtit span {
+      color: #000;
+      font-weight: 400;
+    }
+
+    .element-list {
+      position: fixed;
+      left: 20px;
+      top: 20px;
+      margin-top: 20px;
+      font-size: 16px;
+      text-transform: capitalize;
+    }
+
+    .element-list li~li {
+      margin-top: 5px;
+    }
+
+    .element-list li~li a {
+      display: block;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+  </style>
+  <!-- //element head include -->
+
+  <style>
+    .btn {
+      position: relative;
+      z-index: 999;
+    }
+
+    .btn img {
+      width: 100%;
+      height: 100%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="wrap" style="max-width: 1440px; margin: 0 auto">
+
+    <!-- element menu include -->
+    <ul class="element-list">
+      <li>
+        <a href="../element/select.html">Select Box</a>
+      </li>
+      <li>
+        <a href="../element/swiper.html">Swiper</a>
+      </li>
+      <li>
+        <a href="../element/tab.html">Tabs</a>
+      </li>
+      <li>
+        <a href="../element/accordion.html">Accordion</a>
+      </li>
+      <li>
+        <a href="../element/alert.html">Alert</a>
+      </li>
+      <li>
+        <a href="../element/modal.html">Modal</a>
+      </li>
+      <li>
+        <a href="../element/tooltip.html">Tooltip</a>
+      </li>
+      <li>
+        <a href="../element/snackbar.html">Snackbar</a>
+      </li>
+      <!--  <li>-->
+      <!--    <a href="../element/date-picker.html">Date Picker</a>-->
+      <!--  </li>-->
+    </ul>
+    <!-- //element menu include -->
+
+
+    <div class="pageClassMain uxg-page-container-main" id="container">
+      <div id="content" role="main" style="font-size: 1.2rem">
+        <div class="prototype-group">
+          <div class="prototype-tit"> Carousel </div>
+          <select name="lang" id="lang">
+            <option value="ko">Korean</option>
+            <option value="eng">English</option>
+          </select>
+          <!-- swiper -->
+          <div class="component-carousels">
+            <div class="component-carousel thumbs-top left-fixed" data-component="carousel" data-props-initial-slide="0" data-props-autoplay-button="true" data-props-slideTo-button="true">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="https://i.ibb.co/6Hn3QGG/image.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://i.ibb.co/4FpJSG7/image.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://i.ibb.co/zVgTPq6/image.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://i.ibb.co/6Hn3QGG/image.jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://i.ibb.co/4FpJSG7/image.jpg" alt="" />
+                </div>
+              </div>
+              <button class="swiper-button-prev"></button>
+              <button class="swiper-button-next"></button>
+
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const $carouselEl = document.querySelector('[data-component="carousel"]');
+    // 고급 props
+    const props = {
+      autoplayButton: {
+        state: 'playing',
+        type: 'image', // text, image
+        start: 'play.jpg',
+        stop: 'pause.png',
+        // type: 'image',
+        // start: '시작',
+        // stop: '정지'
+      },
+      slidetoButton: {
+        text: '슬라이드 이동',
+      }
+    }
+    new Carousel().component.init($carouselEl, props)
+  })
+
+</script>
+
+</html>

@@ -18,6 +18,17 @@
   <script src="../../assets/scripts/common.ui.plugin.js" data-init></script>
   <script src="../../assets/scripts/common.ui.js" data-init></script>
   <script src="../../assets/scripts/common.js"></script>
+  <script type="text/javascript">
+    ! function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://developers.kakao.com/sdk/js/kakao.min.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'kakao-js-sdk');
+
+  </script>
 </head>
 
 <body>
@@ -59,7 +70,7 @@
             <div class="tit">석현이의 첫 생일에 초대합니다</div>
             <div class="txt"> 석현이가 태어나 밝고 건강하게 자라 나도록 함께 해주신 여러분들께 감사의 마음을 담아 작은 자리를 마련 했습니다. 바쁘시겠지만 부디 참석해 주시어 셕현이의 첫 생일을 축하해 주세요. </div>
           </div>
-          <button type="button" class="btn-call">연락하기</button>
+          <button type="button" class="btn-call btn-modal01" data-testid="btn-modal01">연락하기</button>
         </div>
         <div class="layer-wrap">
           <div class="parent-wrap">
@@ -165,7 +176,7 @@
         <div class="layer-wrap">
           <div class="tit-group">
             <div class="tit">오시는 길</div>
-            <div class="txt">서울 동작구 보라매로5길 15 전문건설회관 29층 플로랜스 보라매점</div>
+            <div class="txt">서울 동작구 보라매로5길 15 전문건설회관 29층 플로렌스 보라매점</div>
           </div>
           <div class="map-wrap">
             <div class="map">
@@ -285,8 +296,8 @@
                   </div>
                   <div class="flex-box">
                     <div class="txt">신한은행</div>
-                    <div class="txt">000-0000-000-0000</div>
-                    <button type="button" class="btn ico-copy">
+                    <div class="txt account-num">000-0000-000-0000</div>
+                    <button type="button" class="btn btn-copy">
                       <span>계좌번호 복사</span>
                       <i class="ico ico-copy"></i>
                     </button>
@@ -339,7 +350,7 @@
         </div>
         <div class="layer-wrap">
           <div class="share-wrap">
-            <button type="button" class="btn-kakao">
+            <button type="button" class="btn-kakaoshare">
               <i class="ico ico-kakao"></i>
               <span>카카오톡 공유하기</span>
             </button>
@@ -354,8 +365,186 @@
       </div>
     </div>
   </div>
+  <div class="layer-wrap">
+    <!-- 연락하기 -->
+    <div class="component-modal modal01">
+      <div class="modal-dimm"></div>
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 class="modal-tit">연락하기</h3>
+          </div>
+          <div class="modal-content">
+            <div class="phone-box">
+              <span class="phone-tit">아빠 정인호</span>
+              <a href="tel: 01076684200" class="btn-tel">
+                <i class="ico ico-tel"></i>
+              </a>
+              <button type="button" class="btn-message">
+                <i class="ico ico-message"></i>
+              </button>
+            </div>
+            <div class="phone-box">
+              <span class="phone-tit">엄마 박선미</span>
+              <a href="tel: 01057301066" class="btn-tel">
+                <i class="ico ico-tel"></i>
+              </a>
+              <button type="button" class="btn-message">
+                <i class="ico ico-message"></i>
+              </button>
+            </div>
+          </div>
+          <button class="modal-close btn"></button>
+        </div>
+      </div>
+    </div>
+    <!-- //연락하기 -->
   </div>
   <div class="dimm"></div>
+  <script>
+    window.onload = function() {
+      Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1'); // 'YOUR_APP_KEY'를 실제 앱 키로 교체하세요.
+    };
+    document.addEventListener('DOMContentLoaded', function() {
+      // 연락하기 모달
+      const $btnModal01 = document.querySelector('.btn-modal01');
+      $btnModal01.addEventListener('click', function() {
+        const modal01 = document.querySelector('.modal01').ui;
+        modal01.open();
+        setTimeout(() => {
+          document.querySelector('.modal02').ui.open();
+          setTimeout(() => {
+            etUI.dialog.alert({
+              title: 'alert title',
+              message: 'alert message',
+              callback: function() {
+                console.log('alert callback');
+              }
+            });
+          }, 1000)
+        }, 1000)
+      });
+      // 디데이 카운트
+      var countDownDate = new Date("Mar 5, 2025 15:00:00").getTime();
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+        // Get today's date and time
+        var now = new Date().getTime();
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Output the result in an element with id="demo"
+        // document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        document.querySelector('.days .num').innerHTML = days;
+        document.querySelector('.hours .num').innerHTML = hours;
+        document.querySelector('.minutes .num').innerHTML = minutes;
+        document.querySelector('.seconds .num').innerHTML = seconds;
+        document.querySelector('.dday-desc .count').innerHTML = days + "일";
+        // If the count down is over, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+      // 네이버 지도 연결
+      document.querySelector(".btn-naver").addEventListener("click", function() {
+        // 네이버 지도 URL 생성 (좌표, 장소 이름 지정 가능)
+        const latitude = 37.5665; // 위도 (예: 서울)
+        const longitude = 126.9780; // 경도
+        const placeName = "플로렌스 보라매점";
+        // 네이버 지도 URL
+        const naverMapUrl = `https://map.naver.com/v5/?c=${longitude},${latitude},15,0,0&searchCoord=${longitude},${latitude}&place=${encodeURIComponent(placeName)}`;
+        // 새 탭으로 열기
+        window.open(naverMapUrl, "_blank");
+      });
+      // 카카오 내비 연결
+      document.querySelector(".btn-kakao").addEventListener("click", function() {
+        // 목적지 정보 설정
+        const destinationName = "플로렌스 보라매점";
+        const latitude = 37.4967; // 플로렌스 보라매점 위도
+        const longitude = 126.9179; // 플로렌스 보라매점 경도
+        // 카카오네비 URL 스키마
+        const kakaoNaviUrl = `kakaonavi://route?ep=${latitude},${longitude}&ename=${encodeURIComponent(destinationName)}`;
+        // 카카오네비 실행
+        window.location.href = kakaoNaviUrl;
+      });
+      //카카오뱅크 송금하기
+      document.querySelector(".btn-kakaopay").addEventListener("click", function() {
+        // 카카오뱅크 송금 실행 (스키마 URL 활용)
+        const kakaoBankUrl = "kakaobank://transfer"; // 카카오뱅크 송금화면 호출
+        window.location.href = kakaoBankUrl;
+      });
+      // 계좌번호 복사
+      document.querySelector(".btn-copy").addEventListener("click", function() {
+        const accountNumber = document.querySelector(".account-num").textContent;
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(accountNumber).then(function() {
+            alert('계좌번호가 클립보드에 복사되었습니다.');
+          }).catch(function(err) {
+            console.error('복사 실패:', err);
+          });
+        } else {
+          // Clipboard API를 지원하지 않는 경우
+          var tempInput = document.createElement('input');
+          tempInput.readOnly = true;
+          tempInput.value = accountNumber;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          alert('계좌번호가 클립보드에 복사되었습니다.');
+        }
+      });
+      // 카카오톡으로 공유하기
+      document.querySelector('.btn-kakaoshare').addEventListener('click', function() {
+        Kakao.Share.sendDefault({
+          objectType: 'feed',
+          content: {
+            title: '공유할 제목',
+            description: '공유할 설명',
+            imageUrl: '', // 공유할 이미지 URL
+            link: {
+              mobileWebUrl: 'https://seokhyeonparty.netlify.app/pages/main/main.html',
+              webUrl: 'https://seokhyeonparty.netlify.app/pages/main/main.html',
+            },
+          },
+          buttons: [{
+            title: '웹으로 보기',
+            link: {
+              mobileWebUrl: 'https://seokhyeonparty.netlify.app/pages/main/main.html',
+              webUrl: 'https://seokhyeonparty.netlify.app/pages/main/main.html',
+            },
+          }, ],
+        });
+      });
+      // 링크 복사
+      document.querySelector('.btn-link').addEventListener('click', function() {
+        const currentUrl = window.location.href; // 현재 페이지의 URL을 가져옵니다.
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(currentUrl).then(function() {
+            alert('링크가 클립보드에 복사되었습니다.');
+          }).catch(function(err) {
+            console.error('링크 복사 실패:', err);
+          });
+        } else {
+          // Clipboard API를 지원하지 않는 경우
+          var tempInput2 = document.createElement('input');
+          tempInput2.readOnly = true;
+          tempInput2.value = currentUrl;
+          document.body.appendChild(tempInput2);
+          tempInput2.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput2);
+          alert('링크가 클립보드에 복사되었습니다.');
+        }
+      });
+    })
+
+  </script>
 </body>
 
 </html>

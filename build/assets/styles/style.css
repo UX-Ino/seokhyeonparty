@@ -4889,6 +4889,7 @@ button.swiper-pagination-bullet {
 .component-modal {
   display: none;
   position: absolute;
+  font-family: "omyu_pretty";
 }
 .component-modal .modal-dimm {
   position: fixed;
@@ -4912,8 +4913,6 @@ button.swiper-pagination-bullet {
   inset: 0 0 0 0;
   z-index: 110;
   background-color: rgb(250, 250, 250);
-  font-size: 1.8rem;
-  line-height: 1.4;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -4924,22 +4923,29 @@ button.swiper-pagination-bullet {
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 1.7rem;
 }
 .component-modal .modal-container .modal-header {
-  margin: 2rem 0rem;
   height: 3rem;
   text-align: center;
 }
-.component-modal .modal-container .modal-header .modal-tit,.component-modal .modal-container .modal-content {
+.component-modal .modal-container .modal-header .modal-tit {
   border-radius: 1rem;
   color: #333333;
   font-size: 1.6rem;
   line-height: 1.4;
+  font-size: 1.9rem;
 }
 .component-modal .modal-container .modal-content {
-  margin: 2rem 0rem;
   width: 100%;
   text-align: center;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: #333333;
   max-height: 20rem;
   overflow-y: auto;
 }
@@ -4975,13 +4981,19 @@ button.swiper-pagination-bullet {
 }
 .component-modal .modal-container .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  padding: 0;
+  top: 2rem;
+  right: 2rem;
   width: 2.4rem;
   height: 2.4rem;
-  background: url("../../guide/assets/images/ico/ico_close.png") no-repeat 0 0;
-  background-size: 100% auto;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='none'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='m8.855.37.001.001.773.773v.002L5.776 5l3.853 3.853v.003l-.773.773h-.002L5 5.776 1.147 9.629h-.003L.37 8.856v-.002L4.224 5 .371 1.147v-.003L1.144.37h.002L5 4.224 8.853.371z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.6rem auto;
   pointer-events: all;
+  border: none;
+  min-height: 0;
+  min-height: initial;
 }
 .component-modal.modal-full .modal-container {
   width: 100%;
@@ -5509,8 +5521,19 @@ img {
 [class^="ico ico-"].ico-link {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%23000' d='M6.83 8.054a.11.11 0 0 0-.151 0L5.123 9.611c-.72.72-1.937.797-2.732 0a1.924 1.924 0 0 1 0-2.732l1.556-1.557a.11.11 0 0 0 0-.151l-.533-.533a.11.11 0 0 0-.152 0L1.706 6.194a2.895 2.895 0 0 0 0 4.098 2.897 2.897 0 0 0 4.098 0l1.557-1.556a.11.11 0 0 0 0-.151zm3.464-6.348a2.895 2.895 0 0 0-4.098 0L4.638 3.262a.11.11 0 0 0 0 .152l.532.532c.041.041.11.041.15 0l1.557-1.557a1.924 1.924 0 0 1 2.732 0c.797.797.72 2.012 0 2.732L8.053 6.678a.11.11 0 0 0 0 .151l.533.533c.042.042.11.042.151 0l1.557-1.556a2.9 2.9 0 0 0 0-4.1M7.314 4.13a.11.11 0 0 0-.152 0L4.13 7.161a.11.11 0 0 0 0 .151l.53.53c.042.042.11.042.152 0l3.032-3.031a.11.11 0 0 0 0-.152z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h12v12H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
 }
+[class^="ico ico-"].ico-tel {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none'%3E%3Cpath fill='%23000' d='M10.89 2.34 9.463.915a.92.92 0 0 0-1.307 0L6.62 2.448a.924.924 0 0 0 0 1.31l1.2 1.202a5.4 5.4 0 0 1-1.157 1.704 5.4 5.4 0 0 1-1.704 1.16l-1.2-1.201a.92.92 0 0 0-1.307 0L.915 8.156a.924.924 0 0 0 0 1.31l1.425 1.425a1.6 1.6 0 0 0 1.385.446c1.773-.292 3.533-1.236 4.954-2.656 1.42-1.422 2.362-3.182 2.657-4.956a1.6 1.6 0 0 0-.446-1.385m-.504 1.225c-.261 1.58-1.11 3.154-2.39 4.433-1.278 1.28-2.852 2.129-4.43 2.39a.63.63 0 0 1-.547-.177l-1.4-1.4 1.484-1.485 1.605 1.607.012.012.289-.107A6.45 6.45 0 0 0 8.835 5.01l.107-.289-1.617-1.616 1.483-1.486 1.4 1.4a.63.63 0 0 1 .178.546'/%3E%3C/svg%3E");
+}
+[class^="ico ico-"].ico-message {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none'%3E%3Cg clip-path='url(%23a)'%3E%3Cpath fill='%23000' d='M5.357 6a.643.643 0 1 0 1.286 0 .643.643 0 0 0-1.286 0m2.679 0A.643.643 0 1 0 9.32 6a.643.643 0 0 0-1.285 0M2.679 6a.643.643 0 1 0 1.285 0A.643.643 0 0 0 2.68 6m8.855-2.325A6 6 0 0 0 6 0h-.027A5.986 5.986 0 0 0 0 6.028c.005.93.225 1.847.643 2.677v2.036a.616.616 0 0 0 .616.616h2.037c.83.418 1.747.639 2.677.643h.028c.803 0 1.58-.155 2.313-.46a6 6 0 0 0 1.913-1.274A5.987 5.987 0 0 0 12 6.027a6 6 0 0 0-.466-2.352M9.51 9.541A4.96 4.96 0 0 1 6 10.982h-.023A5 5 0 0 1 3.66 10.4l-.112-.06H1.66V8.453L1.6 8.34a5 5 0 0 1-.583-2.318A4.95 4.95 0 0 1 2.459 2.49a4.95 4.95 0 0 1 3.52-1.472H6a4.96 4.96 0 0 1 3.525 1.458 4.96 4.96 0 0 1 1.459 3.547A4.96 4.96 0 0 1 9.51 9.54'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='a'%3E%3Cpath fill='%23fff' d='M0 0h12v12H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
 span + [class^="ico ico-"], [class^="ico ico-"] + span {
   margin-left: 0.7rem;
+}
+
+button,
+[class^="btn btn-"] {
+  color: rgb(57, 62, 70);
 }
 
 .layer-wrap > .tit {
@@ -6106,14 +6129,14 @@ span + [class^="ico ico-"], [class^="ico ico-"] + span {
   -webkit-align-items: center;
   align-items: center;
 }
-.share-wrap .btn-kakao,
+.share-wrap .btn-kakaoshare,
 .share-wrap .btn-link {
   padding: 0.4rem 1.5rem;
   font-size: 1.4rem;
   height: 3.2rem;
 }
 
-.share-wrap .btn-kakao,
+.share-wrap .btn-kakaoshare,
 .share-wrap .btn-link,.tit02 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -6143,4 +6166,37 @@ span + [class^="ico ico-"], [class^="ico ico-"] + span {
   font-size: 1.4rem;
   text-align: left;
   text-align: center;
+}
+
+.phone-box {
+  padding: 1rem 0rem;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+.phone-box,.phone-box .btn-tel {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.phone-box .btn-tel {
+  margin-left: auto;
+  position: relative;
+}
+.phone-box .btn-tel::before {
+  content: "";
+  margin: 0rem 2rem;
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='2' fill='none'%3E%3Cpath fill='%23000' d='M.643.518h.964v.964H.643zm2.437 0h.965v.964H3.08zm4.875 0h.965v.964h-.965zm2.438 0h.964v.964h-.964zm-4.875 0h.964v.964h-.964z'/%3E%3C/svg%3E");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.phone-box .btn-message {
+  padding-left: 2rem;
 }

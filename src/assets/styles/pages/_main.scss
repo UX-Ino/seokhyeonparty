@@ -1,11 +1,16 @@
 @use "../abstracts"as *;
 
-// 공통
-#content {
-  @include rem(padding, 0 10 20);
+html,
+body {
   font-family: "omyu_pretty";
   font-style: normal;
   font-weight: 400;
+}
+
+// 공통
+#content {
+  @include rem(padding, 0 10 20);
+
   background: url(pathImage/background-white.jpg) repeat center / 100% 100%;
   color: rgb(57, 62, 70);
   line-height: 1.3;
@@ -95,19 +100,121 @@ button,
 }
 
 // 간격
-.layer-wrap {
+.contents-layer-wrap {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
   >.tit {
     text-align: center;
   }
 
-  &+.layer-wrap {
+  &+.contents-layer-wrap {
+    @include rem(margin-top, 50);
+    ;
+  }
+
+  &.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-wrap {
+  &+.contents-layer-wrap {
     @include rem(margin-top, 50);
     ;
   }
 }
 
 
+.loading-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 251, 218);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+  opacity: 1;
+  transition: opacity 1s ease-out;
 
+  .loding-txt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .desc {
+      font-size: 22px;
+      color: rgb(251, 238, 172);
+      opacity: 0;
+      transform: translateX(20px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
+
+      /* 애니메이션 시작 전에 딜레이 추가 */
+      &+.desc {
+        @include rem(margin-left, 6);
+      }
+    }
+
+    .desc:nth-child(1) {
+      animation-delay: 0.5s;
+      /* 첫 번째 텍스트에 0.5초 딜레이 */
+    }
+
+    .desc:nth-child(2) {
+      animation-delay: 1s;
+      /* 두 번째 텍스트에 1초 딜레이 */
+    }
+
+    .desc:nth-child(3) {
+      animation-delay: 1.5s;
+      /* 세 번째 텍스트에 1.5초 딜레이 */
+    }
+  }
+}
+
+@keyframes fadeInUp {
+
+  // to {
+  //   opacity: 1;
+  //   transform: translateX(0);
+  //   color: rgb(48, 57, 82);
+  // }
+  0% {
+    color: rgb(251, 238, 172);
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+
+  20% {
+    color: rgb(251, 238, 172);
+  }
+
+  100% {
+    color: rgb(48, 57, 82);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.pageClassMain {
+  display: none;
+  /* 처음에는 숨겨두고 로딩이 끝난 후 보여줌 */
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.pageClassMain.show {
+  // display: block;
+  opacity: 1;
+}
 
 .top-img-wrap {
   margin: 0 auto;
@@ -477,14 +584,17 @@ button,
   }
 
   &.type02 {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgb(233, 236, 239);
+
     .swiper-slide {
       display: flex;
       position: relative;
-      background-color: rgba(255, 255, 255, 0.4);
-      border: 1px solid rgb(233, 236, 239);
       @include rem(padding, 20 20 40 20);
       width: 100%;
       @include rem(border-radius, 10);
+      align-items: center;
+      justify-content: center;
     }
 
     .txt-box {
@@ -662,11 +772,12 @@ button,
     @include rem(padding, 4 15);
     @include rem(font-size, 14);
     @include rem(height, 32);
-
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+
 }
 
 .tit02 {
@@ -718,5 +829,57 @@ button,
 
   .btn-message {
     @include rem(padding-left, 20);
+  }
+}
+
+// 방명록
+.modal02 {
+  .input-field-btn {
+    background-color: rgb(242, 243, 247);
+
+    &.clear {
+      @include rem(margin-right, 8);
+      height: auto;
+      @include rem(padding, 4);
+      border-radius: 50%;
+    }
+  }
+
+  .ico-clear.ico-normal {
+    @include rem(width, 15);
+    @include rem(height, 15);
+    @include ico-x(#00000073)
+  }
+
+
+  .password-state {
+    background-color: transparent;
+
+    [class^='ico-'] {
+      @include rem(width, 18);
+      @include rem(height, 18);
+    }
+  }
+
+  .btn-submit {
+    @include rem(margin-top, 10);
+    color: rgb(33, 34, 36);
+    box-shadow: none;
+    height: unset;
+    background-color: rgb(245, 241, 241);
+    @include rem(padding, 4 10);
+    width: 100%;
+    @include rem(font-size, 17);
+    line-height: 1.6;
+    border: unset;
+    @include rem(border-radius, 6);
+
+    &:disabled {
+      cursor: not-allowed;
+      border-color: #d9d9d9;
+      color: rgba(0, 0, 0, 0.25);
+      background-color: rgba(0, 0, 0, 0.04);
+      box-shadow: none;
+    }
   }
 }

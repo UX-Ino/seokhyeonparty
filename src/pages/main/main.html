@@ -30,9 +30,16 @@
   </head>
   <body>
     <div id="wrap">
+      <div class="loading-wrap">
+        <div class="loding-txt">
+          <span class="desc">셕현이의</span>
+          <span class="desc">첫 번쩨 생일에</span>
+          <span class="desc">초대합니다</span>
+        </div>
+      </div>
       <div class="pageClassMain uxg-page-container-main" id="container">
         <div id="content" role="main">
-          <div class="layer-wrap">
+          <div class="main-wrap">
             <div class="top-img-wrap">
               <div class="badge">
                 <img src="pathImage/first-birthday.webp" alt="" />
@@ -62,14 +69,14 @@
               </div>
             </div>
           </div>
-          <div class="layer-wrap">
+          <div class="contents-layer-wrap">
             <div class="txt-wrap">
               <div class="tit">석현이의 첫 생일에 초대합니다</div>
               <div class="txt"> 석현이가 태어나 밝고 건강하게 자라 나도록 함께 해주신 여러분들께 감사의 마음을 담아 작은 자리를 마련 했습니다. 바쁘시겠지만 부디 참석해 주시어 셕현이의 첫 생일을 축하해 주세요. </div>
             </div>
             <button type="button" class="btn-call btn-modal01" data-testid="btn-modal01">연락하기</button>
           </div>
-          <div class="layer-wrap">
+          <div class="contents-layer-wrap">
             <div class="parent-wrap">
               <div class="dad-box">
                 <div class="img">
@@ -87,7 +94,7 @@
               </div>
             </div>
           </div>
-          <div class="layer-wrap">
+          <div class="contents-layer-wrap">
             <div class="calendar-wrap">
               <div class="tit">행사일</div>
               <div class="calendar-img">
@@ -168,7 +175,7 @@
               <div class="dday-desc">석현이의 첫번째 생일이 <span class="count">00일</span> 남았습니다.</div>
             </div>
           </div>
-          <div class="layer-wrap">
+          <div class="contents-layer-wrap">
             <div class="tit-group">
               <div class="tit">오시는 길</div>
               <div class="txt">서울 동작구 보라매로5길 15 전문건설회관 29층 플로렌스 보라매점</div>
@@ -207,7 +214,7 @@
               </div>
             </div>
           </div>
-          <div class="layer-wrap">
+          <div class="contents-layer-wrap">
             <div class="tit">갤러리</div>
             <div class="gallery-wrap ">
               <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-speed="700" data-props-space-between="8">
@@ -231,7 +238,7 @@
               </div>
             </div>
           </div>
-          <div class="layer-wrap">
+          <div class="contents-layer-wrap">
             <div class="tit">석현이의 성장기록</div>
             <div class="gallery-wrap type02">
               <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="1" data-props-speed="700" data-props-space-between="8">
@@ -273,7 +280,7 @@
               </div>
             </div>
           </div>
-          <div class="layer-wrap">
+          <div class="contents-layer-wrap">
             <div class="tit">마음 전하실 곳</div>
             <div class="component-accordion" data-orientation="vertical">
               <div class="accordion-item" data-state="open" data-type="multiple">
@@ -301,7 +308,7 @@
               </div>
             </div>
           </div>
-          <div class="layer-wrap">
+          <div class="contents-layer-wrap">
             <div class="tit">축하인사 전하기</div>
             <div class="messages-wrap">
               <div class="messages-box">
@@ -342,7 +349,7 @@
               <button type="button" class="btn-messages">작성하기</button>
             </div>
           </div>
-          <div class="layer-wrap">
+          <div class="contents-layer-wrap">
             <div class="share-wrap">
               <button type="button" class="btn-kakaoshare">
                 <i class="ico ico-kakao"></i>
@@ -393,30 +400,143 @@
         </div>
       </div>
       <!-- //연락하기 -->
+      <!-- 방명록 -->
+      <div class="component-modal modal02">
+        <div class="modal-dimm"></div>
+        <div class="modal-frame">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h3 class="modal-tit">방명록 작성</h3>
+            </div>
+            <div class="modal-content">
+              <div class="component-input">
+                <div class="input-field">
+                  <input class="input" type="text" id="temp_input_btn_0001" placeholder="작성자">
+                  <button type="button" class="input-field-btn clear">
+                    <span class="hide-txt">내용 지우기</span>
+                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="component-input">
+                <div class="input-field">
+                  <input class="input" type="password" id="temp_input_btn_0002" placeholder="비밀번호">
+                  <button type="button" class="input-field-btn clear">
+                    <span class="hide-txt">내용 지우기</span>
+                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
+                  </button>
+                  <button type="button" class="input-field-btn password-state">
+                    <span class="hide-txt hide">비밀번호 숨기기</span>
+                    <span class="hide-txt show">비밀번호 표시</span>
+                    <i class="ico-password-state ico-normal" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="component-input">
+                <div class="input-textarea-field">
+                  <textarea id="temp_textarea_0001" class="textarea" placeholder="내용을 입력해주세요."></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn-submit" disabled>저장</button>
+            </div>
+            <button class="modal-close btn"></button>
+          </div>
+        </div>
+      </div>
+      <!-- //방명록 -->
     </div>
     <div class="dimm"></div>
     <script>
       window.onload = function () {
         Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1'); // 'YOUR_APP_KEY'를 실제 앱 키로 교체하세요.
+        // 진입 이벤트
+        const loadingWrap = document.querySelector('.loading-wrap');
+        const pageClassMain = document.querySelector('.pageClassMain');
+        // 로딩 텍스트가 모두 나타난 후 loading-wrap을 숨기기 위한 타이머
+        setTimeout(() => {
+          // loading-wrap을 점차 숨김 (opacity가 0이 될 때)
+          loadingWrap.style.opacity = 0;
+          // 1초 후에 loading-wrap을 완전히 숨기고, pageClassMain을 보이게 함
+          setTimeout(() => {
+            loadingWrap.style.display = 'none'; // 로딩 화면 숨기기
+            pageClassMain.style.display = 'block'; // 메인 페이지 내용 표시
+            setTimeout(() => {
+              pageClassMain.classList.add('show'); // 메인 페이지 내용 표시
+            }, 300)
+          }, 1000); // fadeOut 효과 시간에 맞춰서 실행
+        }, 2500); // 텍스트가 모두 나타날 때까지의 시간
       };
       document.addEventListener('DOMContentLoaded', function () {
         // 연락하기 모달
         const $btnModal01 = document.querySelector('.btn-modal01');
+        const modal01 = document.querySelector('.modal01').ui;
         $btnModal01.addEventListener('click', function () {
-          const modal01 = document.querySelector('.modal01').ui;
           modal01.open();
+        });
+        // 방명록 모달
+        const $btnModal02 = document.querySelector('.btn-messages');
+        const modal02 = document.querySelector('.modal02').ui;
+        $btnModal02.addEventListener('click', function () {
+          modal02.open();
           setTimeout(() => {
             document.querySelector('.modal02').ui.open();
-            setTimeout(() => {
-              etUI.dialog.alert({
-                title: 'alert title',
-                message: 'alert message',
-                callback: function () {
-                  console.log('alert callback');
-                }
-              });
-            }, 1000)
           }, 1000)
+        });
+        // input clear
+        const inputClearBtn = document.querySelectorAll('.input-field-btn.clear');
+        inputClearBtn.forEach((e) => {
+          const $input = e.closest('.input-field').querySelector('input')
+          e.addEventListener('click', () => {
+            $input.value = '';
+          })
+        })
+        // passworld
+        const inputPassBtn = document.querySelectorAll('.password-state');
+        inputPassBtn.forEach((e) => {
+          const $input = e.closest('.input-field').querySelector('input')
+          e.addEventListener('click', () => {
+            console.log(e.classList)
+            if ($input.type === "password") {
+              e.classList.add("show")
+              $input.type = "text";
+            } else {
+              e.classList.remove("show")
+              $input.type = "password";
+            }
+          })
+        })
+        // 입력시 버튼 활성화
+        const inputFields = document.querySelectorAll(".modal02 input, .modal02 textarea");
+        const submitButton = document.querySelector(".modal02 .btn-submit");
+
+        function checkInputs() {
+          const allFilled = Array.from(inputFields).every(input => input.value && input.value.trim() !== "");
+          submitButton.disabled = !allFilled;
+          if (allFilled) {
+            submitButton.addEventListener('click', closeModal);
+          } else {
+            submitButton.removeEventListener('click', closeModal);
+          }
+        }
+
+        function closeModal() {
+          modal02.close();
+          resetInputs();
+        }
+
+        function resetInputs() {
+          inputFields.forEach(input => input.value = ""); // 모든 입력 필드 초기화
+          submitButton.disabled = true; // 버튼 비활성화
+        }
+        inputFields.forEach(input => {
+          input.addEventListener("input", checkInputs);
+          input.addEventListener("blur", checkInputs); // 입력 필드 포커스 해제 시도 체크
+        });
+        inputClearBtn.forEach((button, index) => {
+          button.addEventListener("click", function () {
+            inputFields[index].value = ""; // 해당 인덱스의 input 값 지우기
+            checkInputs(); // 버튼 활성화 여부 다시 체크
+          });
         });
         // 디데이 카운트
         var countDownDate = new Date("Mar 5, 2025 15:00:00").getTime();
@@ -528,6 +648,18 @@
             document.body.removeChild(tempInput2);
             alert('링크가 클립보드에 복사되었습니다.');
           }
+        });
+        // 스크롤 이벤트
+        document.addEventListener('scroll', () => {
+          const sections = document.querySelectorAll('.contents-layer-wrap');
+          const scrollPosition = window.scrollY + window.innerHeight;
+          sections.forEach(section => {
+            if (section.offsetTop < scrollPosition) {
+              section.classList.add('fade-in');
+            } else {
+              section.classList.remove('fade-in');
+            }
+          });
         });
       })
     </script>

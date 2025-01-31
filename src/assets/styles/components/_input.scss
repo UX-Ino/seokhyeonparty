@@ -1,20 +1,24 @@
-@use "../abstracts" as *;
+@use "../abstracts"as *;
 
 /* component input */
 .component-input {
+
   // input 공통 - label 영역
   .input-label {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+
     .label-txt {
       flex: 1 0 auto;
       @include f18();
+      text-align: start;
     }
-    .label-util {
-    }
+
+    .label-util {}
   }
+
   .input-sub-txt {
     width: 100%;
   }
@@ -28,6 +32,7 @@
     background-color: $bg-ffffff;
     overflow: hidden;
     @include rem(border-radius, 4);
+
     input {
       border: 0;
       background-color: transparent;
@@ -35,28 +40,38 @@
       height: 100%;
       @include rem(padding, 0 8);
       @include f18();
+
       ::placeholder {
         @include f12();
       }
+
       &[type="search"] {
         &::-webkit-search-cancel-button {
           appearance: none;
         }
+
         &::-ms-clear {
           display: none;
         }
       }
-      &[type="password"] {
-      }
-      &[type="email"] {
-      }
-      &[type="tel"] {
-      }
-      &[type="number"] {
-      }
+
+      &[type="password"] {}
+
+      &[type="email"] {}
+
+      &[type="tel"] {}
+
+      &[type="number"] {}
+
       &:focus,
       &:focus-visible {
         outline: none;
+      }
+
+      &:placeholder-shown {
+        &+.input-field-btn.clear {
+          display: none;
+        }
       }
     }
   }
@@ -73,6 +88,7 @@
     overflow: hidden;
     @include rem(border-radius, 4);
     cursor: pointer;
+
     input[type="file"] {
       width: 0.1px;
       height: 0.1px;
@@ -87,11 +103,12 @@
   .input-textarea-field {
     display: flex;
     align-items: center;
-    @include rem(height, 160);
+    @include rem(height, 90);
     border: 1px solid gainsboro;
     background-color: $bg-ffffff;
     overflow: hidden;
     @include rem(border-radius, 4);
+
     textarea {
       width: 100%;
       height: 100%;
@@ -99,6 +116,7 @@
       border: 0;
       @include rem(padding, 8);
       @include f18();
+
       &:focus,
       &:focus-visible {
         outline: none;
@@ -113,26 +131,33 @@
     height: 100%;
     @include rem(padding, 0 8);
     background-color: skyblue;
-    &.search {
-    }
+
+    &.search {}
+
     &.clear {
+      display: block;
     }
-    &.calendar {
-    }
+
+    &.calendar {}
+
     &.password-state {
       .hide-txt.show {
         display: none;
       }
+
       .ico-password-state {
-        @include ico-password-hide;
+        @include ico-password-hide(#00000073);
       }
+
       &.show {
         .ico-password-state {
-          @include ico-password-show;
+          @include ico-password-show(#00000073);
         }
+
         .hide-txt.hide {
           display: none;
         }
+
         .hide-txt.show {
           display: inline-block;
         }
@@ -157,12 +182,15 @@
     height: 100%;
     background-size: 100% 100%;
     @include rem(margin, 0 8);
+
     &.login-id {
       @include ico-login-id;
     }
+
     &.login-pw {
       @include ico-login-pw;
     }
+
     &.spinner {
       @include ico-spinner;
       animation: ico-spinner 0.6s linear infinite;
@@ -190,28 +218,33 @@
 
   // input 컨텐츠 간격
   .input-label {
-    & + .input-field {
+    &+.input-field {
       @include rem(margin-top, 8);
     }
-    & + .input-file-field {
+
+    &+.input-file-field {
       @include rem(margin-top, 8);
     }
-    & + .input-textarea-field {
+
+    &+.input-textarea-field {
       @include rem(margin-top, 8);
     }
   }
+
   .input-field {
-    & + .input-info {
+    &+.input-info {
       @include rem(margin-top, 8);
     }
   }
+
   .input-file-field {
-    & + .input-info {
+    &+.input-info {
       @include rem(margin-top, 8);
     }
   }
+
   .input-textarea-field {
-    & + .input-info {
+    &+.input-info {
       @include rem(margin-top, 8);
     }
   }
@@ -221,9 +254,11 @@
     .input-field {
       border: 1px solid $line-000000;
     }
+
     .input-file-field {
       border: 1px solid $line-000000;
     }
+
     .input-textarea-field {
       border: 1px solid $line-000000;
     }
@@ -233,6 +268,7 @@
   &.input-disabled {
     .input-field {
       background: gray;
+
       input {
         background: lightgray;
       }
@@ -243,6 +279,7 @@
   &.input-readonly {
     .input-field {
       background: gray;
+
       input {
         background: lightgray;
       }
@@ -254,6 +291,7 @@
     .input-field {
       border: 1px solid green;
     }
+
     .input-info {
       color: green;
     }
@@ -264,6 +302,7 @@
     .input-field {
       border: 1px solid red;
     }
+
     .input-info {
       color: red;
     }
@@ -275,4 +314,10 @@
       color: red;
     }
   }
+
+  &+.component-input {
+    @include rem(margin-top, 12);
+  }
+
+
 }

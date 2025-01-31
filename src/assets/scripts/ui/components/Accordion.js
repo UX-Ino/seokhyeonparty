@@ -61,7 +61,7 @@ function Accordion() {
 
       $target.setAttribute("data-init", "true");
 
-      console.log($target);
+      // console.log($target);
     }
 
     function setup() {

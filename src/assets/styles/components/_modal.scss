@@ -19,14 +19,14 @@
 
   .modal-container {
     margin: auto;
-    @include rem(padding, 30);
+    @include rem(padding, 20 24);
     display: none;
     position: fixed;
     @include rem(width, 333);
     @include rem(border-radius, 10);
     inset: 0 0 0 0;
     z-index: 110;
-    background-color: rgba(250, 250, 250);
+    background-color: #fff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -38,6 +38,7 @@
       // @include rem(margin, 20 0);
       @include rem(height, 30);
       text-align: center;
+      @include rem(margin-bottom, 8);
 
       .modal-tit {
         @include rem(border-radius, 10);
@@ -51,10 +52,10 @@
       // @include rem(margin, 20 0);
       width: 100%;
       text-align: center;
-      @include rem(border-radius, 10);
+      // @include rem(border-radius, 10);
       @include f16;
       color: $font-333333;
-      @include rem(max-height, 200);
+      @include rem(max-height, 260);
       overflow-y: auto;
 
       .modal-info {

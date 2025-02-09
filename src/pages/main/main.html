@@ -81,16 +81,19 @@
           </div>
           <div class="contents-layer-wrap">
             <div class="parent-wrap">
+              <div class="img">
+                <img src="pathImage/parent-01.jpeg" alt="" />
+              </div>
               <div class="dad-box">
-                <div class="img">
-                </div>
+                <!-- <div class="img">
+                </div> -->
                 <div class="txt">
                   <span>아빠</span> 정인호 </div>
                 <div class="txt"> 석현이가 씩씩하고 <br> 현명한 아이가 되도록 <br> 항상 옆에서 응원하는 <br> 아빠가 되겠습니다. </div>
               </div>
               <div class="mom-box">
-                <div class="img">
-                </div>
+                <!-- <div class="img">
+                </div> -->
                 <div class="txt">
                   <span>엄마</span> 박선미 </div>
                 <div class="txt"> 석현이가 행복한 아이로 <br> 자랄 수 있도록 <br> 축복해주신 모든 분들 <br> 감사합니다 💕 </div>
@@ -220,22 +223,25 @@
           <div class="contents-layer-wrap">
             <div class="tit">갤러리</div>
             <div class="gallery-wrap ">
-              <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-speed="700" data-props-space-between="8">
+              <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-slides-per-group="3" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-speed="700" data-props-space-between="8">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
+                    <button type="button"><img src="pathImage/gallery-01-01.jpeg" alt="" /></button>
                   </div>
                   <div class="swiper-slide">
-                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
+                    <button type="button"><img src="pathImage/gallery-01-02.jpeg" alt="" /></button>
                   </div>
                   <div class="swiper-slide">
-                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
+                    <button type="button"><img src="pathImage/gallery-01-03.jpeg" alt="" /></button>
                   </div>
                   <div class="swiper-slide">
-                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
+                    <button type="button"><img src="pathImage/gallery-01-04.jpeg" alt="" /></button>
                   </div>
                   <div class="swiper-slide">
-                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
+                    <button type="button"><img src="pathImage/gallery-01-05.jpeg" alt="" /></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button"><img src="pathImage/gallery-01-06.jpeg" alt="" /></button>
                   </div>
                 </div>
               </div>
@@ -384,18 +390,18 @@
                 <a href="tel: 01076684200" class="btn-tel">
                   <i class="ico ico-tel"></i>
                 </a>
-                <button type="button" class="btn-message">
+                <!-- <button type="button" class="btn-message">
                   <i class="ico ico-message"></i>
-                </button>
+                </button> -->
               </div>
               <div class="phone-box">
                 <span class="phone-tit">엄마 박선미</span>
                 <a href="tel: 01057301066" class="btn-tel">
                   <i class="ico ico-tel"></i>
                 </a>
-                <button type="button" class="btn-message">
+                <!-- <button type="button" class="btn-message">
                   <i class="ico ico-message"></i>
-                </button>
+                </button> -->
               </div>
             </div>
             <button class="modal-close btn"></button>
@@ -453,6 +459,27 @@
     <div class="dimm"></div>
     <script>
       window.onload = function () {
+        // // 진입 이벤트
+        const loadingWrap = document.querySelector('.loading-wrap');
+        const pageClassMain = document.querySelector('.pageClassMain');
+        // Show loading screen
+        loadingWrap.style.display = 'block';
+        loadingWrap.style.opacity = '1';
+        pageClassMain.style.display = 'none';
+        // Initialize loading sequence
+        const LOADING_DURATION = 2500;
+        const FADE_DURATION = 1000;
+        setTimeout(() => {
+          loadingWrap.style.opacity = '0';
+          loadingWrap.style.transition = `opacity ${FADE_DURATION}ms ease-out`;
+          setTimeout(() => {
+            loadingWrap.style.display = 'none';
+            pageClassMain.style.display = 'block';
+            requestAnimationFrame(() => {
+              pageClassMain.classList.add('show');
+            });
+          }, FADE_DURATION);
+        }, LOADING_DURATION);
         // 디데이 카운트
         var countDownDate = new Date("Mar 16, 2025 15:00:00").getTime();
         // Update the count down every 1 second

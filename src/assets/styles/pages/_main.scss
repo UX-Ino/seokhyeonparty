@@ -342,9 +342,10 @@ button,
 .parent-wrap {
   display: flex;
   @include rem(padding-bottom, 24);
+  flex-wrap: wrap;
 
   [class*="-box"] {
-    width: 50%;
+    width: calc(50% - .5rem);
 
     .img {
       &+.txt {
@@ -369,8 +370,16 @@ button,
 
   .img {
     width: 100%;
-    @include rem(height, 150);
+    @include rem(margin-bottom, 16);
+    @include rem(height, 250);
     background-color: rgb(244, 241, 238);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
 }
 
@@ -573,9 +582,21 @@ button,
   .swiper-slide {
     @include rem(border-radius, 5);
 
-    img {
+    button {
+      height: 0;
       width: 100%;
-      height: auto;
+      padding-bottom: 100%;
+      overflow: hidden;
+      position: relative;
+      @include rem(border-radius, 5);
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   }
@@ -608,7 +629,24 @@ button,
       @include rem(border-radius, 10);
       align-items: center;
       justify-content: center;
+
+      .img {
+        height: auto;
+        width: 100%;
+
+        img {
+          position: relative;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
     }
+
+
+
 
     .txt-box {
       @include rem(margin-top, 10);

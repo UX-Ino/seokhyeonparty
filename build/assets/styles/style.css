@@ -5829,9 +5829,12 @@ button,
 
 .parent-wrap {
   padding-bottom: 2.4rem;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .parent-wrap [class*=-box] {
-  width: 50%;
+  width: -webkit-calc(50% - 0.5rem);
+  width: calc(50% - 0.5rem);
 }
 .parent-wrap [class*=-box] .img + .txt {
   margin-top: 1rem;
@@ -5847,8 +5850,15 @@ button,
 }
 .parent-wrap .img {
   width: 100%;
-  height: 15rem;
+  margin-bottom: 1.6rem;
+  height: 25rem;
   background-color: rgb(244, 241, 238);
+  overflow: hidden;
+}
+.parent-wrap .img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .calendar-wrap {
@@ -6053,9 +6063,20 @@ button,
 .gallery-wrap .swiper-slide {
   border-radius: 0.5rem;
 }
-.gallery-wrap .swiper-slide img {
+.gallery-wrap .swiper-slide button {
+  height: 0;
   width: 100%;
-  height: auto;
+  padding-bottom: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 0.5rem;
+}
+.gallery-wrap .swiper-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .gallery-wrap .swiper-pagination-fraction,
@@ -6076,28 +6097,44 @@ button,
   border: 1px solid rgb(233, 236, 239);
 }
 .gallery-wrap.type02 .swiper-slide {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
   position: relative;
   padding: 2rem 2rem 4rem 2rem;
   width: 100%;
   border-radius: 1rem;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
 }
-.gallery-wrap.type02 .swiper-slide,.gallery-wrap.type02 .txt-box {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+.gallery-wrap.type02 .swiper-slide .img {
+  height: auto;
+  width: 100%;
+}
+.gallery-wrap.type02 .swiper-slide .img img {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 .gallery-wrap.type02 .txt-box {
   margin-top: 1rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .gallery-wrap.type02 .date {
   font-size: 1.9rem;

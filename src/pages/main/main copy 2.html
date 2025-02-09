@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -13,10 +13,13 @@
     <meta property="og:image" content="" />
     <meta property="og:description" content="" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <link href="./assets/styles/style.css" type="text/css" rel="stylesheet" />
-    <script src="./assets/scripts/common.ui.plugin.js" data-init></script>
-    <script src="./assets/scripts/common.ui.js" data-init></script>
-    <script src="./assets/scripts/common.js"></script>
+    <link href="pathStyles/style.css" type="text/css" rel="stylesheet" />
+    <script src="pathScripts/common.ui.plugin.js" data-init></script>
+    <script src="pathScripts/common.ui.js" data-init></script>
+    <!-- <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
+    <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services,clusterer,drawing"></script>
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
+    <script src="pathScripts/common.js"></script>
     <script type="text/javascript">
       ! function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -30,7 +33,7 @@
   </head>
   <body>
     <div id="wrap">
-      <div class="loading-wrap">
+      <div class="loading-wrap" style="display: none;">
         <div class="loding-txt">
           <span class="desc">셕현이의</span>
           <span class="desc">첫 번쩨 생일에</span>
@@ -42,13 +45,13 @@
           <div class="main-wrap">
             <div class="top-img-wrap">
               <div class="badge">
-                <img src="./assets/images/first-birthday.webp" alt="" />
+                <img src="pathImage/first-birthday.webp" alt="" />
               </div>
               <div class="photo">
-                <img src="./assets/images/img-main-top.png" alt="" />
+                <img src="pathImage/img-main-top.png" alt="" />
               </div>
               <div class="point">
-                <img src="./assets/images/img-ribbon.png" alt="" />
+                <img src="pathImage/img-ribbon.png" alt="" />
               </div>
             </div>
             <div class="info-wrap">
@@ -62,10 +65,10 @@
             </div>
             <div class="bg-area">
               <div class="bg-item01">
-                <img src="./assets/images/img-animal01.webp" alt="" />
+                <img src="pathImage/img-animal01.webp" alt="" />
               </div>
               <div class="bg-item02">
-                <img src="./assets/images/img-animal02.webp" alt="" />
+                <img src="pathImage/img-animal02.webp" alt="" />
               </div>
             </div>
           </div>
@@ -98,7 +101,7 @@
             <div class="calendar-wrap">
               <div class="tit">행사일</div>
               <div class="calendar-img">
-                <img src="./assets/images/img-main-top.png" alt="" />
+                <img src="pathImage/img-main-top.png" alt="" />
               </div>
               <div class="txt">2025년 3월 16일 일요일 오후 3시 </div>
               <div class="calendar">
@@ -182,21 +185,6 @@
             </div>
             <div class="map-wrap">
               <div class="map">
-                <!-- * 카카오맵 - 지도퍼가기 -->
-                <!-- 1. 지도 노드 -->
-                <div id="daumRoughmapContainer1738515460598" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-                <!--
-                  2. 설치 스크립트
-                  * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
-                -->
-                <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-                <!-- 3. 실행 스크립트 -->
-                <script charset="UTF-8">
-                  new daum.roughmap.Lander({
-                    "timestamp": "1738515460598",
-                    "key": "937a6e2254897fcfacb4449b6fbe0fc1",
-                  }).render();
-                </script>
               </div>
               <div class="btn-box">
                 <button class="btn btn-naver">
@@ -220,19 +208,19 @@
               <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-speed="700" data-props-space-between="8">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
-                    <button><img src="./assets/images/img-main-top.png" alt="" /></button>
+                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
                   </div>
                   <div class="swiper-slide">
-                    <button><img src="./assets/images/img-main-top.png" alt="" /></button>
+                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
                   </div>
                   <div class="swiper-slide">
-                    <button><img src="./assets/images/img-main-top.png" alt="" /></button>
+                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
                   </div>
                   <div class="swiper-slide">
-                    <button><img src="./assets/images/img-main-top.png" alt="" /></button>
+                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
                   </div>
                   <div class="swiper-slide">
-                    <button><img src="./assets/images/img-main-top.png" alt="" /></button>
+                    <button><img src="pathImage/img-main-top.png" alt="" /></button>
                   </div>
                 </div>
               </div>
@@ -246,7 +234,7 @@
                   <div class="swiper-slide">
                     <div class="img-box">
                       <div class="img">
-                        <img src="./assets/images/img-main-top.png" alt="" />
+                        <img src="pathImage/img-main-top.png" alt="" />
                       </div>
                       <div class="txt-box">
                         <div class="date">2024.03.19</div>
@@ -257,7 +245,7 @@
                   <div class="swiper-slide">
                     <div class="img-box">
                       <div class="img">
-                        <img src="./assets/images/img-main-top.png" alt="" />
+                        <img src="pathImage/img-main-top.png" alt="" />
                       </div>
                       <div class="txt-box">
                         <div class="date">2024.03.19</div>
@@ -268,7 +256,7 @@
                   <div class="swiper-slide">
                     <div class="img-box">
                       <div class="img">
-                        <img src="./assets/images/img-main-top.png" alt="" />
+                        <img src="pathImage/img-main-top.png" alt="" />
                       </div>
                       <div class="txt-box">
                         <div class="date">2024.03.19</div>
@@ -449,26 +437,30 @@
     </div>
     <div class="dimm"></div>
     <script>
-    </script>
-    <script>
       window.onload = function () {
+        // Kakao SDK 초기화 전에 로드 확인
         Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1'); // 'YOUR_APP_KEY'를 실제 앱 키로 교체하세요.
-        // 진입 이벤트
-        const loadingWrap = document.querySelector('.loading-wrap');
-        const pageClassMain = document.querySelector('.pageClassMain');
-        // 로딩 텍스트가 모두 나타난 후 loading-wrap을 숨기기 위한 타이머
-        setTimeout(() => {
-          // loading-wrap을 점차 숨김 (opacity가 0이 될 때)
-          loadingWrap.style.opacity = 0;
-          // 1초 후에 loading-wrap을 완전히 숨기고, pageClassMain을 보이게 함
-          setTimeout(() => {
-            loadingWrap.style.display = 'none'; // 로딩 화면 숨기기
-            pageClassMain.style.display = 'block'; // 메인 페이지 내용 표시
-            setTimeout(() => {
-              pageClassMain.classList.add('show'); // 메인 페이지 내용 표시
-            }, 300)
-          }, 1000); // fadeOut 효과 시간에 맞춰서 실행
-        }, 2500); // 텍스트가 모두 나타날 때까지의 시간
+        // // 진입 이벤트
+        // const loadingWrap = document.querySelector('.loading-wrap');
+        // const pageClassMain = document.querySelector('.pageClassMain');
+        // // Show loading screen
+        // loadingWrap.style.display = 'block';
+        // loadingWrap.style.opacity = '1';
+        // pageClassMain.style.display = 'none';
+        // // Initialize loading sequence
+        // const LOADING_DURATION = 2500;
+        // const FADE_DURATION = 1000;
+        // setTimeout(() => {
+        //   loadingWrap.style.opacity = '0';
+        //   loadingWrap.style.transition = `opacity ${FADE_DURATION}ms ease-out`;
+        //   setTimeout(() => {
+        //     loadingWrap.style.display = 'none';
+        //     pageClassMain.style.display = 'block';
+        //     requestAnimationFrame(() => {
+        //       pageClassMain.classList.add('show');
+        //     });
+        //   }, FADE_DURATION);
+        // }, LOADING_DURATION);
       };
       document.addEventListener('DOMContentLoaded', function () {
         // 연락하기 모달
@@ -543,7 +535,7 @@
           });
         });
         // 디데이 카운트
-        var countDownDate = new Date("Mar 5, 2025 15:00:00").getTime();
+        var countDownDate = new Date("Mar 16, 2025 15:00:00").getTime();
         // Update the count down every 1 second
         var x = setInterval(function () {
           // Get today's date and time
@@ -632,7 +624,7 @@
             },
           });
         });
-        // 링크 복사
+        // 링크 복사ㅌ
         document.querySelector('.btn-link').addEventListener('click', function () {
           const currentUrl = window.location.href; // 현재 페이지의 URL을 가져옵니다.
           if (navigator.clipboard) {
@@ -665,63 +657,90 @@
             }
           });
         });
+        // 카카오맵 초기화 및 표시
+        var mapContainer = document.querySelector('.map'), // 지도를 표시할 div
+          mapOption = {
+            center: new kakao.maps.LatLng(37.4967, 126.9179), // 플로렌스 보라매점 좌표
+            level: 3 // 지도의 확대 레벨
+          };
+        // 지도 생성
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+        // 주소-좌표 변환 객체 생성
+        var geocoder = new kakao.maps.services.Geocoder();
+        // 주소로 좌표를 검색
+        geocoder.addressSearch('서울 동작구 보라매로5길 15', function (result, status) {
+          // 정상적으로 검색이 완료됐으면
+          if (status === kakao.maps.services.Status.OK) {
+            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+            // 결과값으로 받은 위치를 마커로 표시
+            var marker = new kakao.maps.Marker({
+              map: map,
+              position: coords
+            });
+            // 인포윈도우로 장소에 대한 설명을 표시
+            var infowindow = new kakao.maps.InfoWindow({
+              content: '<div style="width:150px;text-align:center;padding:6px 0;">플로렌스 보라매점</div>'
+            });
+            infowindow.open(map, marker);
+            // 지도의 중심을 결과값으로 받은 위치로 이동
+            map.setCenter(coords);
+          }
+        });
       })
     </script>
-    <script type="module"> import {
-      createClient
-    } from 'https://esm.sh/@supabase/supabase-js';
+    <script type="module"> import { createClient } from 'https://esm.sh/@supabase/supabase-js';
 
-    // Supabase 설정
-    const supabaseUrl = 'https://cnimbijddrxtbqkljwml.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI';
-    const supabase = createClient(supabaseUrl, supabaseKey)
+      // Supabase 설정
+      const supabaseUrl = 'https://cnimbijddrxtbqkljwml.supabase.co';
+      const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI';
+      const supabase = createClient(supabaseUrl, supabaseKey)
 
-    document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
       // 페이지 로드 시 댓글 목록 불러오기
       loadComments();
-      // 댓글기능 만들기
-      // 댓글 작성
-      document.querySelector('.comment-form').addEventListener('submit', async function(event) {
-        event.preventDefault();
-        alert('폼 제출 이벤트가 발생했습니다!'); // 확인용 알림
+       // 댓글기능 만들기
+        // 댓글 작성
+        document.querySelector('.comment-form').addEventListener('submit', async function (event) {
+          event.preventDefault();
+          alert('폼 제출 이벤트가 발생했습니다!'); // 확인용 알림
 
 
-        const author = document.getElementById('author').value;
-        const password = document.getElementById('password').value;
-        const comment = document.getElementById('comment').value;
-        const {
-          data,
-          error
-        } = await supabase.from('seokhyeonpartyDb').insert([{
-          author,
-          password,
-          comment,
-          date: new Date().toISOString()
-        }]);
-        if (error) {
-          console.error('Error:', error);
-          alert('댓글 작성에 실패했습니다.');
-        } else {
-          alert('댓글이 작성되었습니다.');
-          loadComments();
-        }
-      });
-      // 댓글 목록 불러오기
-      async function loadComments() {
-        const {
-          data,
-          error
-        } = await supabase.from('seokhyeonpartyDb').select('*').order('date', {
-          ascending: false
+          const author = document.getElementById('author').value;
+          const password = document.getElementById('password').value;
+          const comment = document.getElementById('comment').value;
+          const {
+            data,
+            error
+          } = await supabase.from('seokhyeonpartyDb').insert([{
+            author,
+            password,
+            comment,
+            date: new Date().toISOString()
+          }]);
+          if (error) {
+            console.error('Error:', error);
+            alert('댓글 작성에 실패했습니다.');
+          } else {
+            alert('댓글이 작성되었습니다.');
+            loadComments();
+          }
         });
-        if (error) {
-          console.error('Error:', error);
-        } else {
-          const commentList = document.querySelector('.messages-wrap');
-          commentList.innerHTML = '';
-          data.forEach(comment => {
-            const div = document.createElement('div');
-            div.innerHTML = `
+        // 댓글 목록 불러오기
+        async function loadComments() {
+          const {
+            data,
+            error
+          } = await supabase.from('seokhyeonpartyDb').select('*').order('date', {
+            ascending: false
+          });
+          if (error) {
+            console.error('Error:', error);
+          } else {
+            const commentList = document.querySelector('.messages-wrap');
+            commentList.innerHTML = '';
+            data.forEach(comment => {
+              const div = document.createElement('div');
+              div.innerHTML = `
                 <div class="messages-box">
                   <div class="top">
                     <span class="name">${comment.author}</span>
@@ -734,32 +753,31 @@
                   <div class="bottom">${comment.comment}</div>
                 </div>
               `;
-            commentList.appendChild(div);
-          });
-        }
-      }
-      // 댓글 삭제
-      async function deleteComment(commentId, password) {
-        const inputPassword = prompt('비밀번호를 입력하세요.');
-        if (inputPassword === password) {
-          const {
-            error
-          } = await supabase.from('seokhyeonpartyDb').delete().eq('id', commentId);
-          if (error) {
-            console.error('Error:', error);
-            alert('댓글 삭제에 실패했습니다.');
-          } else {
-            alert('댓글이 삭제되었습니다.');
-            loadComments();
+              commentList.appendChild(div);
+            });
           }
-        } else {
-          alert('비밀번호가 일치하지 않습니다.');
         }
-      }
+        // 댓글 삭제
+        async function deleteComment(commentId, password) {
+          const inputPassword = prompt('비밀번호를 입력하세요.');
+          if (inputPassword === password) {
+            const {
+              error
+            } = await supabase.from('seokhyeonpartyDb').delete().eq('id', commentId);
+            if (error) {
+              console.error('Error:', error);
+              alert('댓글 삭제에 실패했습니다.');
+            } else {
+              alert('댓글이 삭제되었습니다.');
+              loadComments();
+            }
+          } else {
+            alert('비밀번호가 일치하지 않습니다.');
+          }
+        }
 
 
-    })
-
-  </script>
+      })
+    </script>
   </body>
 </html>

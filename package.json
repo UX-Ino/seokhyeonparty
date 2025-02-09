@@ -88,6 +88,7 @@
     "npm": ">=8"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.48.1",
     "concurrently": "^8.2.2",
     "gulp-footer": "^2.1.0",
     "gulp-header": "^2.0.9",

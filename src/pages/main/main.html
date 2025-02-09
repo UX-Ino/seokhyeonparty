@@ -14,9 +14,12 @@
     <meta property="og:description" content="" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link href="pathStyles/style.css" type="text/css" rel="stylesheet" />
+    <!-- 기존 스크립트들 -->
     <script src="pathScripts/common.ui.plugin.js" data-init></script>
     <script src="pathScripts/common.ui.js" data-init></script>
     <script src="pathScripts/common.js"></script>
+    <!-- <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
     <script type="text/javascript">
       ! function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -30,7 +33,7 @@
   </head>
   <body>
     <div id="wrap">
-      <div class="loading-wrap">
+      <div class="loading-wrap" style="display: none;">
         <div class="loding-txt">
           <span class="desc">셕현이의</span>
           <span class="desc">첫 번쩨 생일에</span>
@@ -184,7 +187,7 @@
               <div class="map">
                 <!-- * 카카오맵 - 지도퍼가기 -->
                 <!-- 1. 지도 노드 -->
-                <div id="daumRoughmapContainer1737894759470" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                <div id="daumRoughmapContainer1739119826020" class="root_daum_roughmap root_daum_roughmap_landing"></div>
                 <!--
                   2. 설치 스크립트
                   * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
@@ -193,8 +196,8 @@
                 <!-- 3. 실행 스크립트 -->
                 <script charset="UTF-8">
                   new daum.roughmap.Lander({
-                    "timestamp": "1737894759470",
-                    "key": "2mvuc",
+                    "timestamp": "1739119826020",
+                    "key": "2myu3"
                   }).render();
                 </script>
               </div>
@@ -288,18 +291,18 @@
                 <div class="accordion-content">
                   <div class="bank-account-wrap">
                     <div class="flex-box">
-                      <div class="txt">엄마</div>
-                      <div class="txt">박선미</div>
+                      <div class="txt">주인공</div>
+                      <div class="txt">정석현</div>
                       <button type="button" class="btn btn-kakaopay">
                         <span>송금하기</span>
                         <i class="ico ico-kakaopay"></i>
                       </button>
                     </div>
                     <div class="flex-box">
-                      <div class="txt">신한은행</div>
-                      <div class="txt account-num">000-0000-000-0000</div>
+                      <div class="txt">MG새마을금고</div>
+                      <div class="txt account-num">9003-2929-3475-7</div>
                       <button type="button" class="btn btn-copy">
-                        <span>계좌번호 복사</span>
+                        <span>복사</span>
                         <i class="ico ico-copy"></i>
                       </button>
                     </div>
@@ -409,35 +412,37 @@
               <h3 class="modal-tit">방명록 작성</h3>
             </div>
             <div class="modal-content">
-              <div class="component-input">
-                <div class="input-field">
-                  <input class="input" type="text" id="temp_input_btn_0001" placeholder="작성자">
-                  <button type="button" class="input-field-btn clear">
-                    <span class="hide-txt">내용 지우기</span>
-                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
-                  </button>
+              <form class="comment-form">
+                <div class="component-input">
+                  <div class="input-field">
+                    <input class="input" type="text" id="author" placeholder="작성자">
+                    <button type="button" class="input-field-btn clear">
+                      <span class="hide-txt">내용 지우기</span>
+                      <i class="ico-clear ico-normal" aria-hidden="true"></i>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div class="component-input">
-                <div class="input-field">
-                  <input class="input" type="password" id="temp_input_btn_0002" placeholder="비밀번호">
-                  <button type="button" class="input-field-btn clear">
-                    <span class="hide-txt">내용 지우기</span>
-                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
-                  </button>
-                  <button type="button" class="input-field-btn password-state">
-                    <span class="hide-txt hide">비밀번호 숨기기</span>
-                    <span class="hide-txt show">비밀번호 표시</span>
-                    <i class="ico-password-state ico-normal" aria-hidden="true"></i>
-                  </button>
+                <div class="component-input">
+                  <div class="input-field">
+                    <input class="input" type="password" id="password" placeholder="비밀번호">
+                    <button type="button" class="input-field-btn clear">
+                      <span class="hide-txt">내용 지우기</span>
+                      <i class="ico-clear ico-normal" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="input-field-btn password-state">
+                      <span class="hide-txt hide">비밀번호 숨기기</span>
+                      <span class="hide-txt show">비밀번호 표시</span>
+                      <i class="ico-password-state ico-normal" aria-hidden="true"></i>
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div class="component-input">
-                <div class="input-textarea-field">
-                  <textarea id="temp_textarea_0001" class="textarea" placeholder="내용을 입력해주세요."></textarea>
+                <div class="component-input">
+                  <div class="input-textarea-field">
+                    <textarea id="comment" class="textarea" placeholder="내용을 입력해주세요."></textarea>
+                  </div>
                 </div>
-              </div>
-              <button type="submit" class="btn-submit" disabled>저장</button>
+                <button type="submit" class="btn-submit" disabled>저장</button>
+              </form>
             </div>
             <button class="modal-close btn"></button>
           </div>
@@ -448,24 +453,32 @@
     <div class="dimm"></div>
     <script>
       window.onload = function () {
-        Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1'); // 'YOUR_APP_KEY'를 실제 앱 키로 교체하세요.
-        // 진입 이벤트
-        const loadingWrap = document.querySelector('.loading-wrap');
-        const pageClassMain = document.querySelector('.pageClassMain');
-        // 로딩 텍스트가 모두 나타난 후 loading-wrap을 숨기기 위한 타이머
-        setTimeout(() => {
-          // loading-wrap을 점차 숨김 (opacity가 0이 될 때)
-          loadingWrap.style.opacity = 0;
-          // 1초 후에 loading-wrap을 완전히 숨기고, pageClassMain을 보이게 함
-          setTimeout(() => {
-            loadingWrap.style.display = 'none'; // 로딩 화면 숨기기
-            pageClassMain.style.display = 'block'; // 메인 페이지 내용 표시
-            setTimeout(() => {
-              pageClassMain.classList.add('show'); // 메인 페이지 내용 표시
-            }, 300)
-          }, 1000); // fadeOut 효과 시간에 맞춰서 실행
-        }, 2500); // 텍스트가 모두 나타날 때까지의 시간
+        // 디데이 카운트
+        var countDownDate = new Date("Mar 16, 2025 15:00:00").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+          // Get today's date and time
+          var now = new Date().getTime();
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.querySelector('.days .num').innerHTML = days;
+          document.querySelector('.hours .num').innerHTML = hours;
+          document.querySelector('.minutes .num').innerHTML = minutes;
+          document.querySelector('.seconds .num').innerHTML = seconds;
+          document.querySelector('.dday-desc .count').innerHTML = days + "일";
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          }
+        }, 1000);
       };
+    </script>
+    <script>
       document.addEventListener('DOMContentLoaded', function () {
         // 연락하기 모달
         const $btnModal01 = document.querySelector('.btn-modal01');
@@ -539,7 +552,7 @@
           });
         });
         // 디데이 카운트
-        var countDownDate = new Date("Mar 5, 2025 15:00:00").getTime();
+        var countDownDate = new Date("Mar 16, 2025 15:00:00").getTime();
         // Update the count down every 1 second
         var x = setInterval(function () {
           // Get today's date and time
@@ -566,25 +579,73 @@
         }, 1000);
         // 네이버 지도 연결
         document.querySelector(".btn-naver").addEventListener("click", function () {
-          // 네이버 지도 URL 생성 (좌표, 장소 이름 지정 가능)
-          const latitude = 37.5665; // 위도 (예: 서울)
-          const longitude = 126.9780; // 경도
           const placeName = "플로렌스 보라매점";
-          // 네이버 지도 URL
-          const naverMapUrl = `https://map.naver.com/v5/?c=${longitude},${latitude},15,0,0&searchCoord=${longitude},${latitude}&place=${encodeURIComponent(placeName)}`;
-          // 새 탭으로 열기
-          window.open(naverMapUrl, "_blank");
+          const placeX = "14129145.4174025"; // 네이버 지도 X좌표
+          const placeY = "4507911.5556359"; // 네이버 지도 Y좌표
+          const placeId = "34882590"; // 장소 ID
+          // 현재 위치 가져오기
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+              // 위경도를 네이버 지도 좌표로 변환
+              const currentX = position.coords.longitude * 111319.49079327357;
+              const currentY = Math.log(Math.tan((90 + position.coords.latitude) * Math.PI / 360)) / (Math.PI / 180) * 111319.49079327357;
+              // 네이버 지도 URL 생성 (새로운 형식)
+              const naverMapUrl = `https://map.naver.com/p/directions/` + `${currentX},${currentY},현재위치,,ADDRESS_POI/` + `${placeX},${placeY},${encodeURIComponent(placeName)},${placeId},PLACE_POI/-/walk?c=14.00,0,0,0,dh`;
+              // 새 창에서 네이버 지도 열기
+              window.open(naverMapUrl, "_blank");
+            }, function (error) {
+              // 위치 정보를 가져올 수 없는 경우
+              console.error("위치 정보를 가져올 수 없습니다:", error);
+              const searchUrl = `https://map.naver.com/p/search/${encodeURIComponent(placeName)}`;
+              window.open(searchUrl, "_blank");
+            });
+          } else {
+            // 지오로케이션을 지원하지 않는 브라우저의 경우
+            console.log("이 브라우저에서는 위치 정보를 지원하지 않습니다.");
+            const searchUrl = `https://map.naver.com/p/search/${encodeURIComponent(placeName)}`;
+            window.open(searchUrl, "_blank");
+          }
         });
         // 카카오 내비 연결
         document.querySelector(".btn-kakao").addEventListener("click", function () {
-          // 목적지 정보 설정
-          const destinationName = "플로렌스 보라매점";
-          const latitude = 37.4967; // 플로렌스 보라매점 위도
-          const longitude = 126.9179; // 플로렌스 보라매점 경도
-          // 카카오네비 URL 스키마
-          const kakaoNaviUrl = `kakaonavi://route?ep=${latitude},${longitude}&ename=${encodeURIComponent(destinationName)}`;
-          // 카카오네비 실행
-          window.location.href = kakaoNaviUrl;
+          const placeName = "플로렌스 보라매점";
+          const destinationLat = "37.4967"; // 플로렌스 보라매점 위도
+          const destinationLng = "126.9179"; // 플로렌스 보라매점 경도
+          // 현재 위치 가져오기
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+              const currentLat = position.coords.latitude;
+              const currentLng = position.coords.longitude;
+              // 카카오내비 URL 스키마 생성 (현재 위치에서 목적지까지)
+              const kakaoNaviUrl = `kakaonavi://route?sp=${currentLat},${currentLng}&ep=${destinationLat},${destinationLng}` + `&by=CAR` + // 자동차 길찾기 (PUBLICTRANSIT: 대중교통, FOOT: 도보)
+                `&sname=현재위치` + `&ename=${encodeURIComponent(placeName)}`;
+              // 카카오내비 실행
+              window.location.href = kakaoNaviUrl;
+              // 카카오내비가 설치되어 있지 않은 경우를 위한 타임아웃 처리
+              setTimeout(function () {
+                // 앱스토어로 이동하는 로직
+                if (confirm('카카오내비가 설치되어 있지 않습니다. 설치하시겠습니까?')) {
+                  if (navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('iPad') > -1) {
+                    window.location.href = 'https://itunes.apple.com/kr/app/kakaonavi/id417698849';
+                  } else {
+                    window.location.href = 'https://play.google.com/store/apps/details?id=com.locnall.KimGiSa';
+                  }
+                }
+              }, 500);
+            }, function (error) {
+              // 위치 정보를 가져올 수 없는 경우
+              console.error("위치 정보를 가져올 수 없습니다:", error);
+              // 목적지만 입력하여 카카오내비 실행
+              const kakaoNaviUrl = `kakaonavi://route?ep=${destinationLat},${destinationLng}&ename=${encodeURIComponent(placeName)}`;
+              window.location.href = kakaoNaviUrl;
+            });
+          } else {
+            // 지오로케이션을 지원하지 않는 브라우저의 경우
+            console.log("이 브라우저에서는 위치 정보를 지원하지 않습니다.");
+            // 목적지만 입력하여 카카오내비 실행
+            const kakaoNaviUrl = `kakaonavi://route?ep=${destinationLat},${destinationLng}&ename=${encodeURIComponent(placeName)}`;
+            window.location.href = kakaoNaviUrl;
+          }
         });
         //카카오뱅크 송금하기
         document.querySelector(".btn-kakaopay").addEventListener("click", function () {
@@ -628,7 +689,7 @@
             },
           });
         });
-        // 링크 복사
+        // 링크 복사ㅌ
         document.querySelector('.btn-link').addEventListener('click', function () {
           const currentUrl = window.location.href; // 현재 페이지의 URL을 가져옵니다.
           if (navigator.clipboard) {
@@ -661,6 +722,97 @@
             }
           });
         });
+      })
+    </script>
+    <script type="module"> import { createClient } from 'https://esm.sh/@supabase/supabase-js';
+
+      // Supabase 설정
+      const supabaseUrl = 'https://cnimbijddrxtbqkljwml.supabase.co';
+      const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI';
+      const supabase = createClient(supabaseUrl, supabaseKey)
+
+      document.addEventListener('DOMContentLoaded', function () {
+      // 페이지 로드 시 댓글 목록 불러오기
+      loadComments();
+       // 댓글기능 만들기
+        // 댓글 작성
+        document.querySelector('.comment-form').addEventListener('submit', async function (event) {
+          event.preventDefault();
+          alert('폼 제출 이벤트가 발생했습니다!'); // 확인용 알림
+
+
+          const author = document.getElementById('author').value;
+          const password = document.getElementById('password').value;
+          const comment = document.getElementById('comment').value;
+          const {
+            data,
+            error
+          } = await supabase.from('seokhyeonpartyDb').insert([{
+            author,
+            password,
+            comment,
+            date: new Date().toISOString()
+          }]);
+          if (error) {
+            console.error('Error:', error);
+            alert('댓글 작성에 실패했습니다.');
+          } else {
+            alert('댓글이 작성되었습니다.');
+            loadComments();
+          }
+        });
+        // 댓글 목록 불러오기
+        async function loadComments() {
+          const {
+            data,
+            error
+          } = await supabase.from('seokhyeonpartyDb').select('*').order('date', {
+            ascending: false
+          });
+          if (error) {
+            console.error('Error:', error);
+          } else {
+            const commentList = document.querySelector('.messages-wrap');
+            commentList.innerHTML = '';
+            data.forEach(comment => {
+              const div = document.createElement('div');
+              div.innerHTML = `
+                <div class="messages-box">
+                  <div class="top">
+                    <span class="name">${comment.author}</span>
+                    <span class="time">[${new Date(comment.date).toLocaleString()}] </span>
+                    <button type="button" class="btn-del" onclick="deleteComment('${comment.id}', '${comment.password}')">
+                      <span class="hide-txt">삭제</span>
+                      <i class="ico ico-del"></i>
+                    </button>
+                  </div>
+                  <div class="bottom">${comment.comment}</div>
+                </div>
+              `;
+              commentList.appendChild(div);
+            });
+          }
+        }
+        // 댓글 삭제
+        async function deleteComment(commentId, password) {
+          const inputPassword = prompt('비밀번호를 입력하세요.');
+          if (inputPassword === password) {
+            const {
+              error
+            } = await supabase.from('seokhyeonpartyDb').delete().eq('id', commentId);
+            if (error) {
+              console.error('Error:', error);
+              alert('댓글 삭제에 실패했습니다.');
+            } else {
+              alert('댓글이 삭제되었습니다.');
+              loadComments();
+            }
+          } else {
+            alert('비밀번호가 일치하지 않습니다.');
+          }
+        }
+
+
       })
     </script>
   </body>

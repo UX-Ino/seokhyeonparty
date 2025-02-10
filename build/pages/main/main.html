@@ -38,8 +38,8 @@
   <div id="wrap">
     <div class="loading-wrap" style="display: none;">
       <div class="loding-txt">
-        <span class="desc">셕현이의</span>
-        <span class="desc">첫 번쩨 생일에</span>
+        <span class="desc">석현이의</span>
+        <span class="desc">첫 번째 생일에</span>
         <span class="desc">초대합니다</span>
       </div>
     </div>
@@ -78,7 +78,7 @@
         <div class="contents-layer-wrap">
           <div class="txt-wrap">
             <div class="tit">석현이의 첫 생일에 초대합니다</div>
-            <div class="txt"> 석현이가 태어나 밝고 건강하게 자라 나도록 함께 해주신 여러분들께 감사의 마음을 담아 작은 자리를 마련 했습니다. 바쁘시겠지만 부디 참석해 주시어 셕현이의 첫 생일을 축하해 주세요. </div>
+            <div class="txt"> 석현이가 태어나 밝고 건강하게 자라 나도록 함께 해주신 여러분들께 감사의 마음을 담아 작은 자리를 마련 했습니다. 바쁘시겠지만 부디 참석해 주시어 석현이의 첫 생일을 축하해 주세요. </div>
           </div>
           <button type="button" class="btn-call btn-modal01" data-testid="btn-modal01">연락하기</button>
         </div>
@@ -650,35 +650,44 @@
           navigator.geolocation.getCurrentPosition(function(position) {
             const currentLat = position.coords.latitude;
             const currentLng = position.coords.longitude;
-            // 카카오내비 URL 스키마 생성 (현재 위치에서 목적지까지)
-            const kakaoNaviUrl = `kakaonavi://route?sp=${currentLat},${currentLng}&ep=${destinationLat},${destinationLng}` + `&by=CAR` + // 자동차 길찾기 (PUBLICTRANSIT: 대중교통, FOOT: 도보)
-              `&sname=현재위치` + `&ename=${encodeURIComponent(placeName)}`;
-            // 카카오내비 실행
-            window.location.href = kakaoNaviUrl;
-            // 카카오내비가 설치되어 있지 않은 경우를 위한 타임아웃 처리
-            setTimeout(function() {
-              // 앱스토어로 이동하는 로직
-              if (confirm('카카오내비가 설치되어 있지 않습니다. 설치하시겠습니까?')) {
-                if (navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('iPad') > -1) {
-                  window.location.href = 'https://itunes.apple.com/kr/app/kakaonavi/id417698849';
+            // 모바일 기기 확인
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+              // 모바일에서는 카카오내비 앱으로 연결
+              const kakaoNaviUrl = `kakaonavi://navigate?ep=${destinationLat},${destinationLng}&by=CAR&ename=${encodeURIComponent(placeName)}`;
+              // Universal Link를 사용한 딥링크
+              const webKakaoNaviUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
+              // 앱 실행 시도
+              location.href = kakaoNaviUrl;
+              // 앱이 없는 경우를 위한 타임아웃
+              setTimeout(function() {
+                if (confirm('카카오내비 앱이 설치되어 있지 않습니다. 설치하시겠습니까?')) {
+                  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    location.href = 'https://itunes.apple.com/kr/app/kakaonavi/id417698849';
+                  } else {
+                    location.href = 'https://play.google.com/store/apps/details?id=com.locnall.KimGiSa';
+                  }
                 } else {
-                  window.location.href = 'https://play.google.com/store/apps/details?id=com.locnall.KimGiSa';
+                  // 앱 설치를 원하지 않는 경우 웹 버전으로 연결
+                  window.open(webKakaoNaviUrl, '_blank');
                 }
-              }
-            }, 500);
+              }, 1000);
+            } else {
+              // 데스크톱에서는 카카오맵 웹으로 연결
+              const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
+              window.open(webKakaoMapUrl, '_blank');
+            }
           }, function(error) {
-            // 위치 정보를 가져올 수 없는 경우
             console.error("위치 정보를 가져올 수 없습니다:", error);
-            // 목적지만 입력하여 카카오내비 실행
-            const kakaoNaviUrl = `kakaonavi://route?ep=${destinationLat},${destinationLng}&ename=${encodeURIComponent(placeName)}`;
-            window.location.href = kakaoNaviUrl;
+            // 위치 정보 없이 목적지로만 이동
+            const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
+            window.open(webKakaoMapUrl, '_blank');
           });
         } else {
-          // 지오로케이션을 지원하지 않는 브라우저의 경우
+          // 위치 정보를 지원하지 않는 경우
           console.log("이 브라우저에서는 위치 정보를 지원하지 않습니다.");
-          // 목적지만 입력하여 카카오내비 실행
-          const kakaoNaviUrl = `kakaonavi://route?ep=${destinationLat},${destinationLng}&ename=${encodeURIComponent(placeName)}`;
-          window.location.href = kakaoNaviUrl;
+          const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
+          window.open(webKakaoMapUrl, '_blank');
         }
       });
       //카카오뱅크 송금하기

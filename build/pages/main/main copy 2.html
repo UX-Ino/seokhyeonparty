@@ -789,6 +789,33 @@
     })
 
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('.comment-form');
+      if (form) {
+        // 모든 버튼의 기본 이벤트 방지
+        form.querySelectorAll('button').forEach(button => {
+          button.addEventListener('click', (e) => {
+            if (button.type !== 'submit') {
+              e.preventDefault();
+              e.stopPropagation(); // 이벤트 전파 중지
+            }
+          });
+        });
+        // 폼 제출 이벤트
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          console.log('폼 제출 시도');
+          // submit 버튼이 disabled가 아닐 때만 처리
+          const submitButton = form.querySelector('.btn-submit');
+          if (!submitButton.disabled) {
+            handleSubmit(e);
+          }
+        });
+      }
+    });
+
+  </script>
 </body>
 
 </html>

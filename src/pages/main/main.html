@@ -15,6 +15,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link href="pathStyles/style.css" type="text/css" rel="stylesheet" />
     <!-- 기존 스크립트들 -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="pathScripts/common.ui.plugin.js" data-init></script>
     <script src="pathScripts/common.ui.js" data-init></script>
     <script src="pathScripts/common.js"></script>
@@ -223,7 +224,7 @@
           <div class="contents-layer-wrap">
             <div class="tit">갤러리</div>
             <div class="gallery-wrap ">
-              <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-slides-per-group="3" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-speed="700" data-props-space-between="8">
+              <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-slides-per-group="3" data-props-speed="700" data-props-space-between="8" data-props-loop="false">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <button type="button"><img src="pathImage/gallery-01-01.jpeg" alt="" /></button>
@@ -419,35 +420,16 @@
             </div>
             <div class="modal-content">
               <form class="comment-form">
-                <div class="component-input">
-                  <div class="input-field">
-                    <input class="input" type="text" id="author" placeholder="작성자">
-                    <button type="button" class="input-field-btn clear">
-                      <span class="hide-txt">내용 지우기</span>
-                      <i class="ico-clear ico-normal" aria-hidden="true"></i>
-                    </button>
-                  </div>
+                <div class="form-group">
+                  <input type="text" id="author" placeholder="이름" required>
                 </div>
-                <div class="component-input">
-                  <div class="input-field">
-                    <input class="input" type="password" id="password" placeholder="비밀번호">
-                    <button type="button" class="input-field-btn clear">
-                      <span class="hide-txt">내용 지우기</span>
-                      <i class="ico-clear ico-normal" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" class="input-field-btn password-state">
-                      <span class="hide-txt hide">비밀번호 숨기기</span>
-                      <span class="hide-txt show">비밀번호 표시</span>
-                      <i class="ico-password-state ico-normal" aria-hidden="true"></i>
-                    </button>
-                  </div>
+                <div class="form-group">
+                  <input type="password" id="password" placeholder="비밀번호" required>
                 </div>
-                <div class="component-input">
-                  <div class="input-textarea-field">
-                    <textarea id="comment" class="textarea" placeholder="내용을 입력해주세요."></textarea>
-                  </div>
+                <div class="form-group">
+                  <textarea id="comment" placeholder="댓글을 입력하세요" required></textarea>
                 </div>
-                <button type="submit" class="btn-submit" disabled>저장</button>
+                <button type="submit">댓글 작성</button>
               </form>
             </div>
             <button class="modal-close btn"></button>
@@ -760,96 +742,101 @@
         });
       })
     </script>
-    <script type="module"> import { createClient } from 'https://esm.sh/@supabase/supabase-js';
-
-      // Supabase 설정
+    <script>
+      // Supabase 클라이언트 설정
       const supabaseUrl = 'https://cnimbijddrxtbqkljwml.supabase.co';
       const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI';
-      const supabase = createClient(supabaseUrl, supabaseKey)
-
-      document.addEventListener('DOMContentLoaded', function () {
-      // 페이지 로드 시 댓글 목록 불러오기
-      loadComments();
-       // 댓글기능 만들기
-        // 댓글 작성
-        document.querySelector('.comment-form').addEventListener('submit', async function (event) {
-          event.preventDefault();
-          alert('폼 제출 이벤트가 발생했습니다!'); // 확인용 알림
-
-
-          const author = document.getElementById('author').value;
-          const password = document.getElementById('password').value;
-          const comment = document.getElementById('comment').value;
+      const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+      // 댓글 로드 함수
+      async function loadComments() {
+        console.log('댓글 로딩 시작');
+        try {
           const {
             data,
             error
-          } = await supabase.from('seokhyeonpartyDb').insert([{
-            author,
-            password,
-            comment,
-            date: new Date().toISOString()
-          }]);
-          if (error) {
-            console.error('Error:', error);
-            alert('댓글 작성에 실패했습니다.');
-          } else {
-            alert('댓글이 작성되었습니다.');
-            loadComments();
-          }
-        });
-        // 댓글 목록 불러오기
-        async function loadComments() {
-          const {
-            data,
-            error
-          } = await supabase.from('seokhyeonpartyDb').select('*').order('date', {
+          } = await supabaseClient.from('seokhyeonpartyDb').select('*').order('date', {
             ascending: false
           });
-          if (error) {
-            console.error('Error:', error);
-          } else {
-            const commentList = document.querySelector('.messages-wrap');
-            commentList.innerHTML = '';
-            data.forEach(comment => {
-              const div = document.createElement('div');
-              div.innerHTML = `
-                <div class="messages-box">
-                  <div class="top">
-                    <span class="name">${comment.author}</span>
-                    <span class="time">[${new Date(comment.date).toLocaleString()}] </span>
-                    <button type="button" class="btn-del" onclick="deleteComment('${comment.id}', '${comment.password}')">
-                      <span class="hide-txt">삭제</span>
-                      <i class="ico ico-del"></i>
-                    </button>
-                  </div>
-                  <div class="bottom">${comment.comment}</div>
+          if (error) throw error;
+          console.log('받은 데이터:', data);
+          const commentList = document.querySelector('.messages-wrap');
+          if (!commentList) {
+            console.error('댓글 목록 컨테이너를 찾을 수 없습니다');
+            return;
+          }
+          if (!data || data.length === 0) {
+            commentList.innerHTML = '<p>아직 댓글이 없습니다.</p>';
+            return;
+          }
+          commentList.innerHTML = '';
+          data.forEach(comment => {
+            const div = document.createElement('div');
+            div.innerHTML = `
+              <div class="messages-box">
+                <div class="top">
+                  <span class="name">${comment.author}</span>
+                  <span class="time">[${new Date(comment.date).toLocaleString()}]</span>
                 </div>
-              `;
-              commentList.appendChild(div);
-            });
-          }
+                <div class="bottom">${comment.comment}</div>
+              </div>
+            `;
+            commentList.appendChild(div);
+          });
+        } catch (error) {
+          console.error('댓글 로딩 에러:', error);
         }
-        // 댓글 삭제
-        async function deleteComment(commentId, password) {
-          const inputPassword = prompt('비밀번호를 입력하세요.');
-          if (inputPassword === password) {
-            const {
-              error
-            } = await supabase.from('seokhyeonpartyDb').delete().eq('id', commentId);
-            if (error) {
-              console.error('Error:', error);
-              alert('댓글 삭제에 실패했습니다.');
-            } else {
-              alert('댓글이 삭제되었습니다.');
-              loadComments();
-            }
-          } else {
-            alert('비밀번호가 일치하지 않습니다.');
-          }
+      }
+      // 폼 제출 함수
+      function handleSubmit(event) {
+        event.preventDefault();
+        console.log('폼 제출!');
+        const authorInput = document.getElementById('author');
+        const passwordInput = document.getElementById('password');
+        const commentInput = document.getElementById('comment');
+        if (!authorInput || !passwordInput || !commentInput) {
+          console.error('입력 필드를 찾을 수 없습니다');
+          return;
         }
-
-
-      })
+        const author = authorInput.value;
+        const password = passwordInput.value;
+        const comment = commentInput.value;
+        console.log('입력값:', {
+          author,
+          password,
+          comment
+        });
+        // Supabase에 데이터 저장
+        supabaseClient.from('seokhyeonpartyDb').insert([{
+          author: author,
+          password: password,
+          comment: comment,
+          date: new Date().toISOString()
+        }]).then(response => {
+          console.log('응답:', response);
+          if (response.error) {
+            throw response.error;
+          }
+          alert('댓글이 작성되었습니다!');
+          event.target.reset();
+          loadComments(); // 댓글 목록 새로고침
+        }).catch(error => {
+          console.error('에러:', error);
+          alert('댓글 작성 실패: ' + error.message);
+        });
+      }
+      // 페이지 로드 시 실행
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('페이지 로드됨');
+        const form = document.querySelector('.comment-form');
+        if (form) {
+          console.log('폼 찾음');
+          form.addEventListener('submit', handleSubmit);
+        } else {
+          console.error('폼을 찾을 수 없음');
+        }
+        // 초기 댓글 로드
+        loadComments();
+      });
     </script>
   </body>
 </html>

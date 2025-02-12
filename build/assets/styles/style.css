@@ -5672,10 +5672,10 @@ button,
 }
 .pageClassMain {
   /* 처음에는 숨겨두고 로딩이 끝난 후 보여줌 */
-  display: block;
-  opacity: 1;
-  -webkit-transition: opacity 1s ease-out;
-  transition: opacity 1s ease-out;
+  display: none;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 }
 
 .pageClassMain.show {

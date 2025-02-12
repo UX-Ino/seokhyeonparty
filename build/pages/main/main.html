@@ -34,8 +34,7 @@
 
   </script>
   <!-- 카카오 SDK 스크립트를 이렇게 변경 -->
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js" integrity="sha384-6MFdIr0zOira1DhCDX1xjY7BxkZjpvZt0q6FHlN+z9Y/ONTQfEg8gNih9CzGFhk" crossorigin="anonymous">
-  </script>
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"></script>
 </head>
 
 <body>
@@ -764,61 +763,50 @@
           alert('계좌번호 복사에 실패했습니다.');
         }
       });
-      // Kakao SDK 초기화 (페이지 로드 시 한 번만 실행)
-      window.addEventListener('load', function() {
-        if (typeof Kakao === 'undefined') {
-          console.error('Kakao SDK가 로드되지 않았습니다.');
-          return;
-        }
-        try {
-          Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1'); // JavaScript 키
-          console.log('Kakao SDK 초기화 성공:', Kakao.isInitialized());
-        } catch (error) {
-          console.error('Kakao SDK 초기화 실패:', error);
-        }
-      });
-      // 카카오 공유하기 버튼 이벤트
-      document.querySelector('.btn-kakaoshare').addEventListener('click', function() {
+      // 카카오 초기화 및 공유하기 설정
+      console.log('DOM Content Loaded');
+      // 카카오 SDK 초기화
+      try {
         if (!Kakao.isInitialized()) {
-          console.error('Kakao SDK가 초기화되지 않았습니다.');
+          Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
+          console.log('Kakao SDK 초기화 상태:', Kakao.isInitialized());
+        }
+      } catch (e) {
+        console.error('Kakao init error:', e);
+      }
+      const shareButton = document.querySelector('.btn-kakaoshare');
+      console.log('Share button found:', shareButton); // 버튼 엘리먼트 확인
+      // 카카오 공유하기 버튼 이벤트
+      shareButton.addEventListener('click', function(e) {
+        console.log('Share button clicked'); // 클릭 이벤트 발생 확인
+        e.preventDefault();
+        if (!Kakao.isInitialized()) {
+          console.error('Kakao SDK not initialized');
+          alert('카카오 SDK 초기화에 실패했습니다.');
           return;
         }
         try {
-          Kakao.Share.sendCustom({
-            templateId: 100592, // 메시지 템플릿 ID를 사용하는 방식으로 변경
-            templateArgs: {
-              title: '석현이의 돌잔치',
-              description: '석현이의 첫 번째 돌잔치에 초대합니다.',
-              image: 'https://seokhyeonparty.netlify.app/assets/images/img-main-top.png'
+          console.log('Attempting to share...'); // 공유 시도 확인
+          Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+              title: '석현이의 돌잔치에 초대합니다',
+              description: '2025년 3월 16일 일요일 오후 3시\n플로렌스파티하우스 보라매점 29층',
+              imageUrl: 'https://seokhyeonparty.netlify.app/assets/images/img-main-top.png',
+              link: {
+                webUrl: 'https://seokhyeonparty.netlify.app',
+                mobileWebUrl: 'https://seokhyeonparty.netlify.app'
+              }
             }
+          }).then(function(response) {
+            console.log('공유 성공:', response);
+          }).catch(function(error) {
+            console.error('공유 실패:', error);
+            alert('카카오톡 공유하기에 실패했습니다.');
           });
         } catch (error) {
           console.error('카카오 공유하기 에러:', error);
-          // 기본 공유하기로 폴백
-          try {
-            Kakao.Share.sendDefault({
-              objectType: 'feed',
-              content: {
-                title: '석현이의 돌잔치',
-                description: '석현이의 첫 번째 돌잔치에 초대합니다.',
-                imageUrl: 'https://seokhyeonparty.netlify.app/assets/images/img-main-top.png',
-                link: {
-                  mobileWebUrl: 'https://seokhyeonparty.netlify.app',
-                  webUrl: 'https://seokhyeonparty.netlify.app'
-                }
-              },
-              buttons: [{
-                title: '자세히 보기',
-                link: {
-                  mobileWebUrl: 'https://seokhyeonparty.netlify.app',
-                  webUrl: 'https://seokhyeonparty.netlify.app'
-                }
-              }]
-            });
-          } catch (fallbackError) {
-            console.error('카카오 공유하기 폴백 에러:', fallbackError);
-            alert('카카오톡 공유하기를 사용할 수 없습니다.');
-          }
+          alert('카카오톡 공유하기를 사용할 수 없습니다.');
         }
       });
       // 링크 복사
@@ -1046,6 +1034,20 @@
       const kakaoBankUrl = `kakaobank://transfer?receiver_acc=${accountNumber}`;
       window.location.href = kakaoBankUrl;
     }
+
+  </script>
+  <script>
+    // 전역 에러 핸들러 추가
+    window.onerror = function(msg, url, line, col, error) {
+      console.error('Global error:', {
+        msg,
+        url,
+        line,
+        col,
+        error
+      });
+      return false;
+    };
 
   </script>
 </body>

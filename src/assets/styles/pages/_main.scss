@@ -208,9 +208,9 @@ button,
   // display: none;
   /* 처음에는 숨겨두고 로딩이 끝난 후 보여줌 */
   // opacity: 0;
-  display: block;
-  opacity: 1;
-  transition: opacity 1s ease-out;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .pageClassMain.show {

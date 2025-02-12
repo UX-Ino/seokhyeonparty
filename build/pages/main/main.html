@@ -235,26 +235,26 @@
         </div>
         <div class="contents-layer-wrap">
           <div class="tit">갤러리</div>
-          <div class="gallery-wrap ">
-            <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-slides-per-group="3" data-props-speed="700" data-props-space-between="8" data-props-loop="false">
+          <div class="gallery-wrap type01">
+            <div class="component-swiper gallery-swiper01" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-slides-per-group="3" data-props-speed="700" data-props-space-between="8" data-props-loop="false">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-01.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-01.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-02.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-02.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-03.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-03.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-04.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-04.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-05.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-05.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-06.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-06.jpeg" alt="" /></button>
                 </div>
               </div>
             </div>
@@ -468,6 +468,93 @@
       </div>
     </div>
     <!-- //방명록 -->
+    <!-- 갤러리 -->
+    <div class="component-modal modal03">
+      <div class="modal-dimm"></div>
+      <div class="modal-frame">
+        <div class="modal-container ">
+          <div class="modal-header">
+            <h3 class="modal-tit">갤러리</h3>
+          </div>
+          <div class="modal-content">
+            <div class="gallery-wrap type02">
+              <div class="component-swiper gallery-swiper02" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="1" data-props-speed="700" data-props-space-between="8">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-01.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-02.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-03.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-04.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-05.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-06.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="modal-close btn"></button>
+        </div>
+      </div>
+    </div>
+    <!-- //갤러리 -->
   </div>
   <div class="dimm"></div>
   <script>
@@ -535,6 +622,34 @@
         setTimeout(() => {
           document.querySelector('.modal02').ui.open();
         }, 1000)
+      });
+      // 갤러리 모달
+      const $btnModal03 = document.querySelectorAll('.btn-gallery');
+      const modal03 = document.querySelector('.modal03').ui;
+      // swiper 인스턴스 가져오기
+      const swiper01 = document.querySelector('.gallery-swiper01').swiper;
+      const swiper02 = document.querySelector('.gallery-swiper02').swiper;
+      $btnModal03.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+          modal03.open();
+          // 모달이 열릴 때 클릭한 이미지의 인덱스로 swiper02 초기화
+          // 모달이 열릴 때 클릭한 이미지의 인덱스로 swiper02 초기화
+          if (swiper02) {
+            swiper02.slideTo(Math.floor(index / 3) * 3);
+          }
+          setTimeout(() => {
+            document.querySelector('.modal03').ui.open();
+          }, 1000)
+        });
+      });
+      // 모달 닫기 이벤트
+      const modalCloseBtn = document.querySelector('.modal03 .modal-close');
+      modalCloseBtn.addEventListener('click', function() {
+        // 모달이 닫힐 때 swiper01의 인덱스를 swiper02와 동기화
+        if (swiper01 && swiper02) {
+          const currentIndex = swiper02.activeIndex;
+          swiper01.slideTo(Math.floor(currentIndex / 3) * 3);
+        }
       });
       // 입력시 버튼 활성화
       const inputFields = document.querySelectorAll(".modal02 input, .modal02 textarea");

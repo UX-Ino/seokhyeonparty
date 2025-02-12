@@ -1,874 +1,981 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-  <meta charset="utf-8" />
-  <title>프로젝트타이틀</title>
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta property="og:title" content="" />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
-  <meta property="og:description" content="" />
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-  <link href="../../assets/styles/style.css" type="text/css" rel="stylesheet" />
-  <!-- 기존 스크립트들 -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="../../assets/scripts/common.ui.plugin.js" data-init></script>
-  <script src="../../assets/scripts/common.ui.js" data-init></script>
-  <script src="../../assets/scripts/common.js"></script>
-  <!-- <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
-  <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
-  <script type="text/javascript">
-    ! function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://developers.kakao.com/sdk/js/kakao.min.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'kakao-js-sdk');
-
-  </script>
-  <!-- 카카오 SDK 스크립트를 이렇게 변경 -->
-  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"></script>
-</head>
-
-<body>
-  <div id="wrap">
-    <div class="loading-wrap" style="display: none;">
-      <div class="loding-txt">
-        <span class="desc">석현이의</span>
-        <span class="desc">첫 번째 생일에</span>
-        <span class="desc">초대합니다</span>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="utf-8" />
+    <title>프로젝트타이틀</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link href="../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+    <!-- 기존 스크립트들 -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../../assets/scripts/common.ui.plugin.js" data-init></script>
+    <script src="../../assets/scripts/common.ui.js" data-init></script>
+    <script src="../../assets/scripts/common.js"></script>
+    <!-- <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
+    <script type="text/javascript">
+      ! function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://developers.kakao.com/sdk/js/kakao.min.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'kakao-js-sdk');
+    </script>
+    <!-- 카카오 SDK 스크립트를 이렇게 변경 -->
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="loading-wrap" style="display: none;">
+        <div class="loding-txt">
+          <span class="desc">석현이의</span>
+          <span class="desc">첫 번째 생일에</span>
+          <span class="desc">초대합니다</span>
+        </div>
       </div>
-    </div>
-    <div class="pageClassMain uxg-page-container-main" id="container">
-      <div id="content" role="main">
-        <div class="main-wrap">
-          <div class="top-img-wrap">
-            <div class="badge">
-              <img src="../../assets/images/first-birthday.webp" alt="" />
+      <div class="pageClassMain uxg-page-container-main" id="container">
+        <div id="content" role="main">
+          <div class="main-wrap">
+            <div class="top-img-wrap">
+              <div class="badge">
+                <img src="../../assets/images/first-birthday.webp" alt="" />
+              </div>
+              <div class="photo">
+                <img src="../../assets/images/img-main-top.png" alt="" />
+              </div>
+              <div class="point">
+                <img src="../../assets/images/img-ribbon.png" alt="" />
+              </div>
             </div>
-            <div class="photo">
-              <img src="../../assets/images/img-main-top.png" alt="" />
+            <div class="info-wrap">
+              <div class="name"> 정석현 </div>
+              <div class="parent">
+                <div class="dad"><span>Dad</span>정인호</div>
+                <div class="mon"><span>Mom</span>박선미</div>
+              </div>
+              <div class="date">3월 16일 일요일 오후 3시</div>
+              <div class="palce">플로렌스파티하우스 보라매점 29층</div>
             </div>
-            <div class="point">
-              <img src="../../assets/images/img-ribbon.png" alt="" />
+            <div class="bg-area">
+              <div class="bg-item01">
+                <img src="../../assets/images/img-animal01.webp" alt="" />
+              </div>
+              <div class="bg-item02">
+                <img src="../../assets/images/img-animal02.webp" alt="" />
+              </div>
             </div>
           </div>
-          <div class="info-wrap">
-            <div class="name"> 정석현 </div>
-            <div class="parent">
-              <div class="dad"><span>Dad</span>정인호</div>
-              <div class="mon"><span>Mom</span>박선미</div>
+          <div class="contents-layer-wrap">
+            <div class="txt-wrap">
+              <div class="tit">석현이의 첫 생일에 초대합니다</div>
+              <div class="txt"> 석현이가 태어나 밝고 건강하게 자라 나도록 함께 해주신 여러분들께 감사의 마음을 담아 작은 자리를 마련 했습니다. 바쁘시겠지만 부디 참석해 주시어 석현이의 첫 생일을 축하해 주세요. </div>
             </div>
-            <div class="date">3월 16일 일요일 오후 3시</div>
-            <div class="palce">플로렌스파티하우스 보라매점 29층</div>
+            <button type="button" class="btn-call btn-modal01" data-testid="btn-modal01">연락하기</button>
           </div>
-          <div class="bg-area">
-            <div class="bg-item01">
-              <img src="../../assets/images/img-animal01.webp" alt="" />
-            </div>
-            <div class="bg-item02">
-              <img src="../../assets/images/img-animal02.webp" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="contents-layer-wrap">
-          <div class="txt-wrap">
-            <div class="tit">석현이의 첫 생일에 초대합니다</div>
-            <div class="txt"> 석현이가 태어나 밝고 건강하게 자라 나도록 함께 해주신 여러분들께 감사의 마음을 담아 작은 자리를 마련 했습니다. 바쁘시겠지만 부디 참석해 주시어 석현이의 첫 생일을 축하해 주세요. </div>
-          </div>
-          <button type="button" class="btn-call btn-modal01" data-testid="btn-modal01">연락하기</button>
-        </div>
-        <div class="contents-layer-wrap">
-          <div class="parent-wrap">
-            <div class="img">
-              <img src="../../assets/images/parent-01.jpeg" alt="" />
-            </div>
-            <div class="dad-box">
-              <!-- <div class="img">
+          <div class="contents-layer-wrap">
+            <div class="parent-wrap">
+              <div class="img">
+                <img src="../../assets/images/parent-01.jpeg" alt="" />
+              </div>
+              <div class="dad-box">
+                <!-- <div class="img">
                 </div> -->
-              <div class="txt">
-                <span>아빠</span> 정인호
+                <div class="txt">
+                  <span>아빠</span> 정인호 </div>
+                <div class="txt"> 석현이가 씩씩하고 <br> 현명한 아이가 되도록 <br> 항상 옆에서 응원하는 <br> 아빠가 되겠습니다. </div>
               </div>
-              <div class="txt"> 석현이가 씩씩하고 <br> 현명한 아이가 되도록 <br> 항상 옆에서 응원하는 <br> 아빠가 되겠습니다. </div>
-            </div>
-            <div class="mom-box">
-              <!-- <div class="img">
+              <div class="mom-box">
+                <!-- <div class="img">
                 </div> -->
-              <div class="txt">
-                <span>엄마</span> 박선미
-              </div>
-              <div class="txt"> 석현이가 행복한 아이로 <br> 자랄 수 있도록 <br> 축복해주신 모든 분들 <br> 감사합니다 💕 </div>
-            </div>
-          </div>
-        </div>
-        <div class="contents-layer-wrap">
-          <div class="calendar-wrap">
-            <div class="tit">행사일</div>
-            <div class="calendar-img">
-              <img src="../../assets/images/img-main-top.png" alt="" />
-            </div>
-            <div class="txt">2025년 3월 16일 일요일 오후 3시 </div>
-            <div class="calendar">
-              <span class="day">Mo</span>
-              <span class="day">Tu</span>
-              <span class="day">We</span>
-              <span class="day">Th</span>
-              <span class="day">Fr</span>
-              <span class="day">Sa</span>
-              <span class="day">Su</span>
-              <span class="date faded"></span>
-              <span class="date faded"></span>
-              <span class="date faded"></span>
-              <span class="date faded"></span>
-              <span class="date faded"></span>
-              <span class="date faded"></span>
-              <span class="date">1</span>
-              <span class="date">2</span>
-              <span class="date">3</span>
-              <span class="date">4</span>
-              <span class="date">5</span>
-              <span class="date">6</span>
-              <span class="date">7</span>
-              <span class="date">8</span>
-              <span class="date ">9</span>
-              <span class="date">10</span>
-              <span class="date">11</span>
-              <span class="date">12</span>
-              <span class="date">13</span>
-              <span class="date">14</span>
-              <span class="date">15</span>
-              <span class="date current-day">16</span>
-              <span class="date">17</span>
-              <span class="date">18</span>
-              <span class="date ">19</span>
-              <span class="date">20</span>
-              <span class="date">21</span>
-              <span class="date">22</span>
-              <span class="date">23</span>
-              <span class="date">24</span>
-              <span class="date">25</span>
-              <span class="date">26</span>
-              <span class="date">27</span>
-              <span class="date">28</span>
-              <span class="date">29</span>
-              <span class="date">30</span>
-              <span class="date">31</span>
-              <span class="date faded"></span>
-              <span class="date faded"></span>
-              <span class="date faded"></span>
-              <span class="date faded"></span>
-              <span class="date faded"></span>
-            </div>
-          </div>
-          <div class="dday-wrap">
-            <div class="dday-box">
-              <div class="days">
-                <span class="num">00</span>
-                <span class="tit">Days</span>
-              </div>
-              <div class="hours">
-                <span class="num">00</span>
-                <span class="tit">Hours</span>
-              </div>
-              <div class="minutes">
-                <span class="num">00</span>
-                <span class="tit">minutes</span>
-              </div>
-              <div class="seconds">
-                <span class="num">00</span>
-                <span class="tit">seconds</span>
+                <div class="txt">
+                  <span>엄마</span> 박선미 </div>
+                <div class="txt"> 석현이가 행복한 아이로 <br> 자랄 수 있도록 <br> 축복해주신 모든 분들 <br> 감사합니다 💕 </div>
               </div>
             </div>
-            <div class="dday-desc">석현이의 첫번째 생일이 <span class="count">00일</span> 남았습니다.</div>
           </div>
-        </div>
-        <div class="contents-layer-wrap">
-          <div class="tit-group">
-            <div class="tit">오시는 길</div>
-            <div class="txt">서울 동작구 보라매로5길 15 전문건설회관 29층 플로렌스 보라매점</div>
+          <div class="contents-layer-wrap">
+            <div class="calendar-wrap">
+              <div class="tit">행사일</div>
+              <div class="calendar-img">
+                <img src="../../assets/images/img-main-top.png" alt="" />
+              </div>
+              <div class="txt">2025년 3월 16일 일요일 오후 3시 </div>
+              <div class="calendar">
+                <span class="day">Mo</span>
+                <span class="day">Tu</span>
+                <span class="day">We</span>
+                <span class="day">Th</span>
+                <span class="day">Fr</span>
+                <span class="day">Sa</span>
+                <span class="day">Su</span>
+                <span class="date faded"></span>
+                <span class="date faded"></span>
+                <span class="date faded"></span>
+                <span class="date faded"></span>
+                <span class="date faded"></span>
+                <span class="date faded"></span>
+                <span class="date">1</span>
+                <span class="date">2</span>
+                <span class="date">3</span>
+                <span class="date">4</span>
+                <span class="date">5</span>
+                <span class="date">6</span>
+                <span class="date">7</span>
+                <span class="date">8</span>
+                <span class="date ">9</span>
+                <span class="date">10</span>
+                <span class="date">11</span>
+                <span class="date">12</span>
+                <span class="date">13</span>
+                <span class="date">14</span>
+                <span class="date">15</span>
+                <span class="date current-day">16</span>
+                <span class="date">17</span>
+                <span class="date">18</span>
+                <span class="date ">19</span>
+                <span class="date">20</span>
+                <span class="date">21</span>
+                <span class="date">22</span>
+                <span class="date">23</span>
+                <span class="date">24</span>
+                <span class="date">25</span>
+                <span class="date">26</span>
+                <span class="date">27</span>
+                <span class="date">28</span>
+                <span class="date">29</span>
+                <span class="date">30</span>
+                <span class="date">31</span>
+                <span class="date faded"></span>
+                <span class="date faded"></span>
+                <span class="date faded"></span>
+                <span class="date faded"></span>
+                <span class="date faded"></span>
+              </div>
+            </div>
+            <div class="dday-wrap">
+              <div class="dday-box">
+                <div class="days">
+                  <span class="num">00</span>
+                  <span class="tit">Days</span>
+                </div>
+                <div class="hours">
+                  <span class="num">00</span>
+                  <span class="tit">Hours</span>
+                </div>
+                <div class="minutes">
+                  <span class="num">00</span>
+                  <span class="tit">minutes</span>
+                </div>
+                <div class="seconds">
+                  <span class="num">00</span>
+                  <span class="tit">seconds</span>
+                </div>
+              </div>
+              <div class="dday-desc">석현이의 첫번째 생일이 <span class="count">00일</span> 남았습니다.</div>
+            </div>
           </div>
-          <div class="map-wrap">
-            <div class="map">
-              <!-- * 카카오맵 - 지도퍼가기 -->
-              <!-- 1. 지도 노드 -->
-              <div id="daumRoughmapContainer1739380881789" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-              <!--
+          <div class="contents-layer-wrap">
+            <div class="tit-group">
+              <div class="tit">오시는 길</div>
+              <div class="txt">서울 동작구 보라매로5길 15 전문건설회관 29층 플로렌스 보라매점</div>
+            </div>
+            <div class="map-wrap">
+              <div class="map">
+                <!-- * 카카오맵 - 지도퍼가기 -->
+                <!-- 1. 지도 노드 -->
+                <div id="daumRoughmapContainer1739380881789" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                <!--
                   2. 설치 스크립트
                   * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
                 -->
-              <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-              <!-- 3. 실행 스크립트 -->
-              <script charset="UTF-8">
-                window.addEventListener('load', function() {
-                  setTimeout(function() {
-                    new daum.roughmap.Lander({
-                      "timestamp": "1739380881789",
-                      "key": "2n235",
-                    }).render();
-                  }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
-                });
-
-              </script>
+                <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+                <!-- 3. 실행 스크립트 -->
+                <script charset="UTF-8">
+                  window.addEventListener('load', function () {
+                    setTimeout(function () {
+                      new daum.roughmap.Lander({
+                        "timestamp": "1739380881789",
+                        "key": "2n235",
+                      }).render();
+                    }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
+                  });
+                </script>
+              </div>
+              <div class="btn-box">
+                <button class="btn btn-naver">
+                  <i class="ico ico-naver"></i>
+                  <span>네이버지도</span>
+                </button>
+                <button class="btn btn-kakao">
+                  <i class="ico ico-kakao"></i>
+                  <span>카카오네비</span>
+                </button>
+              </div>
+              <div class="info-txt">
+                <div class="tit">지하철</div>
+                <div class="txt"><em>신림</em> 보라매병원역 2번 출구에서 26m</div>
+              </div>
             </div>
-            <div class="btn-box">
-              <button class="btn btn-naver">
-                <i class="ico ico-naver"></i>
-                <span>네이버지도</span>
-              </button>
-              <button class="btn btn-kakao">
+          </div>
+          <div class="contents-layer-wrap">
+            <div class="tit">갤러리</div>
+            <div class="gallery-wrap type01">
+              <div class="component-swiper gallery-swiper01" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-slides-per-group="3" data-props-speed="700" data-props-space-between="8" data-props-loop="false">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-01.jpeg" alt="" /></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-02.jpeg" alt="" /></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-03.jpeg" alt="" /></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-04.jpeg" alt="" /></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-05.jpeg" alt="" /></button>
+                  </div>
+                  <div class="swiper-slide">
+                    <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-06.jpeg" alt="" /></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contents-layer-wrap">
+            <div class="tit">석현이의 성장기록</div>
+            <div class="gallery-wrap type02">
+              <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="1" data-props-speed="700" data-props-space-between="8">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/img-main-top.png" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/img-main-top.png" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/img-main-top.png" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contents-layer-wrap">
+            <div class="tit">마음 전하실 곳</div>
+            <div class="component-accordion" data-orientation="vertical">
+              <div class="accordion-item" data-state="open" data-type="multiple">
+                <button type="button" class="accordion-tit">계좌번호</button>
+                <div class="accordion-content">
+                  <div class="bank-account-wrap">
+                    <div class="flex-box">
+                      <div class="txt">주인공</div>
+                      <div class="txt">정석현</div>
+                      <button type="button" class="btn btn-kakaopay">
+                        <span>송금하기</span>
+                        <i class="ico ico-kakaopay"></i>
+                      </button>
+                    </div>
+                    <div class="flex-box">
+                      <div class="txt">MG새마을금고</div>
+                      <div class="txt account-num">9003-2929-3475-7</div>
+                      <button type="button" class="btn btn-copy">
+                        <span>복사</span>
+                        <i class="ico ico-copy"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contents-layer-wrap">
+            <div class="tit">축하인사 전하기</div>
+            <div class="messages-wrap">
+              <div class="messages-box">
+                <div class="top">
+                  <span class="name">홍길동</span>
+                  <span class="time">0000.00.00 00:00</span>
+                  <button type="button" class="btn-del">
+                    <span class="hide-txt">삭제</span>
+                    <i class="ico ico-del"></i>
+                  </button>
+                </div>
+                <div class="bottom"> 축하인사 타임~~~~ </div>
+              </div>
+              <div class="messages-box">
+                <div class="top">
+                  <span class="name">홍길동</span>
+                  <span class="time">0000.00.00 00:00</span>
+                  <button type="button" class="btn-del">
+                    <span class="hide-txt">삭제</span>
+                    <i class="ico ico-del"></i>
+                  </button>
+                </div>
+                <div class="bottom"> 축하인사 타임~~~~ </div>
+              </div>
+              <div class="messages-box">
+                <div class="top">
+                  <span class="name">홍길동</span>
+                  <span class="time">0000.00.00 00:00</span>
+                  <button type="button" class="btn-del">
+                    <span class="hide-txt">삭제</span>
+                    <i class="ico ico-del"></i>
+                  </button>
+                </div>
+                <div class="bottom"> 축하인사 타임~~~~ </div>
+              </div>
+            </div>
+            <div class="messages-btn-box">
+              <button type="button" class="btn-messages">작성하기</button>
+            </div>
+          </div>
+          <div class="contents-layer-wrap">
+            <div class="share-wrap">
+              <button type="button" class="btn-kakaoshare">
                 <i class="ico ico-kakao"></i>
-                <span>카카오네비</span>
+                <span>카카오톡 공유하기</span>
+              </button>
+              <button type="button" class="btn-link">
+                <i class="ico ico-link"></i>
+                <span>링크 복사하기</span>
               </button>
             </div>
-            <div class="info-txt">
-              <div class="tit">지하철</div>
-              <div class="txt"><em>신림</em> 보라매병원역 2번 출구에서 26m</div>
-            </div>
+            <div class="tit02">IH ❤️ SM</div>
+            <div class="copyright">Copyright(C) seokhyeon. All Rights Reserved. </div>
           </div>
         </div>
-        <div class="contents-layer-wrap">
-          <div class="tit">갤러리</div>
-          <div class="gallery-wrap ">
-            <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-slides-per-group="3" data-props-speed="700" data-props-space-between="8" data-props-loop="false">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-01.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-02.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-03.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-04.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-05.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-06.jpeg" alt="" /></button>
-                </div>
+      </div>
+    </div>
+    <div class="layer-wrap">
+      <!-- 연락하기 -->
+      <div class="component-modal modal01">
+        <div class="modal-dimm"></div>
+        <div class="modal-frame">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h3 class="modal-tit">연락하기</h3>
+            </div>
+            <div class="modal-content">
+              <div class="phone-box">
+                <span class="phone-tit">아빠 정인호</span>
+                <a href="tel: 01076684200" class="btn-tel">
+                  <i class="ico ico-tel"></i>
+                </a>
+                <!-- <button type="button" class="btn-message">
+                  <i class="ico ico-message"></i>
+                </button> -->
+              </div>
+              <div class="phone-box">
+                <span class="phone-tit">엄마 박선미</span>
+                <a href="tel: 01057301066" class="btn-tel">
+                  <i class="ico ico-tel"></i>
+                </a>
+                <!-- <button type="button" class="btn-message">
+                  <i class="ico ico-message"></i>
+                </button> -->
               </div>
             </div>
+            <button class="modal-close btn"></button>
           </div>
         </div>
-        <div class="contents-layer-wrap">
-          <div class="tit">석현이의 성장기록</div>
-          <div class="gallery-wrap type02">
-            <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="1" data-props-speed="700" data-props-space-between="8">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div class="img-box">
-                    <div class="img">
-                      <img src="../../assets/images/img-main-top.png" alt="" />
-                    </div>
-                    <div class="txt-box">
-                      <div class="date">2024.03.19</div>
-                      <div class="desc">석현이 탄신일</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="img-box">
-                    <div class="img">
-                      <img src="../../assets/images/img-main-top.png" alt="" />
-                    </div>
-                    <div class="txt-box">
-                      <div class="date">2024.03.19</div>
-                      <div class="desc">석현이 탄신일</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="img-box">
-                    <div class="img">
-                      <img src="../../assets/images/img-main-top.png" alt="" />
-                    </div>
-                    <div class="txt-box">
-                      <div class="date">2024.03.19</div>
-                      <div class="desc">석현이 탄신일</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      </div>
+      <!-- //연락하기 -->
+      <!-- 방명록 -->
+      <div class="component-modal modal02">
+        <div class="modal-dimm"></div>
+        <div class="modal-frame">
+          <div class="modal-container">
+            <div class="modal-header">
+              <h3 class="modal-tit">방명록 작성</h3>
             </div>
-          </div>
-        </div>
-        <div class="contents-layer-wrap">
-          <div class="tit">마음 전하실 곳</div>
-          <div class="component-accordion" data-orientation="vertical">
-            <div class="accordion-item" data-state="open" data-type="multiple">
-              <button type="button" class="accordion-tit">계좌번호</button>
-              <div class="accordion-content">
-                <div class="bank-account-wrap">
-                  <div class="flex-box">
-                    <div class="txt">주인공</div>
-                    <div class="txt">정석현</div>
-                    <button type="button" class="btn btn-kakaopay">
-                      <span>송금하기</span>
-                      <i class="ico ico-kakaopay"></i>
-                    </button>
-                  </div>
-                  <div class="flex-box">
-                    <div class="txt">MG새마을금고</div>
-                    <div class="txt account-num">9003-2929-3475-7</div>
-                    <button type="button" class="btn btn-copy">
-                      <span>복사</span>
-                      <i class="ico ico-copy"></i>
+            <div class="modal-content">
+              <form class="comment-form">
+                <div class="component-input">
+                  <div class="input-field">
+                    <input class="input" type="text" id="author" placeholder="작성자" required>
+                    <button type="button" class="input-field-btn clear">
+                      <span class="hide-txt">내용 지우기</span>
+                      <i class="ico-clear ico-normal" aria-hidden="true"></i>
                     </button>
                   </div>
                 </div>
-              </div>
+                <div class="component-input">
+                  <div class="input-field">
+                    <input class="input" type="password" id="password" placeholder="비밀번호" required>
+                    <button type="button" class="input-field-btn clear">
+                      <span class="hide-txt">내용 지우기</span>
+                      <i class="ico-clear ico-normal" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="input-field-btn password-state">
+                      <span class="hide-txt hide">비밀번호 숨기기</span>
+                      <span class="hide-txt show">비밀번호 표시</span>
+                      <i class="ico-password-state ico-normal" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="component-input">
+                  <div class="input-textarea-field">
+                    <textarea id="comment" class="textarea" placeholder="내용을 입력해주세요." required></textarea>
+                  </div>
+                </div>
+                <button type="submit" class="btn-submit" disabled>저장</button>
+              </form>
             </div>
+            <button class="modal-close btn"></button>
           </div>
-        </div>
-        <div class="contents-layer-wrap">
-          <div class="tit">축하인사 전하기</div>
-          <div class="messages-wrap">
-            <div class="messages-box">
-              <div class="top">
-                <span class="name">홍길동</span>
-                <span class="time">0000.00.00 00:00</span>
-                <button type="button" class="btn-del">
-                  <span class="hide-txt">삭제</span>
-                  <i class="ico ico-del"></i>
-                </button>
-              </div>
-              <div class="bottom"> 축하인사 타임~~~~ </div>
-            </div>
-            <div class="messages-box">
-              <div class="top">
-                <span class="name">홍길동</span>
-                <span class="time">0000.00.00 00:00</span>
-                <button type="button" class="btn-del">
-                  <span class="hide-txt">삭제</span>
-                  <i class="ico ico-del"></i>
-                </button>
-              </div>
-              <div class="bottom"> 축하인사 타임~~~~ </div>
-            </div>
-            <div class="messages-box">
-              <div class="top">
-                <span class="name">홍길동</span>
-                <span class="time">0000.00.00 00:00</span>
-                <button type="button" class="btn-del">
-                  <span class="hide-txt">삭제</span>
-                  <i class="ico ico-del"></i>
-                </button>
-              </div>
-              <div class="bottom"> 축하인사 타임~~~~ </div>
-            </div>
-          </div>
-          <div class="messages-btn-box">
-            <button type="button" class="btn-messages">작성하기</button>
-          </div>
-        </div>
-        <div class="contents-layer-wrap">
-          <div class="share-wrap">
-            <button type="button" class="btn-kakaoshare">
-              <i class="ico ico-kakao"></i>
-              <span>카카오톡 공유하기</span>
-            </button>
-            <button type="button" class="btn-link">
-              <i class="ico ico-link"></i>
-              <span>링크 복사하기</span>
-            </button>
-          </div>
-          <div class="tit02">IH ❤️ SM</div>
-          <div class="copyright">Copyright(C) seokhyeon. All Rights Reserved. </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="layer-wrap">
-    <!-- 연락하기 -->
-    <div class="component-modal modal01">
-      <div class="modal-dimm"></div>
-      <div class="modal-frame">
-        <div class="modal-container">
-          <div class="modal-header">
-            <h3 class="modal-tit">연락하기</h3>
-          </div>
-          <div class="modal-content">
-            <div class="phone-box">
-              <span class="phone-tit">아빠 정인호</span>
-              <a href="tel: 01076684200" class="btn-tel">
-                <i class="ico ico-tel"></i>
-              </a>
-              <!-- <button type="button" class="btn-message">
-                  <i class="ico ico-message"></i>
-                </button> -->
+      <!-- //방명록 -->
+      <!-- 갤러리 -->
+      <div class="component-modal modal03">
+        <div class="modal-dimm"></div>
+        <div class="modal-frame">
+          <div class="modal-container ">
+            <div class="modal-header">
+              <h3 class="modal-tit">갤러리</h3>
             </div>
-            <div class="phone-box">
-              <span class="phone-tit">엄마 박선미</span>
-              <a href="tel: 01057301066" class="btn-tel">
-                <i class="ico ico-tel"></i>
-              </a>
-              <!-- <button type="button" class="btn-message">
-                  <i class="ico ico-message"></i>
-                </button> -->
+            <div class="modal-content">
+              <div class="gallery-wrap type02">
+                <div class="component-swiper gallery-swiper02" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="1" data-props-speed="700" data-props-space-between="8">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="img-box">
+                        <div class="img">
+                          <img src="../../assets/images/gallery-01-01.jpeg" alt="" />
+                        </div>
+                        <div class="txt-box">
+                          <div class="date">2024.03.19</div>
+                          <div class="desc">석현이 탄신일</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-box">
+                        <div class="img">
+                          <img src="../../assets/images/gallery-01-02.jpeg" alt="" />
+                        </div>
+                        <div class="txt-box">
+                          <div class="date">2024.03.19</div>
+                          <div class="desc">석현이 탄신일</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-box">
+                        <div class="img">
+                          <img src="../../assets/images/gallery-01-03.jpeg" alt="" />
+                        </div>
+                        <div class="txt-box">
+                          <div class="date">2024.03.19</div>
+                          <div class="desc">석현이 탄신일</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-box">
+                        <div class="img">
+                          <img src="../../assets/images/gallery-01-04.jpeg" alt="" />
+                        </div>
+                        <div class="txt-box">
+                          <div class="date">2024.03.19</div>
+                          <div class="desc">석현이 탄신일</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-box">
+                        <div class="img">
+                          <img src="../../assets/images/gallery-01-05.jpeg" alt="" />
+                        </div>
+                        <div class="txt-box">
+                          <div class="date">2024.03.19</div>
+                          <div class="desc">석현이 탄신일</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="img-box">
+                        <div class="img">
+                          <img src="../../assets/images/gallery-01-06.jpeg" alt="" />
+                        </div>
+                        <div class="txt-box">
+                          <div class="date">2024.03.19</div>
+                          <div class="desc">석현이 탄신일</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <button class="modal-close btn"></button>
           </div>
-          <button class="modal-close btn"></button>
         </div>
       </div>
+      <!-- //갤러리 -->
     </div>
-    <!-- //연락하기 -->
-    <!-- 방명록 -->
-    <div class="component-modal modal02">
-      <div class="modal-dimm"></div>
-      <div class="modal-frame">
-        <div class="modal-container">
-          <div class="modal-header">
-            <h3 class="modal-tit">방명록 작성</h3>
-          </div>
-          <div class="modal-content">
-            <form class="comment-form">
-              <div class="component-input">
-                <div class="input-field">
-                  <input class="input" type="text" id="author" placeholder="작성자" required>
-                  <button type="button" class="input-field-btn clear">
-                    <span class="hide-txt">내용 지우기</span>
-                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="component-input">
-                <div class="input-field">
-                  <input class="input" type="password" id="password" placeholder="비밀번호" required>
-                  <button type="button" class="input-field-btn clear">
-                    <span class="hide-txt">내용 지우기</span>
-                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
-                  </button>
-                  <button type="button" class="input-field-btn password-state">
-                    <span class="hide-txt hide">비밀번호 숨기기</span>
-                    <span class="hide-txt show">비밀번호 표시</span>
-                    <i class="ico-password-state ico-normal" aria-hidden="true"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="component-input">
-                <div class="input-textarea-field">
-                  <textarea id="comment" class="textarea" placeholder="내용을 입력해주세요." required></textarea>
-                </div>
-              </div>
-              <button type="submit" class="btn-submit" disabled>저장</button>
-            </form>
-          </div>
-          <button class="modal-close btn"></button>
-        </div>
-      </div>
-    </div>
-    <!-- //방명록 -->
-  </div>
-  <div class="dimm"></div>
-  <script>
-    window.onload = function() {
-      // // 진입 이벤트
-      const loadingWrap = document.querySelector('.loading-wrap');
-      const pageClassMain = document.querySelector('.pageClassMain');
-      // Show loading screen
-      loadingWrap.style.display = 'block';
-      loadingWrap.style.opacity = '1';
-      pageClassMain.style.display = 'none';
-      // Initialize loading sequence
-      const LOADING_DURATION = 2500;
-      const FADE_DURATION = 1000;
-      setTimeout(() => {
-        loadingWrap.style.opacity = '0';
-        loadingWrap.style.transition = `opacity ${FADE_DURATION}ms ease-out`;
+    <div class="dimm"></div>
+    <script>
+      window.onload = function () {
+        // // 진입 이벤트
+        const loadingWrap = document.querySelector('.loading-wrap');
+        const pageClassMain = document.querySelector('.pageClassMain');
+        // Show loading screen
+        loadingWrap.style.display = 'block';
+        loadingWrap.style.opacity = '1';
+        pageClassMain.style.display = 'none';
+        // Initialize loading sequence
+        const LOADING_DURATION = 2500;
+        const FADE_DURATION = 1000;
         setTimeout(() => {
-          loadingWrap.style.display = 'none';
-          pageClassMain.style.display = 'block';
-          requestAnimationFrame(() => {
-            pageClassMain.classList.add('show');
-          });
-        }, FADE_DURATION);
-      }, LOADING_DURATION);
-      // 디데이 카운트
-      var countDownDate = new Date("Mar 16, 2025 15:00:00").getTime();
-      // Update the count down every 1 second
-      var x = setInterval(function() {
-        // Get today's date and time
-        var now = new Date().getTime();
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.querySelector('.days .num').innerHTML = days;
-        document.querySelector('.hours .num').innerHTML = hours;
-        document.querySelector('.minutes .num').innerHTML = minutes;
-        document.querySelector('.seconds .num').innerHTML = seconds;
-        document.querySelector('.dday-desc .count').innerHTML = days + "일";
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("demo").innerHTML = "EXPIRED";
-        }
-      }, 1000);
-    };
-
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // 연락하기 모달
-      const $btnModal01 = document.querySelector('.btn-modal01');
-      const modal01 = document.querySelector('.modal01').ui;
-      $btnModal01.addEventListener('click', function() {
-        modal01.open();
-      });
-      // 방명록 모달
-      const $btnModal02 = document.querySelector('.btn-messages');
-      const modal02 = document.querySelector('.modal02').ui;
-      $btnModal02.addEventListener('click', function() {
-        modal02.open();
-        setTimeout(() => {
-          document.querySelector('.modal02').ui.open();
-        }, 1000)
-      });
-      // 입력시 버튼 활성화
-      const inputFields = document.querySelectorAll(".modal02 input, .modal02 textarea");
-      const submitButton = document.querySelector(".modal02 .btn-submit");
-
-      function checkInputs() {
-        const allFilled = Array.from(inputFields).every(input => input.value && input.value.trim() !== "");
-        submitButton.disabled = !allFilled;
-        if (allFilled) {
-          submitButton.addEventListener('click', closeModal);
-        } else {
-          submitButton.removeEventListener('click', closeModal);
-        }
-      }
-
-      function closeModal() {
-        modal02.close();
-        resetInputs();
-      }
-
-      function resetInputs() {
-        inputFields.forEach(input => input.value = ""); // 모든 입력 필드 초기화
-        submitButton.disabled = true; // 버튼 비활성화
-      }
-      inputFields.forEach(input => {
-        input.addEventListener("input", checkInputs);
-        input.addEventListener("blur", checkInputs); // 입력 필드 포커스 해제 시도 체크
-      });
-      const inputClearBtn = document.querySelectorAll('.input-field-btn.clear');
-      inputClearBtn.forEach((button, index) => {
-        button.addEventListener("click", function() {
-          inputFields[index].value = ""; // 해당 인덱스의 input 값 지우기
-          checkInputs(); // 버튼 활성화 여부 다시 체크
+          loadingWrap.style.opacity = '0';
+          loadingWrap.style.transition = `opacity ${FADE_DURATION}ms ease-out`;
+          setTimeout(() => {
+            loadingWrap.style.display = 'none';
+            pageClassMain.style.display = 'block';
+            requestAnimationFrame(() => {
+              pageClassMain.classList.add('show');
+            });
+          }, FADE_DURATION);
+        }, LOADING_DURATION);
+        // 디데이 카운트
+        var countDownDate = new Date("Mar 16, 2025 15:00:00").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+          // Get today's date and time
+          var now = new Date().getTime();
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.querySelector('.days .num').innerHTML = days;
+          document.querySelector('.hours .num').innerHTML = hours;
+          document.querySelector('.minutes .num').innerHTML = minutes;
+          document.querySelector('.seconds .num').innerHTML = seconds;
+          document.querySelector('.dday-desc .count').innerHTML = days + "일";
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+      };
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // 연락하기 모달
+        const $btnModal01 = document.querySelector('.btn-modal01');
+        const modal01 = document.querySelector('.modal01').ui;
+        $btnModal01.addEventListener('click', function () {
+          modal01.open();
         });
-      });
-      // 디데이 카운트
-      var countDownDate = new Date("Mar 16, 2025 15:00:00").getTime();
-      // Update the count down every 1 second
-      var x = setInterval(function() {
-        // Get today's date and time
-        var now = new Date().getTime();
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        // Output the result in an element with id="demo"
-        // document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-        document.querySelector('.days .num').innerHTML = days;
-        document.querySelector('.hours .num').innerHTML = hours;
-        document.querySelector('.minutes .num').innerHTML = minutes;
-        document.querySelector('.seconds .num').innerHTML = seconds;
-        document.querySelector('.dday-desc .count').innerHTML = days + "일";
-        // If the count down is over, write some text
-        if (distance < 0) {
-          clearInterval(x);
-          document.getElementById("demo").innerHTML = "EXPIRED";
+        // 방명록 모달
+        const $btnModal02 = document.querySelector('.btn-messages');
+        const modal02 = document.querySelector('.modal02').ui;
+        $btnModal02.addEventListener('click', function () {
+          modal02.open();
+          setTimeout(() => {
+            document.querySelector('.modal02').ui.open();
+          }, 1000)
+        });
+        // 갤러리 모달
+        const $btnModal03 = document.querySelectorAll('.btn-gallery');
+        const modal03 = document.querySelector('.modal03').ui;
+        // swiper 인스턴스 가져오기
+        const swiper01 = document.querySelector('.gallery-swiper01').swiper;
+        const swiper02 = document.querySelector('.gallery-swiper02').swiper;
+        $btnModal03.forEach((btn, index) => {
+          btn.addEventListener('click', function () {
+            modal03.open();
+            // 모달이 열릴 때 클릭한 이미지의 인덱스로 swiper02 초기화
+            // 모달이 열릴 때 클릭한 이미지의 인덱스로 swiper02 초기화
+            if (swiper02) {
+              swiper02.slideTo(Math.floor(index / 3) * 3);
+            }
+            setTimeout(() => {
+              document.querySelector('.modal03').ui.open();
+            }, 1000)
+          });
+        });
+        // 모달 닫기 이벤트
+        const modalCloseBtn = document.querySelector('.modal03 .modal-close');
+        modalCloseBtn.addEventListener('click', function () {
+          // 모달이 닫힐 때 swiper01의 인덱스를 swiper02와 동기화
+          if (swiper01 && swiper02) {
+            const currentIndex = swiper02.activeIndex;
+            swiper01.slideTo(Math.floor(currentIndex / 3) * 3);
+          }
+        });
+        // 입력시 버튼 활성화
+        const inputFields = document.querySelectorAll(".modal02 input, .modal02 textarea");
+        const submitButton = document.querySelector(".modal02 .btn-submit");
+
+        function checkInputs() {
+          const allFilled = Array.from(inputFields).every(input => input.value && input.value.trim() !== "");
+          submitButton.disabled = !allFilled;
+          if (allFilled) {
+            submitButton.addEventListener('click', closeModal);
+          } else {
+            submitButton.removeEventListener('click', closeModal);
+          }
         }
-      }, 1000);
-      // 네이버 지도 연결
-      document.querySelector(".btn-naver").addEventListener("click", function(e) {
-        e.preventDefault();
-        // 플로렌스 보라매점 정보
-        const placeName = "플로렌스 보라매점";
-        const placeX = "126.9179"; // 경도
-        const placeY = "37.4933"; // 위도
-        // 모바일 기기 체크
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        const isAndroid = /Android/i.test(navigator.userAgent);
-        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-        if (isMobile) {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              const currentLat = position.coords.latitude;
-              const currentLng = position.coords.longitude;
-              // Android와 iOS 모두 동일한 내비게이션 URL 스키마 사용
-              if (isAndroid || isIOS) {
-                // 네이버 지도 앱 내비게이션 URL
-                const naverAppUrl = `nmap://navigation?slat=${currentLat}&slng=${currentLng}&sname=현재위치&dlat=${placeY}&dlng=${placeX}&dname=${encodeURIComponent(placeName)}&appname=com.example.myapp`;
-                window.location.href = naverAppUrl;
-                // 앱이 없을 경우 스토어로 이동
-                setTimeout(() => {
-                  if (isAndroid) {
-                    window.location.href = 'market://details?id=com.nhn.android.nmap';
-                  } else {
-                    window.location.href = 'http://itunes.apple.com/app/id311867728';
-                  }
-                }, 1000);
-              } else {
-                // 기타 모바일 기기는 모바일 웹으로
-                window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
-              }
-            }, function(error) {
-              console.error("위치 정보 오류:", error);
-              // 위치 정보 실패시 일반 검색
+
+        function closeModal() {
+          modal02.close();
+          resetInputs();
+        }
+
+        function resetInputs() {
+          inputFields.forEach(input => input.value = ""); // 모든 입력 필드 초기화
+          submitButton.disabled = true; // 버튼 비활성화
+        }
+        inputFields.forEach(input => {
+          input.addEventListener("input", checkInputs);
+          input.addEventListener("blur", checkInputs); // 입력 필드 포커스 해제 시도 체크
+        });
+        const inputClearBtn = document.querySelectorAll('.input-field-btn.clear');
+        inputClearBtn.forEach((button, index) => {
+          button.addEventListener("click", function () {
+            inputFields[index].value = ""; // 해당 인덱스의 input 값 지우기
+            checkInputs(); // 버튼 활성화 여부 다시 체크
+          });
+        });
+        // 디데이 카운트
+        var countDownDate = new Date("Mar 16, 2025 15:00:00").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+          // Get today's date and time
+          var now = new Date().getTime();
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          // Output the result in an element with id="demo"
+          // document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+          document.querySelector('.days .num').innerHTML = days;
+          document.querySelector('.hours .num').innerHTML = hours;
+          document.querySelector('.minutes .num').innerHTML = minutes;
+          document.querySelector('.seconds .num').innerHTML = seconds;
+          document.querySelector('.dday-desc .count').innerHTML = days + "일";
+          // If the count down is over, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+        // 네이버 지도 연결
+        document.querySelector(".btn-naver").addEventListener("click", function (e) {
+          e.preventDefault();
+          // 플로렌스 보라매점 정보
+          const placeName = "플로렌스 보라매점";
+          const placeX = "126.9179"; // 경도
+          const placeY = "37.4933"; // 위도
+          // 모바일 기기 체크
+          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+          const isAndroid = /Android/i.test(navigator.userAgent);
+          const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+          if (isMobile) {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function (position) {
+                const currentLat = position.coords.latitude;
+                const currentLng = position.coords.longitude;
+                // Android와 iOS 모두 동일한 내비게이션 URL 스키마 사용
+                if (isAndroid || isIOS) {
+                  // 네이버 지도 앱 내비게이션 URL
+                  const naverAppUrl = `nmap://navigation?slat=${currentLat}&slng=${currentLng}&sname=현재위치&dlat=${placeY}&dlng=${placeX}&dname=${encodeURIComponent(placeName)}&appname=com.example.myapp`;
+                  window.location.href = naverAppUrl;
+                  // 앱이 없을 경우 스토어로 이동
+                  setTimeout(() => {
+                    if (isAndroid) {
+                      window.location.href = 'market://details?id=com.nhn.android.nmap';
+                    } else {
+                      window.location.href = 'http://itunes.apple.com/app/id311867728';
+                    }
+                  }, 1000);
+                } else {
+                  // 기타 모바일 기기는 모바일 웹으로
+                  window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
+                }
+              }, function (error) {
+                console.error("위치 정보 오류:", error);
+                // 위치 정보 실패시 일반 검색
+                if (isAndroid || isIOS) {
+                  window.location.href = `nmap://search?query=${encodeURIComponent(placeName)}`;
+                } else {
+                  window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
+                }
+              }, {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+              });
+            } else {
+              // 위치 정보를 지원하지 않는 경우
               if (isAndroid || isIOS) {
                 window.location.href = `nmap://search?query=${encodeURIComponent(placeName)}`;
               } else {
                 window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
               }
-            }, {
-              enableHighAccuracy: true,
-              timeout: 5000,
-              maximumAge: 0
+            }
+          } else {
+            // PC 버전 코드는 이전과 동일
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(function (position) {
+                const currentLat = position.coords.latitude;
+                const currentLng = position.coords.longitude;
+                const naverMapUrl = `https://map.naver.com/p/directions/${currentLng},${currentLat},현재위치,,LOCATION/${placeX},${placeY},${encodeURIComponent(placeName)},PLACE_POI/-/walk`;
+                window.open(naverMapUrl, '_blank');
+              }, function (error) {
+                console.error("위치 정보 오류:", error);
+                window.open(`https://map.naver.com/p/search/${encodeURIComponent(placeName)}`, '_blank');
+              });
+            } else {
+              window.open(`https://map.naver.com/p/search/${encodeURIComponent(placeName)}`, '_blank');
+            }
+          }
+        });
+        // 카카오 내비 연결
+        document.querySelector(".btn-kakao").addEventListener("click", function () {
+          const placeName = "플로렌스 보라매점";
+          const destinationLat = "37.4967"; // 플로렌스 보라매점 위도
+          const destinationLng = "126.9179"; // 플로렌스 보라매점 경도
+          // 현재 위치 가져오기
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+              const currentLat = position.coords.latitude;
+              const currentLng = position.coords.longitude;
+              // 모바일 기기 확인
+              const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+              if (isMobile) {
+                // 모바일에서는 카카오내비 앱으로 연결
+                const kakaoNaviUrl = `kakaonavi://navigate?ep=${destinationLat},${destinationLng}&by=CAR&ename=${encodeURIComponent(placeName)}`;
+                // Universal Link를 사용한 딥링크
+                const webKakaoNaviUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
+                // 앱 실행 시도
+                location.href = kakaoNaviUrl;
+                // 앱이 없는 경우를 위한 타임아웃
+                setTimeout(function () {
+                  if (confirm('카카오내비 앱이 설치되어 있지 않습니다. 설치하시겠습니까?')) {
+                    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                      location.href = 'https://itunes.apple.com/kr/app/kakaonavi/id417698849';
+                    } else {
+                      location.href = 'https://play.google.com/store/apps/details?id=com.locnall.KimGiSa';
+                    }
+                  } else {
+                    // 앱 설치를 원하지 않는 경우 웹 버전으로 연결
+                    window.open(webKakaoNaviUrl, '_blank');
+                  }
+                }, 1000);
+              } else {
+                // 데스크톱에서는 카카오맵 웹으로 연결
+                const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
+                window.open(webKakaoMapUrl, '_blank');
+              }
+            }, function (error) {
+              console.error("위치 정보를 가져올 수 없습니다:", error);
+              // 위치 정보 없이 목적지로만 이동
+              const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
+              window.open(webKakaoMapUrl, '_blank');
             });
           } else {
             // 위치 정보를 지원하지 않는 경우
-            if (isAndroid || isIOS) {
-              window.location.href = `nmap://search?query=${encodeURIComponent(placeName)}`;
-            } else {
-              window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
-            }
-          }
-        } else {
-          // PC 버전 코드는 이전과 동일
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              const currentLat = position.coords.latitude;
-              const currentLng = position.coords.longitude;
-              const naverMapUrl = `https://map.naver.com/p/directions/${currentLng},${currentLat},현재위치,,LOCATION/${placeX},${placeY},${encodeURIComponent(placeName)},PLACE_POI/-/walk`;
-              window.open(naverMapUrl, '_blank');
-            }, function(error) {
-              console.error("위치 정보 오류:", error);
-              window.open(`https://map.naver.com/p/search/${encodeURIComponent(placeName)}`, '_blank');
-            });
-          } else {
-            window.open(`https://map.naver.com/p/search/${encodeURIComponent(placeName)}`, '_blank');
-          }
-        }
-      });
-      // 카카오 내비 연결
-      document.querySelector(".btn-kakao").addEventListener("click", function() {
-        const placeName = "플로렌스 보라매점";
-        const destinationLat = "37.4967"; // 플로렌스 보라매점 위도
-        const destinationLng = "126.9179"; // 플로렌스 보라매점 경도
-        // 현재 위치 가져오기
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            const currentLat = position.coords.latitude;
-            const currentLng = position.coords.longitude;
-            // 모바일 기기 확인
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            if (isMobile) {
-              // 모바일에서는 카카오내비 앱으로 연결
-              const kakaoNaviUrl = `kakaonavi://navigate?ep=${destinationLat},${destinationLng}&by=CAR&ename=${encodeURIComponent(placeName)}`;
-              // Universal Link를 사용한 딥링크
-              const webKakaoNaviUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
-              // 앱 실행 시도
-              location.href = kakaoNaviUrl;
-              // 앱이 없는 경우를 위한 타임아웃
-              setTimeout(function() {
-                if (confirm('카카오내비 앱이 설치되어 있지 않습니다. 설치하시겠습니까?')) {
-                  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                    location.href = 'https://itunes.apple.com/kr/app/kakaonavi/id417698849';
-                  } else {
-                    location.href = 'https://play.google.com/store/apps/details?id=com.locnall.KimGiSa';
-                  }
-                } else {
-                  // 앱 설치를 원하지 않는 경우 웹 버전으로 연결
-                  window.open(webKakaoNaviUrl, '_blank');
-                }
-              }, 1000);
-            } else {
-              // 데스크톱에서는 카카오맵 웹으로 연결
-              const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
-              window.open(webKakaoMapUrl, '_blank');
-            }
-          }, function(error) {
-            console.error("위치 정보를 가져올 수 없습니다:", error);
-            // 위치 정보 없이 목적지로만 이동
+            console.log("이 브라우저에서는 위치 정보를 지원하지 않습니다.");
             const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
             window.open(webKakaoMapUrl, '_blank');
-          });
-        } else {
-          // 위치 정보를 지원하지 않는 경우
-          console.log("이 브라우저에서는 위치 정보를 지원하지 않습니다.");
-          const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
-          window.open(webKakaoMapUrl, '_blank');
-        }
-      });
-      //카카오뱅크 송금하기
-      document.querySelector(".btn-kakaopay").addEventListener("click", async function() {
-        const accountNumber = document.querySelector(".account-num").textContent;
-        const userChoice = confirm("계좌번호를 복사하고 카카오뱅크 송금 화면으로 이동하시겠습니까?");
-        if (userChoice) {
+          }
+        });
+        //카카오뱅크 송금하기
+        document.querySelector(".btn-kakaopay").addEventListener("click", async function () {
+          const accountNumber = document.querySelector(".account-num").textContent;
+          const userChoice = confirm("계좌번호를 복사하고 카카오뱅크 송금 화면으로 이동하시겠습니까?");
+          if (userChoice) {
+            const copySuccess = await copyAccountNumber();
+            if (copySuccess) {
+              alert('계좌번호가 클립보드에 복사되었습니다. 카카오뱅크 앱으로 이동합니다.');
+              openKakaoBank(accountNumber.replace(/[^0-9]/g, '')); // 숫자만 추출
+            } else {
+              alert('계좌번호 복사에 실패했습니다. 카카오뱅크 앱으로만 이동합니다.');
+              openKakaoBank('');
+            }
+          }
+        });
+        // 계좌번호 복사
+        document.querySelector(".btn-copy").addEventListener("click", async function () {
           const copySuccess = await copyAccountNumber();
           if (copySuccess) {
-            alert('계좌번호가 클립보드에 복사되었습니다. 카카오뱅크 앱으로 이동합니다.');
-            openKakaoBank(accountNumber.replace(/[^0-9]/g, '')); // 숫자만 추출
+            const moveToBank = confirm('계좌번호가 복사되었습니다. 카카오뱅크 송금 화면으로 이동하시겠습니까?');
+            if (moveToBank) {
+              const accountNumber = document.querySelector(".account-num").textContent;
+              openKakaoBank(accountNumber.replace(/[^0-9]/g, '')); // 숫자만 추출
+            }
           } else {
-            alert('계좌번호 복사에 실패했습니다. 카카오뱅크 앱으로만 이동합니다.');
-            openKakaoBank('');
+            alert('계좌번호 복사에 실패했습니다.');
           }
-        }
-      });
-      // 계좌번호 복사
-      document.querySelector(".btn-copy").addEventListener("click", async function() {
-        const copySuccess = await copyAccountNumber();
-        if (copySuccess) {
-          const moveToBank = confirm('계좌번호가 복사되었습니다. 카카오뱅크 송금 화면으로 이동하시겠습니까?');
-          if (moveToBank) {
-            const accountNumber = document.querySelector(".account-num").textContent;
-            openKakaoBank(accountNumber.replace(/[^0-9]/g, '')); // 숫자만 추출
-          }
-        } else {
-          alert('계좌번호 복사에 실패했습니다.');
-        }
-      });
-      // 카카오 초기화 및 공유하기 설정
-      // console.log('DOM Content Loaded');
-      // 카카오 SDK 초기화
-      try {
-        if (!Kakao.isInitialized()) {
-          Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
-          // console.log('Kakao SDK 초기화 상태:', Kakao.isInitialized());
-        }
-      } catch (e) {
-        // console.error('Kakao init error:', e);
-      }
-      const shareButton = document.querySelector('.btn-kakaoshare');
-      // console.log('Share button found:', shareButton);
-      shareButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        console.log('Share button clicked');
-        // SDK가 로드되었는지 확인
-        if (typeof Kakao === 'undefined') {
-          console.error('Kakao SDK가 로드되지 않았습니다.');
-          alert('카카오 SDK를 불러올 수 없습니다.');
-          return;
-        }
-        // SDK 초기화 재시도
-        if (!Kakao.isInitialized()) {
-          try {
+        });
+        // 카카오 초기화 및 공유하기 설정
+        // console.log('DOM Content Loaded');
+        // 카카오 SDK 초기화
+        try {
+          if (!Kakao.isInitialized()) {
             Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
-          } catch (error) {
-            console.error('Kakao 재초기화 실패:', error);
-            alert('카카오 기능을 사용할 수 없습니다.');
+            // console.log('Kakao SDK 초기화 상태:', Kakao.isInitialized());
+          }
+        } catch (e) {
+          // console.error('Kakao init error:', e);
+        }
+        const shareButton = document.querySelector('.btn-kakaoshare');
+        // console.log('Share button found:', shareButton);
+        shareButton.addEventListener('click', function (e) {
+          e.preventDefault();
+          console.log('Share button clicked');
+          // SDK가 로드되었는지 확인
+          if (typeof Kakao === 'undefined') {
+            console.error('Kakao SDK가 로드되지 않았습니다.');
+            alert('카카오 SDK를 불러올 수 없습니다.');
             return;
           }
-        }
-        try {
-          console.log('공유하기 시도...');
-          Kakao.Share.sendDefault({
-            objectType: 'feed',
-            content: {
-              title: '석현이의 돌잔치에 초대합니다',
-              description: '2025년 3월 16일 일요일 오후 3시\n플로렌스파티하우스 보라매점 29층',
-              imageUrl: 'https://seokhyeonparty.netlify.app/assets/images/img-main-top.png',
-              link: {
-                webUrl: 'https://seokhyeonparty.netlify.app',
-                mobileWebUrl: 'https://seokhyeonparty.netlify.app'
-              }
+          // SDK 초기화 재시도
+          if (!Kakao.isInitialized()) {
+            try {
+              Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
+            } catch (error) {
+              console.error('Kakao 재초기화 실패:', error);
+              alert('카카오 기능을 사용할 수 없습니다.');
+              return;
             }
-          });
-        } catch (error) {
-          console.error('카카오 공유하기 에러:', error);
-          alert('카카오톡 공유하기를 사용할 수 없습니다.');
-        }
-      });
-      // 링크 복사
-      document.querySelector('.btn-link').addEventListener('click', function() {
-        const currentUrl = window.location.href; // 현재 페이지의 URL을 가져옵니다.
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(currentUrl).then(function() {
-            alert('링크가 클립보드에 복사되었습니다.');
-          }).catch(function(err) {
-            console.error('링크 복사 실패:', err);
-          });
-        } else {
-          // Clipboard API를 지원하지 않는 경우
-          var tempInput2 = document.createElement('input');
-          tempInput2.readOnly = true;
-          tempInput2.value = currentUrl;
-          document.body.appendChild(tempInput2);
-          tempInput2.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput2);
-          alert('링크가 클립보드에 복사되었습니다.');
-        }
-      });
-      // 스크롤 이벤트
-      document.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('.contents-layer-wrap');
-        const scrollPosition = window.scrollY + window.innerHeight;
-        sections.forEach(section => {
-          if (section.offsetTop < scrollPosition) {
-            section.classList.add('fade-in');
-          } else {
-            section.classList.remove('fade-in');
+          }
+          try {
+            console.log('공유하기 시도...');
+            Kakao.Share.sendDefault({
+              objectType: 'feed',
+              content: {
+                title: '석현이의 돌잔치에 초대합니다',
+                description: '2025년 3월 16일 일요일 오후 3시\n플로렌스파티하우스 보라매점 29층',
+                imageUrl: 'https://seokhyeonparty.netlify.app/assets/images/img-main-top.png',
+                link: {
+                  webUrl: 'https://seokhyeonparty.netlify.app',
+                  mobileWebUrl: 'https://seokhyeonparty.netlify.app'
+                }
+              }
+            });
+          } catch (error) {
+            console.error('카카오 공유하기 에러:', error);
+            alert('카카오톡 공유하기를 사용할 수 없습니다.');
           }
         });
-      });
-    })
-
-  </script>
-  <script>
-    // Supabase 클라이언트 설정
-    const supabaseUrl = 'https://cnimbijddrxtbqkljwml.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI';
-    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
-    // 댓글 로드 함수
-    async function loadComments() {
-      try {
-        const {
-          data,
-          error
-        } = await supabaseClient.from('seokhyeonpartyDb').select('*').order('date', {
-          ascending: false
+        // 링크 복사
+        document.querySelector('.btn-link').addEventListener('click', function () {
+          const currentUrl = window.location.href; // 현재 페이지의 URL을 가져옵니다.
+          if (navigator.clipboard) {
+            navigator.clipboard.writeText(currentUrl).then(function () {
+              alert('링크가 클립보드에 복사되었습니다.');
+            }).catch(function (err) {
+              console.error('링크 복사 실패:', err);
+            });
+          } else {
+            // Clipboard API를 지원하지 않는 경우
+            var tempInput2 = document.createElement('input');
+            tempInput2.readOnly = true;
+            tempInput2.value = currentUrl;
+            document.body.appendChild(tempInput2);
+            tempInput2.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput2);
+            alert('링크가 클립보드에 복사되었습니다.');
+          }
         });
-        if (error) throw error;
-        const commentList = document.querySelector('.messages-wrap');
-        if (!commentList) {
-          console.error('댓글 목록 컨테이너를 찾을 수 없습니다');
-          return;
-        }
-        if (!data || data.length === 0) {
-          commentList.innerHTML = '<p>아직 댓글이 없습니다.</p>';
-          return;
-        }
-        commentList.innerHTML = '';
-        data.forEach(comment => {
-          const commentDate = new Date(comment.date);
-          const formattedDate = commentDate.toLocaleString('ko-KR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: false
+        // 스크롤 이벤트
+        document.addEventListener('scroll', () => {
+          const sections = document.querySelectorAll('.contents-layer-wrap');
+          const scrollPosition = window.scrollY + window.innerHeight;
+          sections.forEach(section => {
+            if (section.offsetTop < scrollPosition) {
+              section.classList.add('fade-in');
+            } else {
+              section.classList.remove('fade-in');
+            }
           });
-          const div = document.createElement('div');
-          div.innerHTML = `
+        });
+      })
+    </script>
+    <script>
+      // Supabase 클라이언트 설정
+      const supabaseUrl = 'https://cnimbijddrxtbqkljwml.supabase.co';
+      const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI';
+      const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+      // 댓글 로드 함수
+      async function loadComments() {
+        try {
+          const {
+            data,
+            error
+          } = await supabaseClient.from('seokhyeonpartyDb').select('*').order('date', {
+            ascending: false
+          });
+          if (error) throw error;
+          const commentList = document.querySelector('.messages-wrap');
+          if (!commentList) {
+            console.error('댓글 목록 컨테이너를 찾을 수 없습니다');
+            return;
+          }
+          if (!data || data.length === 0) {
+            commentList.innerHTML = '<p>아직 댓글이 없습니다.</p>';
+            return;
+          }
+          commentList.innerHTML = '';
+          data.forEach(comment => {
+            const commentDate = new Date(comment.date);
+            const formattedDate = commentDate.toLocaleString('ko-KR', {
+              year: 'numeric',
+              month: '2-digit',
+              day: '2-digit',
+              hour: '2-digit',
+              minute: '2-digit',
+              hour12: false
+            });
+            const div = document.createElement('div');
+            div.innerHTML = `
               <div class="messages-box">
                 <div class="top">
                   <span class="name">${comment.author}</span>
@@ -881,150 +988,148 @@
                 <div class="bottom">${comment.comment}</div>
               </div>
             `;
-          commentList.appendChild(div);
-          // 삭제 버튼에 이벤트 리스너 추가
-          const deleteButton = div.querySelector('.btn-del');
-          deleteButton.addEventListener('click', async () => {
-            const password = prompt('비밀번호를 입력하세요:');
-            if (!password) return; // 취소를 누른 경우
-            try {
-              // 비밀번호 확인을 위해 해당 댓글 데이터 조회
-              const {
-                data: commentData,
-                error: commentError
-              } = await supabaseClient.from('seokhyeonpartyDb').select('password').eq('id', comment.id).single();
-              if (commentError) throw commentError;
-              // 비밀번호 검증
-              if (commentData.password === password) {
-                // 비밀번호가 일치하면 삭제 실행
+            commentList.appendChild(div);
+            // 삭제 버튼에 이벤트 리스너 추가
+            const deleteButton = div.querySelector('.btn-del');
+            deleteButton.addEventListener('click', async () => {
+              const password = prompt('비밀번호를 입력하세요:');
+              if (!password) return; // 취소를 누른 경우
+              try {
+                // 비밀번호 확인을 위해 해당 댓글 데이터 조회
                 const {
-                  error: deleteError
-                } = await supabaseClient.from('seokhyeonpartyDb').delete().eq('id', comment.id);
-                if (deleteError) throw deleteError;
-                alert('댓글이 삭제되었습니다.');
-                // 댓글 목록 새로고침
-                loadComments();
-              } else {
-                alert('비밀번호가 일치하지 않습니다.');
+                  data: commentData,
+                  error: commentError
+                } = await supabaseClient.from('seokhyeonpartyDb').select('password').eq('id', comment.id).single();
+                if (commentError) throw commentError;
+                // 비밀번호 검증
+                if (commentData.password === password) {
+                  // 비밀번호가 일치하면 삭제 실행
+                  const {
+                    error: deleteError
+                  } = await supabaseClient.from('seokhyeonpartyDb').delete().eq('id', comment.id);
+                  if (deleteError) throw deleteError;
+                  alert('댓글이 삭제되었습니다.');
+                  // 댓글 목록 새로고침
+                  loadComments();
+                } else {
+                  alert('비밀번호가 일치하지 않습니다.');
+                }
+              } catch (error) {
+                console.error('댓글 삭제 중 오류 발생:', error);
+                alert('댓글 삭제에 실패했습니다.');
               }
-            } catch (error) {
-              console.error('댓글 삭제 중 오류 발생:', error);
-              alert('댓글 삭제에 실패했습니다.');
-            }
+            });
           });
-        });
-      } catch (error) {
-        console.error('댓글 로딩 에러:', error);
+        } catch (error) {
+          console.error('댓글 로딩 에러:', error);
+        }
       }
-    }
-    // 페이지 로드 시 실행
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.querySelector('.comment-form');
-      const submitButton = form ? form.querySelector('.btn-submit') : null;
-      if (form && submitButton) {
-        // clear 버튼 이벤트
-        form.querySelectorAll('.input-field-btn.clear').forEach(button => {
-          button.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const input = button.closest('.input-field').querySelector('.input, .textarea');
-            if (input) {
-              input.value = '';
-              checkFormValidity();
-            }
+      // 페이지 로드 시 실행
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('.comment-form');
+        const submitButton = form ? form.querySelector('.btn-submit') : null;
+        if (form && submitButton) {
+          // clear 버튼 이벤트
+          form.querySelectorAll('.input-field-btn.clear').forEach(button => {
+            button.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const input = button.closest('.input-field').querySelector('.input, .textarea');
+              if (input) {
+                input.value = '';
+                checkFormValidity();
+              }
+            });
           });
-        });
-        // 비밀번호 토글 버튼 이벤트
-        const passwordToggle = form.querySelector('.password-state');
-        if (passwordToggle) {
-          passwordToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const passwordInput = document.getElementById('password');
-            if (passwordInput) {
-              console.log(passwordInput)
-              passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
-              passwordToggle.classList.toggle('show');
-            }
-          });
-        }
-        // 입력 필드 변경 감지
-        function checkFormValidity() {
-          const author = document.getElementById('author').value.trim();
-          const password = document.getElementById('password').value.trim();
-          const comment = document.getElementById('comment').value.trim();
-          submitButton.disabled = !(author && password && comment);
-        }
-        form.querySelectorAll('input, textarea').forEach(input => {
-          input.addEventListener('input', checkFormValidity);
-        });
-        // submit 버튼 이벤트
-        submitButton.addEventListener('click', async (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          if (!submitButton.disabled) {
+          // 비밀번호 토글 버튼 이벤트
+          const passwordToggle = form.querySelector('.password-state');
+          if (passwordToggle) {
+            passwordToggle.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const passwordInput = document.getElementById('password');
+              if (passwordInput) {
+                console.log(passwordInput)
+                passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+                passwordToggle.classList.toggle('show');
+              }
+            });
+          }
+          // 입력 필드 변경 감지
+          function checkFormValidity() {
             const author = document.getElementById('author').value.trim();
             const password = document.getElementById('password').value.trim();
             const comment = document.getElementById('comment').value.trim();
-            try {
-              const {
-                error
-              } = await supabaseClient.from('seokhyeonpartyDb').insert([{
-                author,
-                password,
-                comment,
-                date: new Date().toISOString()
-              }]);
-              if (error) throw error;
-              alert('댓글이 작성되었습니다!');
-              form.reset();
-              submitButton.disabled = true;
-              loadComments();
-            } catch (error) {
-              console.error('에러:', error);
-              alert('댓글 작성 실패: ' + error.message);
-            }
+            submitButton.disabled = !(author && password && comment);
           }
-        });
-        // 초기 댓글 로드
-        loadComments();
-      }
-    });
-
-  </script>
-  <script>
-    // 계좌번호 복사 함수
-    async function copyAccountNumber() {
-      const accountNumber = document.querySelector(".account-num").textContent;
-      try {
-        if (navigator.clipboard) {
-          await navigator.clipboard.writeText(accountNumber);
-          return true;
-        } else {
-          // Clipboard API를 지원하지 않는 경우
-          const tempInput = document.createElement('input');
-          tempInput.readOnly = true;
-          tempInput.value = accountNumber;
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput);
-          return true;
+          form.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', checkFormValidity);
+          });
+          // submit 버튼 이벤트
+          submitButton.addEventListener('click', async (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (!submitButton.disabled) {
+              const author = document.getElementById('author').value.trim();
+              const password = document.getElementById('password').value.trim();
+              const comment = document.getElementById('comment').value.trim();
+              try {
+                const {
+                  error
+                } = await supabaseClient.from('seokhyeonpartyDb').insert([{
+                  author,
+                  password,
+                  comment,
+                  date: new Date().toISOString()
+                }]);
+                if (error) throw error;
+                alert('댓글이 작성되었습니다!');
+                form.reset();
+                submitButton.disabled = true;
+                loadComments();
+              } catch (error) {
+                console.error('에러:', error);
+                alert('댓글 작성 실패: ' + error.message);
+              }
+            }
+          });
+          // 초기 댓글 로드
+          loadComments();
         }
-      } catch (err) {
-        console.error('복사 실패:', err);
-        return false;
+      });
+    </script>
+    <script>
+      // 계좌번호 복사 함수
+      async function copyAccountNumber() {
+        const accountNumber = document.querySelector(".account-num").textContent;
+        try {
+          if (navigator.clipboard) {
+            await navigator.clipboard.writeText(accountNumber);
+            return true;
+          } else {
+            // Clipboard API를 지원하지 않는 경우
+            const tempInput = document.createElement('input');
+            tempInput.readOnly = true;
+            tempInput.value = accountNumber;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            return true;
+          }
+        } catch (err) {
+          console.error('복사 실패:', err);
+          return false;
+        }
       }
-    }
-    // 카카오뱅크 송금 함수
-    function openKakaoBank(accountNumber) {
-      // 카카오뱅크 송금 URL 스키마 (계좌번호 포함)
-      const kakaoBankUrl = `kakaobank://transfer?receiver_acc=${accountNumber}`;
-      window.location.href = kakaoBankUrl;
-    }
-
-  </script>
-  <!-- <script>
+      // 카카오뱅크 송금 함수
+      function openKakaoBank(accountNumber) {
+        // 카카오뱅크 송금 URL 스키마 (계좌번호 포함)
+        const kakaoBankUrl = `kakaobank://transfer?receiver_acc=${accountNumber}`;
+        window.location.href = kakaoBankUrl;
+      }
+    </script>
+    <!-- <script>
       // 전역 에러 핸들러 추가
       window.onerror = function (msg, url, line, col, error) {
         console.error('Global error:', {
@@ -1037,8 +1142,8 @@
         return false;
       };
     </script> -->
-  <!-- 여기서부터 지도 관련 스크립트만 body 끝으로 이동 -->
-  <!-- <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+    <!-- 여기서부터 지도 관련 스크립트만 body 끝으로 이동 -->
+    <!-- <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
     <script charset="UTF-8">
       window.addEventListener('load', function () {
         setTimeout(function () {
@@ -1057,6 +1162,5 @@
         }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
       });
     </script> -->
-</body>
-
+  </body>
 </html>

@@ -210,7 +210,7 @@ button,
   // opacity: 0;
   display: none;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in;
 }
 
 .pageClassMain.show {
@@ -511,6 +511,7 @@ button,
     /* 원하는 높이로 조정 가능 */
     >div {
       width: 100%;
+      height: 100%;
     }
 
     .wrap_controllers {
@@ -725,6 +726,11 @@ button,
     @include rem(font-size, 15);
     font-weight: 400;
 
+    &:nth-child(1) {
+      @include rem(width, 90);
+      flex: 0 1 auto;
+    }
+
     &:nth-child(2) {
       @include rem(min-width, 113);
     }
@@ -736,8 +742,8 @@ button,
     justify-content: center;
     @include rem(border-radius, 2.5);
     @include rem(padding, 2.5 5);
-    @include rem(max-width, 110);
-    @include rem(min-width, 110);
+    // @include rem(max-width, 90);
+    @include rem(width, 90);
     @include rem(height, 26);
     min-height: initial;
     border: 1px solid rgb(154, 155, 167);

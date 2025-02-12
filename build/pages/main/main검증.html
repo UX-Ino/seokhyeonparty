@@ -33,6 +33,8 @@
     }(document, 'script', 'kakao-js-sdk');
 
   </script>
+  <!-- 카카오 SDK 스크립트를 이렇게 변경 -->
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"></script>
 </head>
 
 <body>
@@ -196,7 +198,7 @@
             <div class="map">
               <!-- * 카카오맵 - 지도퍼가기 -->
               <!-- 1. 지도 노드 -->
-              <div id="daumRoughmapContainer1739119826020" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+              <div id="daumRoughmapContainer1739380881789" class="root_daum_roughmap root_daum_roughmap_landing"></div>
               <!--
                   2. 설치 스크립트
                   * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
@@ -204,10 +206,14 @@
               <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
               <!-- 3. 실행 스크립트 -->
               <script charset="UTF-8">
-                new daum.roughmap.Lander({
-                  "timestamp": "1739119826020",
-                  "key": "2myu3"
-                }).render();
+                window.addEventListener('load', function() {
+                  setTimeout(function() {
+                    new daum.roughmap.Lander({
+                      "timestamp": "1739380881789",
+                      "key": "2n235",
+                    }).render();
+                  }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
+                });
 
               </script>
             </div>
@@ -530,29 +536,6 @@
           document.querySelector('.modal02').ui.open();
         }, 1000)
       });
-      // input clear
-      const inputClearBtn = document.querySelectorAll('.input-field-btn.clear');
-      inputClearBtn.forEach((e) => {
-        const $input = e.closest('.input-field').querySelector('input')
-        e.addEventListener('click', () => {
-          $input.value = '';
-        })
-      })
-      // passworld
-      const inputPassBtn = document.querySelectorAll('.password-state');
-      inputPassBtn.forEach((e) => {
-        const $input = e.closest('.input-field').querySelector('input')
-        e.addEventListener('click', () => {
-          console.log(e.classList)
-          if ($input.type === "password") {
-            e.classList.add("show")
-            $input.type = "text";
-          } else {
-            e.classList.remove("show")
-            $input.type = "password";
-          }
-        })
-      })
       // 입력시 버튼 활성화
       const inputFields = document.querySelectorAll(".modal02 input, .modal02 textarea");
       const submitButton = document.querySelector(".modal02 .btn-submit");
@@ -580,6 +563,7 @@
         input.addEventListener("input", checkInputs);
         input.addEventListener("blur", checkInputs); // 입력 필드 포커스 해제 시도 체크
       });
+      const inputClearBtn = document.querySelectorAll('.input-field-btn.clear');
       inputClearBtn.forEach((button, index) => {
         button.addEventListener("click", function() {
           inputFields[index].value = ""; // 해당 인덱스의 input 값 지우기
@@ -613,32 +597,74 @@
         }
       }, 1000);
       // 네이버 지도 연결
-      document.querySelector(".btn-naver").addEventListener("click", function() {
+      document.querySelector(".btn-naver").addEventListener("click", function(e) {
+        e.preventDefault();
+        // 플로렌스 보라매점 정보
         const placeName = "플로렌스 보라매점";
-        const placeX = "14129145.4174025"; // 네이버 지도 X좌표
-        const placeY = "4507911.5556359"; // 네이버 지도 Y좌표
-        const placeId = "34882590"; // 장소 ID
-        // 현재 위치 가져오기
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            // 위경도를 네이버 지도 좌표로 변환
-            const currentX = position.coords.longitude * 111319.49079327357;
-            const currentY = Math.log(Math.tan((90 + position.coords.latitude) * Math.PI / 360)) / (Math.PI / 180) * 111319.49079327357;
-            // 네이버 지도 URL 생성 (새로운 형식)
-            const naverMapUrl = `https://map.naver.com/p/directions/` + `${currentX},${currentY},현재위치,,ADDRESS_POI/` + `${placeX},${placeY},${encodeURIComponent(placeName)},${placeId},PLACE_POI/-/walk?c=14.00,0,0,0,dh`;
-            // 새 창에서 네이버 지도 열기
-            window.open(naverMapUrl, "_blank");
-          }, function(error) {
-            // 위치 정보를 가져올 수 없는 경우
-            console.error("위치 정보를 가져올 수 없습니다:", error);
-            const searchUrl = `https://map.naver.com/p/search/${encodeURIComponent(placeName)}`;
-            window.open(searchUrl, "_blank");
-          });
+        const placeX = "126.9179"; // 경도
+        const placeY = "37.4933"; // 위도
+        // 모바일 기기 체크
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const isAndroid = /Android/i.test(navigator.userAgent);
+        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if (isMobile) {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              const currentLat = position.coords.latitude;
+              const currentLng = position.coords.longitude;
+              // Android와 iOS 모두 동일한 내비게이션 URL 스키마 사용
+              if (isAndroid || isIOS) {
+                // 네이버 지도 앱 내비게이션 URL
+                const naverAppUrl = `nmap://navigation?slat=${currentLat}&slng=${currentLng}&sname=현재위치&dlat=${placeY}&dlng=${placeX}&dname=${encodeURIComponent(placeName)}&appname=com.example.myapp`;
+                window.location.href = naverAppUrl;
+                // 앱이 없을 경우 스토어로 이동
+                setTimeout(() => {
+                  if (isAndroid) {
+                    window.location.href = 'market://details?id=com.nhn.android.nmap';
+                  } else {
+                    window.location.href = 'http://itunes.apple.com/app/id311867728';
+                  }
+                }, 1000);
+              } else {
+                // 기타 모바일 기기는 모바일 웹으로
+                window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
+              }
+            }, function(error) {
+              console.error("위치 정보 오류:", error);
+              // 위치 정보 실패시 일반 검색
+              if (isAndroid || isIOS) {
+                window.location.href = `nmap://search?query=${encodeURIComponent(placeName)}`;
+              } else {
+                window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
+              }
+            }, {
+              enableHighAccuracy: true,
+              timeout: 5000,
+              maximumAge: 0
+            });
+          } else {
+            // 위치 정보를 지원하지 않는 경우
+            if (isAndroid || isIOS) {
+              window.location.href = `nmap://search?query=${encodeURIComponent(placeName)}`;
+            } else {
+              window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
+            }
+          }
         } else {
-          // 지오로케이션을 지원하지 않는 브라우저의 경우
-          console.log("이 브라우저에서는 위치 정보를 지원하지 않습니다.");
-          const searchUrl = `https://map.naver.com/p/search/${encodeURIComponent(placeName)}`;
-          window.open(searchUrl, "_blank");
+          // PC 버전 코드는 이전과 동일
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              const currentLat = position.coords.latitude;
+              const currentLng = position.coords.longitude;
+              const naverMapUrl = `https://map.naver.com/p/directions/${currentLng},${currentLat},현재위치,,LOCATION/${placeX},${placeY},${encodeURIComponent(placeName)},PLACE_POI/-/walk`;
+              window.open(naverMapUrl, '_blank');
+            }, function(error) {
+              console.error("위치 정보 오류:", error);
+              window.open(`https://map.naver.com/p/search/${encodeURIComponent(placeName)}`, '_blank');
+            });
+          } else {
+            window.open(`https://map.naver.com/p/search/${encodeURIComponent(placeName)}`, '_blank');
+          }
         }
       });
       // 카카오 내비 연결
@@ -692,48 +718,85 @@
         }
       });
       //카카오뱅크 송금하기
-      document.querySelector(".btn-kakaopay").addEventListener("click", function() {
-        // 카카오뱅크 송금 실행 (스키마 URL 활용)
-        const kakaoBankUrl = "kakaobank://transfer"; // 카카오뱅크 송금화면 호출
-        window.location.href = kakaoBankUrl;
-      });
-      // 계좌번호 복사
-      document.querySelector(".btn-copy").addEventListener("click", function() {
+      document.querySelector(".btn-kakaopay").addEventListener("click", async function() {
         const accountNumber = document.querySelector(".account-num").textContent;
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(accountNumber).then(function() {
-            alert('계좌번호가 클립보드에 복사되었습니다.');
-          }).catch(function(err) {
-            console.error('복사 실패:', err);
-          });
-        } else {
-          // Clipboard API를 지원하지 않는 경우
-          var tempInput = document.createElement('input');
-          tempInput.readOnly = true;
-          tempInput.value = accountNumber;
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput);
-          alert('계좌번호가 클립보드에 복사되었습니다.');
+        const userChoice = confirm("계좌번호를 복사하고 카카오뱅크 송금 화면으로 이동하시겠습니까?");
+        if (userChoice) {
+          const copySuccess = await copyAccountNumber();
+          if (copySuccess) {
+            alert('계좌번호가 클립보드에 복사되었습니다. 카카오뱅크 앱으로 이동합니다.');
+            openKakaoBank(accountNumber.replace(/[^0-9]/g, '')); // 숫자만 추출
+          } else {
+            alert('계좌번호 복사에 실패했습니다. 카카오뱅크 앱으로만 이동합니다.');
+            openKakaoBank('');
+          }
         }
       });
-      // 카카오톡으로 공유하기
-      document.querySelector('.btn-kakaoshare').addEventListener('click', function() {
-        Kakao.Share.sendDefault({
-          objectType: 'feed',
-          content: {
-            title: '석현이의 돌잔치',
-            description: '석현이의 첫 번째 돌잔치에 초대합니다. 많은 축하 부탁드립니다.',
-            imageUrl: 'https://seokhyeonparty.netlify.app/assets/images/img-main-top.png', // 공유할 이미지 URL
-            link: {
-              mobileWebUrl: 'https://seokhyeonparty.netlify.app',
-              webUrl: 'https://seokhyeonparty.netlify.app',
-            },
-          },
-        });
+      // 계좌번호 복사
+      document.querySelector(".btn-copy").addEventListener("click", async function() {
+        const copySuccess = await copyAccountNumber();
+        if (copySuccess) {
+          const moveToBank = confirm('계좌번호가 복사되었습니다. 카카오뱅크 송금 화면으로 이동하시겠습니까?');
+          if (moveToBank) {
+            const accountNumber = document.querySelector(".account-num").textContent;
+            openKakaoBank(accountNumber.replace(/[^0-9]/g, '')); // 숫자만 추출
+          }
+        } else {
+          alert('계좌번호 복사에 실패했습니다.');
+        }
       });
-      // 링크 복사ㅌ
+      // 카카오 초기화 및 공유하기 설정
+      // console.log('DOM Content Loaded');
+      // 카카오 SDK 초기화
+      try {
+        if (!Kakao.isInitialized()) {
+          Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
+          // console.log('Kakao SDK 초기화 상태:', Kakao.isInitialized());
+        }
+      } catch (e) {
+        // console.error('Kakao init error:', e);
+      }
+      const shareButton = document.querySelector('.btn-kakaoshare');
+      // console.log('Share button found:', shareButton);
+      shareButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        console.log('Share button clicked');
+        // SDK가 로드되었는지 확인
+        if (typeof Kakao === 'undefined') {
+          console.error('Kakao SDK가 로드되지 않았습니다.');
+          alert('카카오 SDK를 불러올 수 없습니다.');
+          return;
+        }
+        // SDK 초기화 재시도
+        if (!Kakao.isInitialized()) {
+          try {
+            Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
+          } catch (error) {
+            console.error('Kakao 재초기화 실패:', error);
+            alert('카카오 기능을 사용할 수 없습니다.');
+            return;
+          }
+        }
+        try {
+          console.log('공유하기 시도...');
+          Kakao.Share.sendDefault({
+            objectType: 'feed',
+            content: {
+              title: '석현이의 돌잔치에 초대합니다',
+              description: '2025년 3월 16일 일요일 오후 3시\n플로렌스파티하우스 보라매점 29층',
+              imageUrl: 'https://seokhyeonparty.netlify.app/assets/images/img-main-top.png',
+              link: {
+                webUrl: 'https://seokhyeonparty.netlify.app',
+                mobileWebUrl: 'https://seokhyeonparty.netlify.app'
+              }
+            }
+          });
+        } catch (error) {
+          console.error('카카오 공유하기 에러:', error);
+          alert('카카오톡 공유하기를 사용할 수 없습니다.');
+        }
+      });
+      // 링크 복사
       document.querySelector('.btn-link').addEventListener('click', function() {
         const currentUrl = window.location.href; // 현재 페이지의 URL을 가져옵니다.
         if (navigator.clipboard) {
@@ -795,21 +858,60 @@
         }
         commentList.innerHTML = '';
         data.forEach(comment => {
+          const commentDate = new Date(comment.date);
+          const formattedDate = commentDate.toLocaleString('ko-KR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false
+          });
           const div = document.createElement('div');
           div.innerHTML = `
               <div class="messages-box">
                 <div class="top">
                   <span class="name">${comment.author}</span>
-                  <span class="time">${new Date(comment.date).toLocaleString()}</span>
-                    <button type="button" class="btn-del">
-                      <span class="hide-txt">삭제</span>
-                      <i class="ico ico-del"></i>
-                    </button>
-                  </div>
+                  <span class="time">${formattedDate}</span>
+                  <button class="btn-del" data-comment-id="${comment.id}">
+                    <span class="hide-txt">삭제</span>
+                    <i class="ico ico-del"></i>
+                  </button>
+                </div>
                 <div class="bottom">${comment.comment}</div>
               </div>
             `;
           commentList.appendChild(div);
+          // 삭제 버튼에 이벤트 리스너 추가
+          const deleteButton = div.querySelector('.btn-del');
+          deleteButton.addEventListener('click', async () => {
+            const password = prompt('비밀번호를 입력하세요:');
+            if (!password) return; // 취소를 누른 경우
+            try {
+              // 비밀번호 확인을 위해 해당 댓글 데이터 조회
+              const {
+                data: commentData,
+                error: commentError
+              } = await supabaseClient.from('seokhyeonpartyDb').select('password').eq('id', comment.id).single();
+              if (commentError) throw commentError;
+              // 비밀번호 검증
+              if (commentData.password === password) {
+                // 비밀번호가 일치하면 삭제 실행
+                const {
+                  error: deleteError
+                } = await supabaseClient.from('seokhyeonpartyDb').delete().eq('id', comment.id);
+                if (deleteError) throw deleteError;
+                alert('댓글이 삭제되었습니다.');
+                // 댓글 목록 새로고침
+                loadComments();
+              } else {
+                alert('비밀번호가 일치하지 않습니다.');
+              }
+            } catch (error) {
+              console.error('댓글 삭제 중 오류 발생:', error);
+              alert('댓글 삭제에 실패했습니다.');
+            }
+          });
         });
       } catch (error) {
         console.error('댓글 로딩 에러:', error);
@@ -840,8 +942,9 @@
             e.stopPropagation();
             const passwordInput = document.getElementById('password');
             if (passwordInput) {
+              console.log(passwordInput)
               passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
-              passwordToggle.classList.toggle('active');
+              passwordToggle.classList.toggle('show');
             }
           });
         }
@@ -889,6 +992,71 @@
     });
 
   </script>
+  <script>
+    // 계좌번호 복사 함수
+    async function copyAccountNumber() {
+      const accountNumber = document.querySelector(".account-num").textContent;
+      try {
+        if (navigator.clipboard) {
+          await navigator.clipboard.writeText(accountNumber);
+          return true;
+        } else {
+          // Clipboard API를 지원하지 않는 경우
+          const tempInput = document.createElement('input');
+          tempInput.readOnly = true;
+          tempInput.value = accountNumber;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          return true;
+        }
+      } catch (err) {
+        console.error('복사 실패:', err);
+        return false;
+      }
+    }
+    // 카카오뱅크 송금 함수
+    function openKakaoBank(accountNumber) {
+      // 카카오뱅크 송금 URL 스키마 (계좌번호 포함)
+      const kakaoBankUrl = `kakaobank://transfer?receiver_acc=${accountNumber}`;
+      window.location.href = kakaoBankUrl;
+    }
+
+  </script>
+  <!-- <script>
+      // 전역 에러 핸들러 추가
+      window.onerror = function (msg, url, line, col, error) {
+        console.error('Global error:', {
+          msg,
+          url,
+          line,
+          col,
+          error
+        });
+        return false;
+      };
+    </script> -->
+  <!-- 여기서부터 지도 관련 스크립트만 body 끝으로 이동 -->
+  <!-- <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+    <script charset="UTF-8">
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          new daum.roughmap.Lander({
+            "timestamp": "1739380252194",
+            "key": "2n234",
+            "level": "3", // 확대 레벨 (1: 가장 확대, 14: 가장 축소)
+            "mapWidth": "100%",
+            "position": {
+              "lat": 37.4933, // 위도
+              "lng": 126.9179, // 경도
+              "zoom": true // 자동 중심점 조정
+            },
+            "sizeMode": "fill" // 지도 크기 모드
+          }).render();
+        }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
+      });
+    </script> -->
 </body>
 
 </html>

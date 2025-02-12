@@ -193,7 +193,7 @@
               <div class="map">
                 <!-- * 카카오맵 - 지도퍼가기 -->
                 <!-- 1. 지도 노드 -->
-                <div id="daumRoughmapContainer1739119826020" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                <div id="daumRoughmapContainer1739380881789" class="root_daum_roughmap root_daum_roughmap_landing"></div>
                 <!--
                   2. 설치 스크립트
                   * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
@@ -201,10 +201,14 @@
                 <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
                 <!-- 3. 실행 스크립트 -->
                 <script charset="UTF-8">
-                  new daum.roughmap.Lander({
-                    "timestamp": "1739119826020",
-                    "key": "2myu3"
-                  }).render();
+                  window.addEventListener('load', function () {
+                    setTimeout(function () {
+                      new daum.roughmap.Lander({
+                        "timestamp": "1739380881789",
+                        "key": "2n235",
+                      }).render();
+                    }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
+                  });
                 </script>
               </div>
               <div class="btn-box">
@@ -525,29 +529,6 @@
             document.querySelector('.modal02').ui.open();
           }, 1000)
         });
-        // input clear
-        const inputClearBtn = document.querySelectorAll('.input-field-btn.clear');
-        inputClearBtn.forEach((e) => {
-          const $input = e.closest('.input-field').querySelector('input')
-          e.addEventListener('click', () => {
-            $input.value = '';
-          })
-        })
-        // passworld
-        const inputPassBtn = document.querySelectorAll('.password-state');
-        inputPassBtn.forEach((e) => {
-          const $input = e.closest('.input-field').querySelector('input')
-          e.addEventListener('click', () => {
-            console.log(e.classList)
-            if ($input.type === "password") {
-              e.classList.add("show")
-              $input.type = "text";
-            } else {
-              e.classList.remove("show")
-              $input.type = "password";
-            }
-          })
-        })
         // 입력시 버튼 활성화
         const inputFields = document.querySelectorAll(".modal02 input, .modal02 textarea");
         const submitButton = document.querySelector(".modal02 .btn-submit");
@@ -575,6 +556,7 @@
           input.addEventListener("input", checkInputs);
           input.addEventListener("blur", checkInputs); // 입력 필드 포커스 해제 시도 체크
         });
+        const inputClearBtn = document.querySelectorAll('.input-field-btn.clear');
         inputClearBtn.forEach((button, index) => {
           button.addEventListener("click", function () {
             inputFields[index].value = ""; // 해당 인덱스의 input 값 지우기
@@ -757,29 +739,39 @@
           }
         });
         // 카카오 초기화 및 공유하기 설정
-        console.log('DOM Content Loaded');
+        // console.log('DOM Content Loaded');
         // 카카오 SDK 초기화
         try {
           if (!Kakao.isInitialized()) {
             Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
-            console.log('Kakao SDK 초기화 상태:', Kakao.isInitialized());
+            // console.log('Kakao SDK 초기화 상태:', Kakao.isInitialized());
           }
         } catch (e) {
-          console.error('Kakao init error:', e);
+          // console.error('Kakao init error:', e);
         }
         const shareButton = document.querySelector('.btn-kakaoshare');
-        console.log('Share button found:', shareButton); // 버튼 엘리먼트 확인
-        // 카카오 공유하기 버튼 이벤트
+        // console.log('Share button found:', shareButton);
         shareButton.addEventListener('click', function (e) {
-          console.log('Share button clicked'); // 클릭 이벤트 발생 확인
           e.preventDefault();
-          if (!Kakao.isInitialized()) {
-            console.error('Kakao SDK not initialized');
-            alert('카카오 SDK 초기화에 실패했습니다.');
+          console.log('Share button clicked');
+          // SDK가 로드되었는지 확인
+          if (typeof Kakao === 'undefined') {
+            console.error('Kakao SDK가 로드되지 않았습니다.');
+            alert('카카오 SDK를 불러올 수 없습니다.');
             return;
           }
+          // SDK 초기화 재시도
+          if (!Kakao.isInitialized()) {
+            try {
+              Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
+            } catch (error) {
+              console.error('Kakao 재초기화 실패:', error);
+              alert('카카오 기능을 사용할 수 없습니다.');
+              return;
+            }
+          }
           try {
-            console.log('Attempting to share...'); // 공유 시도 확인
+            console.log('공유하기 시도...');
             Kakao.Share.sendDefault({
               objectType: 'feed',
               content: {
@@ -791,11 +783,6 @@
                   mobileWebUrl: 'https://seokhyeonparty.netlify.app'
                 }
               }
-            }).then(function (response) {
-              console.log('공유 성공:', response);
-            }).catch(function (error) {
-              console.error('공유 실패:', error);
-              alert('카카오톡 공유하기에 실패했습니다.');
             });
           } catch (error) {
             console.error('카카오 공유하기 에러:', error);
@@ -947,8 +934,9 @@
               e.stopPropagation();
               const passwordInput = document.getElementById('password');
               if (passwordInput) {
+                console.log(passwordInput)
                 passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
-                passwordToggle.classList.toggle('active');
+                passwordToggle.classList.toggle('show');
               }
             });
           }
@@ -1026,7 +1014,7 @@
         window.location.href = kakaoBankUrl;
       }
     </script>
-    <script>
+    <!-- <script>
       // 전역 에러 핸들러 추가
       window.onerror = function (msg, url, line, col, error) {
         console.error('Global error:', {
@@ -1038,6 +1026,26 @@
         });
         return false;
       };
-    </script>
+    </script> -->
+    <!-- 여기서부터 지도 관련 스크립트만 body 끝으로 이동 -->
+    <!-- <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+    <script charset="UTF-8">
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          new daum.roughmap.Lander({
+            "timestamp": "1739380252194",
+            "key": "2n234",
+            "level": "3", // 확대 레벨 (1: 가장 확대, 14: 가장 축소)
+            "mapWidth": "100%",
+            "position": {
+              "lat": 37.4933, // 위도
+              "lng": 126.9179, // 경도
+              "zoom": true // 자동 중심점 조정
+            },
+            "sizeMode": "fill" // 지도 크기 모드
+          }).render();
+        }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
+      });
+    </script> -->
   </body>
 </html>

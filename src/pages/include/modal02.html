@@ -1,0 +1,46 @@
+    <!-- 방명록 -->
+    <div class="component-modal modal02">
+      <div class="modal-dimm"></div>
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 class="modal-tit">방명록 작성</h3>
+          </div>
+          <div class="modal-content">
+            <form class="comment-form">
+              <div class="component-input">
+                <div class="input-field">
+                  <input class="input" type="text" id="author" placeholder="작성자" required>
+                  <button type="button" class="input-field-btn clear">
+                    <span class="hide-txt">내용 지우기</span>
+                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="component-input">
+                <div class="input-field">
+                  <input class="input" type="password" id="password" placeholder="비밀번호" required>
+                  <button type="button" class="input-field-btn clear">
+                    <span class="hide-txt">내용 지우기</span>
+                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
+                  </button>
+                  <button type="button" class="input-field-btn password-state">
+                    <span class="hide-txt hide">비밀번호 숨기기</span>
+                    <span class="hide-txt show">비밀번호 표시</span>
+                    <i class="ico-password-state ico-normal" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="component-input">
+                <div class="input-textarea-field">
+                  <textarea id="comment" class="textarea" placeholder="내용을 입력해주세요." required></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn-submit" disabled>저장</button>
+            </form>
+          </div>
+          <button class="modal-close btn"></button>
+        </div>
+      </div>
+    </div>
+    <!-- //방명록 -->

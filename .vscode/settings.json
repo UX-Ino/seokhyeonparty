@@ -76,7 +76,7 @@
   "editor.insertSpaces": true,
   "editor.formatOnSave": true,
   "[html]": {
-    "editor.defaultFormatter": "HookyQR.beautify",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
   "[scss]": {
@@ -105,5 +105,10 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "prettier.semi": true,
-  "svn.ignoreMissingSvnWarning": true
+  "svn.ignoreMissingSvnWarning": true,
+  "javascript.format.insertSpaceBeforeAndAfterOptionalChainOperator": false,
+  "prettier.noSpaceEmptyFn": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

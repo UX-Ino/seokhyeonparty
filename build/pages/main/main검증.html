@@ -35,6 +35,11 @@
   </script>
   <!-- 카카오 SDK 스크립트를 이렇게 변경 -->
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"></script>
+  <script>
+    // 카카오 SDK 초기화
+    Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
+
+  </script>
 </head>
 
 <body>
@@ -116,13 +121,13 @@
             </div>
             <div class="txt">2025년 3월 16일 일요일 오후 3시 </div>
             <div class="calendar">
+              <span class="day">Su</span>
               <span class="day">Mo</span>
               <span class="day">Tu</span>
               <span class="day">We</span>
               <span class="day">Th</span>
               <span class="day">Fr</span>
               <span class="day">Sa</span>
-              <span class="day">Su</span>
               <span class="date faded"></span>
               <span class="date faded"></span>
               <span class="date faded"></span>
@@ -224,7 +229,7 @@
               </button>
               <button class="btn btn-kakao">
                 <i class="ico ico-kakao"></i>
-                <span>카카오네비</span>
+                <span>카카오맵</span>
               </button>
             </div>
             <div class="info-txt">
@@ -235,26 +240,26 @@
         </div>
         <div class="contents-layer-wrap">
           <div class="tit">갤러리</div>
-          <div class="gallery-wrap ">
-            <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-slides-per-group="3" data-props-speed="700" data-props-space-between="8" data-props-loop="false">
+          <div class="gallery-wrap type01">
+            <div class="component-swiper gallery-swiper01" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-slides-per-group="3" data-props-speed="700" data-props-space-between="8" data-props-loop="false">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-01.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-01.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-02.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-02.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-03.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-03.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-04.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-04.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-05.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-05.jpeg" alt="" /></button>
                 </div>
                 <div class="swiper-slide">
-                  <button type="button"><img src="../../assets/images/gallery-01-06.jpeg" alt="" /></button>
+                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-06.jpeg" alt="" /></button>
                 </div>
               </div>
             </div>
@@ -468,6 +473,93 @@
       </div>
     </div>
     <!-- //방명록 -->
+    <!-- 갤러리 -->
+    <div class="component-modal modal03">
+      <div class="modal-dimm"></div>
+      <div class="modal-frame">
+        <div class="modal-container ">
+          <div class="modal-header">
+            <h3 class="modal-tit">갤러리</h3>
+          </div>
+          <div class="modal-content">
+            <div class="gallery-wrap type02">
+              <div class="component-swiper gallery-swiper02" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="1" data-props-speed="700" data-props-space-between="8" data-props-loop="false">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-01.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-02.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-03.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-04.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-05.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-06.jpeg" alt="" />
+                      </div>
+                      <div class="txt-box">
+                        <div class="date">2024.03.19</div>
+                        <div class="desc">석현이 탄신일</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="modal-close btn"></button>
+        </div>
+      </div>
+    </div>
+    <!-- //갤러리 -->
   </div>
   <div class="dimm"></div>
   <script>
@@ -535,6 +627,36 @@
         setTimeout(() => {
           document.querySelector('.modal02').ui.open();
         }, 1000)
+      });
+      // 갤러리 모달
+      const $btnModal03 = document.querySelectorAll('.btn-gallery');
+      const modal03 = document.querySelector('.modal03').ui;
+      // swiper 인스턴스 가져오기
+      const swiper01 = document.querySelector('.gallery-swiper01').swiper;
+      const swiper02 = document.querySelector('.gallery-swiper02').swiper;
+      $btnModal03.forEach((btn, index) => {
+        btn.addEventListener('click', function() {
+          modal03.open();
+          // 모달이 열릴 때 클릭한 이미지의 인덱스로 swiper02 초기화
+          // 모달이 열릴 때 클릭한 이미지의 인덱스로 swiper02 초기화
+          if (swiper02) {
+            // console.log(Math.floor(index / 3) * 3);
+            swiper02.slideTo(index);
+          }
+          setTimeout(() => {
+            document.querySelector('.modal03').ui.open();
+          }, 1000)
+        });
+      });
+      // 모달 닫기 이벤트
+      const modalCloseBtn = document.querySelector('.modal03 .modal-close');
+      modalCloseBtn.addEventListener('click', function() {
+        // 모달이 닫힐 때 swiper01의 인덱스를 swiper02와 동기화
+        if (swiper01 && swiper02) {
+          const currentIndex = swiper02.activeIndex;
+          // console.log(Math.floor(currentIndex / 3) * 3);
+          swiper01.slideTo(currentIndex);
+        }
       });
       // 입력시 버튼 활성화
       const inputFields = document.querySelectorAll(".modal02 input, .modal02 textarea");
@@ -669,52 +791,31 @@
       });
       // 카카오 내비 연결
       document.querySelector(".btn-kakao").addEventListener("click", function() {
-        const placeName = "플로렌스 보라매점";
-        const destinationLat = "37.4967"; // 플로렌스 보라매점 위도
-        const destinationLng = "126.9179"; // 플로렌스 보라매점 경도
-        // 현재 위치 가져오기
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            const currentLat = position.coords.latitude;
-            const currentLng = position.coords.longitude;
-            // 모바일 기기 확인
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            if (isMobile) {
-              // 모바일에서는 카카오내비 앱으로 연결
-              const kakaoNaviUrl = `kakaonavi://navigate?ep=${destinationLat},${destinationLng}&by=CAR&ename=${encodeURIComponent(placeName)}`;
-              // Universal Link를 사용한 딥링크
-              const webKakaoNaviUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
-              // 앱 실행 시도
-              location.href = kakaoNaviUrl;
-              // 앱이 없는 경우를 위한 타임아웃
-              setTimeout(function() {
-                if (confirm('카카오내비 앱이 설치되어 있지 않습니다. 설치하시겠습니까?')) {
-                  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-                    location.href = 'https://itunes.apple.com/kr/app/kakaonavi/id417698849';
-                  } else {
-                    location.href = 'https://play.google.com/store/apps/details?id=com.locnall.KimGiSa';
-                  }
-                } else {
-                  // 앱 설치를 원하지 않는 경우 웹 버전으로 연결
-                  window.open(webKakaoNaviUrl, '_blank');
-                }
-              }, 1000);
-            } else {
-              // 데스크톱에서는 카카오맵 웹으로 연결
-              const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
-              window.open(webKakaoMapUrl, '_blank');
-            }
-          }, function(error) {
-            console.error("위치 정보를 가져올 수 없습니다:", error);
-            // 위치 정보 없이 목적지로만 이동
-            const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
-            window.open(webKakaoMapUrl, '_blank');
-          });
-        } else {
-          // 위치 정보를 지원하지 않는 경우
-          console.log("이 브라우저에서는 위치 정보를 지원하지 않습니다.");
-          const webKakaoMapUrl = `https://map.kakao.com/link/to/${placeName},${destinationLat},${destinationLng}`;
-          window.open(webKakaoMapUrl, '_blank');
+        const placeName = "플로렌스파티하우스 보라매점";
+        const placeId = "86427304";
+        const mapX = "483257";
+        const mapY = "1109096";
+        // 모바일 기기 확인
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        try {
+          // 카카오맵 URL (모바일과 데스크톱 모두 동일하게 적용)
+          const kakaoMapUrl = `https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,${mapX},${mapY}&rt1=&rt2=${encodeURIComponent(placeName)}&rtIds=,${placeId}`;
+          if (isMobile) {
+            // 모바일에서는 현재 창에서 열기
+            window.location.href = kakaoMapUrl;
+          } else {
+            // 데스크톱에서는 새 창에서 열기
+            window.open(kakaoMapUrl, '_blank');
+          }
+        } catch (e) {
+          console.error('카카오맵 실행 중 오류:', e);
+          // 에러 발생 시 기본 검색 URL로 폴백
+          const searchUrl = `https://map.kakao.com/link/search/${encodeURIComponent(placeName)}`;
+          if (isMobile) {
+            window.location.href = searchUrl;
+          } else {
+            window.open(searchUrl, '_blank');
+          }
         }
       });
       //카카오뱅크 송금하기
@@ -859,13 +960,16 @@
         commentList.innerHTML = '';
         data.forEach(comment => {
           const commentDate = new Date(comment.date);
-          const formattedDate = commentDate.toLocaleString('ko-KR', {
+          // 한국 시간대로 변환
+          const kstDate = new Date(commentDate.getTime() + (9 * 60 * 60 * 1000)); // UTC+9 (한국 시간)
+          const formattedDate = kstDate.toLocaleString('ko-KR', {
             year: 'numeric',
             month: '2-digit',
             day: '2-digit',
             hour: '2-digit',
             minute: '2-digit',
-            hour12: false
+            hour12: false,
+            timeZone: 'Asia/Seoul' // 명시적으로 한국 시간대 지정
           });
           const div = document.createElement('div');
           div.innerHTML = `

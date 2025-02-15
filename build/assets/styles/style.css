@@ -6154,7 +6154,6 @@ button,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background-color: red;
 }
 .gallery-wrap.type01 .btn-gallery.hide {
   display: none;

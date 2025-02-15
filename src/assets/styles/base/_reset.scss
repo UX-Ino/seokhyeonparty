@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use "../abstracts"as *;
 
 /* reset */
 *,
@@ -6,6 +6,7 @@
 *::after {
   box-sizing: border-box;
 }
+
 // html 에 font-size, font-weight 등 설정 이유는
 // 1. rem 코딩을 활용하기 위해
 // 2. 다국어 활용을 위해 (lang 으로 분기 설정)
@@ -19,6 +20,7 @@ html {
   // -webkit-user-select:none;
   @include languages();
 }
+
 // rem 코딩일때 화면 리사이즈에 rem 값이 자연스럽게 변하는 미디어 쿼리 분기값 (아래 사이트들 참고)
 // rem 단위를 쓰지 않으면 필요 없는 소스
 // https://css-tricks.com/using-a-mixin-to-take-the-math-out-of-responsive-font-sizes/
@@ -99,14 +101,17 @@ video {
   margin: 0;
   padding: 0;
 }
+
 body {
   color: $global-font-color;
   background-color: $global-background-color;
 }
+
 img {
   border: 0;
   border-style: none;
 }
+
 // img{max-width:100%;} 모바일 일때 설정 여부 확인
 button {
   border: 0;
@@ -114,6 +119,12 @@ button {
   padding: 0;
   cursor: pointer;
 }
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent !important
+}
+
 button,
 input,
 select,
@@ -128,12 +139,15 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 fieldset {
   border: 0;
 }
+
 legend {
   color: #000000;
 }
+
 address,
 caption,
 cite,
@@ -146,14 +160,17 @@ var {
   font-style: normal;
   font-weight: normal;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 caption,
 th {
   text-align: left;
 }
+
 h1,
 h2,
 h3,
@@ -164,6 +181,7 @@ h6 {
   font-weight: normal;
   line-height: 1;
 }
+
 caption,
 hr,
 legend {
@@ -173,11 +191,13 @@ legend {
   text-indent: -9999em;
   line-height: 0;
 }
+
 a {
   color: inherit;
   text-decoration: none;
   background-color: transparent;
 }
+
 // ios border bug 해결소스
 a:visited span {
   border: inherit;
@@ -208,12 +228,16 @@ main {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
 }
+
 @supports (text-decoration-style: dotted) {
   abbr[title] {
-    text-decoration: underline dotted; /* 점선 밑줄을 지원하는 브라우저에서만 적용 */
+    text-decoration: underline dotted;
+    /* 점선 밑줄을 지원하는 브라우저에서만 적용 */
   }
 }
 
@@ -236,9 +260,11 @@ sup {
   position: relative;
   vertical-align: baseline;
 }
+
 sub {
   bottom: -0.25em;
 }
+
 sup {
   top: -0.5em;
 }
@@ -324,8 +350,10 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type="search"] {
-  appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /*
@@ -340,8 +368,10 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive

@@ -371,7 +371,7 @@ button,
   .img {
     width: 100%;
     @include rem(margin-bottom, 16);
-    @include rem(height, 250);
+    height: auto;
     background-color: rgb(244, 241, 238);
     overflow: hidden;
 
@@ -416,6 +416,14 @@ button,
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &.sun {
+      color: #9c2333;
+    }
+
+    &.sat {
+      color: #2e4dc2;
+    }
   }
 
   .date {

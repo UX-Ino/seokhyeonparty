@@ -972,6 +972,11 @@ button {
   cursor: pointer;
 }
 
+a,
+button {
+  -webkit-tap-highlight-color: transparent !important;
+}
+
 button,
 input,
 select,
@@ -1064,14 +1069,17 @@ main {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none; /* 1 */
-  text-decoration: underline; /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
 }
 
 @supports ((-webkit-text-decoration-style: dotted) or (text-decoration-style: dotted)) {
   abbr[title] {
     -webkit-text-decoration: underline dotted;
-    text-decoration: underline dotted; /* 점선 밑줄을 지원하는 브라우저에서만 적용 */
+    text-decoration: underline dotted;
+    /* 점선 밑줄을 지원하는 브라우저에서만 적용 */
   }
 }
 /*
@@ -1185,8 +1193,10 @@ textarea {
 [type=search] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
-  appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+  appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /*
@@ -1203,8 +1213,10 @@ textarea {
  */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
-  appearance: button; /* 1 */
-  font: inherit; /* 2 */
+  appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive
@@ -5851,7 +5863,7 @@ button,
 .parent-wrap .img {
   width: 100%;
   margin-bottom: 1.6rem;
-  height: 25rem;
+  height: auto;
   background-color: rgb(244, 241, 238);
   overflow: hidden;
 }
@@ -5892,13 +5904,11 @@ button,
   justify-self: center;
 }
 .calendar .day {
-  color: rgb(48, 52, 65);
-  font-weight: 500;
-}
-.calendar .day,.calendar .date {
   width: 4rem;
   height: 4rem;
+  color: rgb(48, 52, 65);
   font-size: 1.2rem;
+  font-weight: 500;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -5909,10 +5919,28 @@ button,
   -webkit-justify-content: center;
   justify-content: center;
 }
+.calendar .day.sun {
+  color: #9c2333;
+}
+.calendar .day.sat {
+  color: #2e4dc2;
+}
 .calendar .date {
   border: 0;
   padding: 0;
+  width: 4rem;
+  height: 4rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
   border-radius: 6px;
+  font-size: 1.2rem;
   font-weight: 600;
   border: 2px solid transparent;
   background-color: transparent;

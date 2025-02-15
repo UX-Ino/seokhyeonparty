@@ -320,10 +320,11 @@ button,
   .txt {
     @include rem(margin-top, 17);
     line-height: 1.5;
-    text-align: start;
-    width: 86%;
+    text-align: center;
+    width: 75%;
   }
 }
+
 
 .btn-call {
   @include rem(margin, 17 auto 0);
@@ -393,6 +394,18 @@ button,
 
 .calendar-img {
   @include rem(margin, 20 0);
+  height: 0;
+  padding-bottom: 115%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -52%)
+  }
 }
 
 .calendar {
@@ -503,6 +516,10 @@ button,
 
   .txt {
     @include rem(margin, 20 0);
+
+    &+.txt {
+      @include rem(margin-top, -15);
+    }
   }
 }
 
@@ -636,14 +653,13 @@ button,
     @include rem(gap, 6);
 
     .btn-gallery {
-      width: calc(25% - 4.86px);
+      width: calc(25% - 6px);
       padding-bottom: 25%;
       position: relative;
       overflow: hidden;
-      @include rem(border-radius, 10);
+      @include rem(border-radius, 4);
 
       img {
-        content: '';
         display: block;
         position: absolute;
         top: 0;
@@ -664,6 +680,7 @@ button,
     background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgb(233, 236, 239);
 
+
     .swiper-slide {
       display: flex;
       position: relative;
@@ -676,6 +693,10 @@ button,
       .img {
         height: auto;
         width: 100%;
+        border: 1px solid rgb(233, 236, 239);
+        @include rem(border-radius, 10);
+        overflow: hidden;
+        font-size: 0;
 
         img {
           position: relative;
@@ -846,6 +867,14 @@ button,
       .ico-del {
         margin-left: 0;
       }
+    }
+
+    .name {
+      font-weight: 600;
+    }
+
+    .bottom {
+      @include rem(margin-top, 8);
     }
 
     .time {
@@ -1045,6 +1074,7 @@ button,
           }
 
           span {
+            font-size: 16px;
             @include f16();
             color: #666;
           }

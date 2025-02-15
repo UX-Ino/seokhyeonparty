@@ -5812,8 +5812,8 @@ button,
 .txt-wrap .txt {
   margin-top: 1.7rem;
   line-height: 1.5;
-  text-align: start;
-  width: 86%;
+  text-align: center;
+  width: 75%;
 }
 
 .btn-call {
@@ -5888,11 +5888,24 @@ button,
   align-items: center;
 }
 
-.calendar-img,.calendar {
+.calendar-img {
   margin: 2rem 0rem;
+  height: 0;
+  padding-bottom: 115%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.calendar-img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -52%);
+  transform: translate(-50%, -52%);
 }
 
 .calendar {
+  margin: 2rem 0rem;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   width: -webkit-fit-content;
@@ -6013,6 +6026,9 @@ button,
 }
 .tit-group .txt {
   margin: 2rem 0rem;
+}
+.tit-group .txt + .txt {
+  margin-top: -1.5rem;
 }
 
 .map-wrap #address,
@@ -6138,15 +6154,14 @@ button,
   gap: 0.6rem;
 }
 .gallery-wrap.type01 .btn-gallery {
-  width: -webkit-calc(25% - 4.86px);
-  width: calc(25% - 4.86px);
+  width: -webkit-calc(25% - 6px);
+  width: calc(25% - 6px);
   padding-bottom: 25%;
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 0.4rem;
 }
 .gallery-wrap.type01 .btn-gallery img {
-  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -6180,6 +6195,10 @@ button,
 .gallery-wrap.type02 .swiper-slide .img {
   height: auto;
   width: 100%;
+  border: 1px solid rgb(233, 236, 239);
+  border-radius: 1rem;
+  overflow: hidden;
+  font-size: 0;
 }
 .gallery-wrap.type02 .swiper-slide .img img {
   position: relative;
@@ -6360,6 +6379,12 @@ button,
 }
 .messages-wrap .messages-box .btn-del .ico-del {
   margin-left: 0;
+}
+.messages-wrap .messages-box .name {
+  font-weight: 600;
+}
+.messages-wrap .messages-box .bottom {
+  margin-top: 0.8rem;
 }
 .messages-wrap .messages-box .time {
   margin-left: auto;
@@ -6564,6 +6589,7 @@ button,
   transition: width 0.3s ease;
 }
 .component-modal.gallery-modal .modal-container .modal-content .gallery-swiper02 .pagination-custom span {
+  font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.4;
   color: #666;

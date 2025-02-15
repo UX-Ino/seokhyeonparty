@@ -49,7 +49,7 @@
       <div class="loding-txt">
         <span class="desc">석현이의</span>
         <span class="desc">첫 번째 생일에</span>
-        <span class="desc">초대합니다</span>
+        <span class="desc">초대합니다.</span>
       </div>
     </div>
     <div class="pageClassMain uxg-page-container-main" id="container">
@@ -223,6 +223,7 @@
             <div class="txt">
               서울 동작구 보라매로5길 15 전문건설회관 29층 플로렌스 보라매점
             </div>
+            <div class="txt">지하철 : 신림 보라매병원역 2번 출구에서 26m</div>
           </div>
           <div class="map-wrap">
             <div class="map">
@@ -256,12 +257,6 @@
                 <i class="ico ico-kakao"></i>
                 <span>카카오맵</span>
               </button>
-            </div>
-            <div class="info-txt">
-              <div class="tit">지하철</div>
-              <div class="txt">
-                <em>신림</em> 보라매병원역 2번 출구에서 26m
-              </div>
             </div>
           </div>
         </div>
@@ -434,10 +429,20 @@
                 <div class="swiper-slide">
                   <div class="img-box">
                     <div class="img">
+                      <img src="../../assets/images/img-diary05.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">30일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
                       <img src="../../assets/images/img-diary03.jpeg" alt="" />
                     </div>
                     <div class="txt-box">
-                      <div class="desc">50일</div>
+                      <div class="desc">30일</div>
                     </div>
                   </div>
                 </div>
@@ -451,23 +456,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="swiper-slide">
-                  <div class="img-box">
-                    <div class="img">
-                      <img src="../../assets/images/img-diary05.jpeg" alt="" />
-                    </div>
-                    <div class="txt-box">
-                      <div class="desc">50일</div>
-                    </div>
-                  </div>
-                </div>
+
                 <div class="swiper-slide">
                   <div class="img-box">
                     <div class="img">
                       <img src="../../assets/images/img-diary06.jpeg" alt="" />
                     </div>
                     <div class="txt-box">
-                      <div class="desc">100일</div>
+                      <div class="desc">50일</div>
                     </div>
                   </div>
                 </div>
@@ -1390,7 +1386,7 @@
           Kakao.Share.sendDefault({
             objectType: "feed",
             content: {
-              title: "석현이의 돌잔치에 초대합니다",
+              title: "석현이의 돌잔치에 초대합니다.",
               description: "2025년 3월 16일 일요일 오후 3시\n플로렌스파티하우스 보라매점 29층",
               imageUrl: "https://seokhyeonparty.netlify.app/assets/images/img-intro.jpeg",
               link: {
@@ -1507,7 +1503,7 @@
           // 삭제 버튼에 이벤트 리스너 추가
           const deleteButton = div.querySelector(".btn-del");
           deleteButton.addEventListener("click", async () => {
-            const password = prompt("비밀번호를 입력하세요:");
+            const password = prompt("비밀번호를 입력하세요.");
             if (!password) return; // 취소를 누른 경우
             try {
               // 비밀번호 확인을 위해 해당 댓글 데이터 조회

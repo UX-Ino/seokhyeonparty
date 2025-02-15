@@ -33,6 +33,33 @@ function Modal() {
   let focusTrapInstance, modalDimmSelector, modalCloseBtnSelector;
   let $target, $html, $modalTitle, $modalContainer, $modalDimm;
 
+  // 스크롤 제어 유틸리티
+  function disableScroll() {
+    const scrollStyle = {
+      overflow: "hidden",
+      height: "100vh",
+    };
+    applyStyles(document.body, scrollStyle);
+    applyStyles($html, scrollStyle);
+  }
+
+  // 스크롤 초기화 유틸리티
+  function enableScroll() {
+    const defaultStyle = {
+      overflow: "",
+      height: "auto",
+    };
+    applyStyles(document.body, defaultStyle);
+    applyStyles($html, defaultStyle);
+  }
+
+  // 스타일 적용 유틸리티
+  function applyStyles(element, styles) {
+    Object.entries(styles).forEach(([property, value]) => {
+      element.style[property] = value;
+    });
+  }
+
   {
     /**
      * init
@@ -148,8 +175,6 @@ function Modal() {
     actions.open = () => {
       const zIndex = getTopDepth();
 
-      document.body.style.overflow = "hidden";
-
       $target.style.display = "block";
       $target.style.zIndex = zIndex;
 
@@ -179,8 +204,6 @@ function Modal() {
     };
 
     actions.close = () => {
-      document.body.style.overflow = "";
-
       gsap.timeline().to($modalDimm, {
         duration: 0.15,
         opacity: 0,
@@ -230,10 +253,12 @@ function Modal() {
 
   function open() {
     setState({ state: "open" });
+    disableScroll();
   }
 
   function close() {
     setState({ state: "close" });
+    enableScroll();
   }
 
   component = {

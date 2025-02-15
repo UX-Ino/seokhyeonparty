@@ -1,6 +1,13 @@
 function SwiperComp() {
   const {
-    actions, props, state, setState, setProps, setTarget, addEvent, removeEvent
+    actions,
+    props,
+    state,
+    setState,
+    setProps,
+    setTarget,
+    addEvent,
+    removeEvent,
   } = etUI.hooks.useCore(
     {
       loop: true,
@@ -30,7 +37,12 @@ function SwiperComp() {
   const name = "swiper";
   let component = {};
   // element, selector
-  let $target, $swiper, $swiperNavigation, $swiperPagination, $swiperAutoplay, $swiperSlideToButton;
+  let $target,
+    $swiper,
+    $swiperNavigation,
+    $swiperPagination,
+    $swiperAutoplay,
+    $swiperSlideToButton;
 
   {
     /**
@@ -77,7 +89,12 @@ function SwiperComp() {
      * @param _props
      */
     function update(_props) {
-      if (props && utils.shallowCompare(props, _props) && !$target.getAttribute("data-init")) return;
+      if (
+        props &&
+        utils.shallowCompare(props, _props) &&
+        !$target.getAttribute("data-init")
+      )
+        return;
       destroy();
 
       setProps({ ...props, ..._props });
@@ -106,7 +123,10 @@ function SwiperComp() {
     }
 
     if (navigation) {
-      navigationEl = createHTMLElement("swiper-navigation", $templateHTML.navigation());
+      navigationEl = createHTMLElement(
+        "swiper-navigation",
+        $templateHTML.navigation(),
+      );
       $target.querySelector(".swiper-wrapper").after(navigationEl);
       typeof navigation === "boolean" &&
         setProps({
@@ -118,7 +138,10 @@ function SwiperComp() {
     }
 
     if (pagination) {
-      paginationEl = createHTMLElement("swiper-pagination-wrap", $templateHTML.pagination());
+      paginationEl = createHTMLElement(
+        "swiper-pagination-wrap",
+        $templateHTML.pagination(),
+      );
       $target.querySelector(".swiper-wrapper").after(paginationEl);
       typeof pagination === "boolean" &&
         setProps({
@@ -129,7 +152,10 @@ function SwiperComp() {
     }
 
     if (autoplay) {
-      autoplayEl = createHTMLElement("swiper-autoplay-wrap", $templateHTML.autoplay());
+      autoplayEl = createHTMLElement(
+        "swiper-autoplay-wrap",
+        $templateHTML.autoplay(),
+      );
       $target.querySelector(".swiper-wrapper").after(autoplayEl);
     }
   }

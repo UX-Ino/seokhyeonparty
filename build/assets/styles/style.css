@@ -5722,8 +5722,8 @@ button,
   z-index: 0;
 }
 .top-img-wrap .photo img {
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
 }
 .top-img-wrap .point {
   position: relative;
@@ -5811,8 +5811,9 @@ button,
 }
 .txt-wrap .txt {
   margin-top: 1.7rem;
-  width: 27rem;
-  line-height: 2;
+  line-height: 1.5;
+  text-align: start;
+  width: 86%;
 }
 
 .btn-call {
@@ -5866,6 +5867,7 @@ button,
   height: auto;
   background-color: rgb(244, 241, 238);
   overflow: hidden;
+  font-size: 0;
 }
 .parent-wrap .img img {
   width: 100%;
@@ -6121,6 +6123,42 @@ button,
 .gallery-wrap .swiper-pagination-bullet-active {
   opacity: 1;
 }
+.gallery-wrap.type01 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+.gallery-wrap.type01 .btn-gallery {
+  width: -webkit-calc(25% - 4.86px);
+  width: calc(25% - 4.86px);
+  padding-bottom: 25%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.gallery-wrap.type01 .btn-gallery img {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: red;
+}
+.gallery-wrap.type01 .btn-gallery.hide {
+  display: none;
+}
 .gallery-wrap.type02 {
   background-color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgb(233, 236, 239);
@@ -6178,6 +6216,26 @@ button,
 .gallery-wrap.type02 .swiper-horizontal > .swiper-pagination-bullets,
 .gallery-wrap.type02 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: 3rem;
+}
+.gallery-wrap + .btn-more {
+  margin: 1.7rem auto 0rem;
+  padding: 0.6rem 4rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  background-color: rgb(244, 241, 238);
+  border: 1px solid rgb(244, 241, 238);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 6.4rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: rgb(33, 34, 36);
+  border-radius: 1rem;
 }
 
 .component-accordion {
@@ -6417,43 +6475,33 @@ button,
   margin-left: auto;
   position: relative;
 }
-.phone-box .btn-tel::before {
-  content: "";
-  margin: 0rem 2rem;
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='2' fill='none'%3E%3Cpath fill='%23000' d='M.643.518h.964v.964H.643zm2.437 0h.965v.964H3.08zm4.875 0h.965v.964h-.965zm2.438 0h.964v.964h-.964zm-4.875 0h.964v.964h-.964z'/%3E%3C/svg%3E");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.phone-box .btn-message {
+
+.btn-message {
   padding-left: 2rem;
 }
 
-.modal02 .input-field-btn {
+.guest-modal .input-field-btn {
   background-color: rgb(242, 243, 247);
 }
-.modal02 .input-field-btn.clear {
+.guest-modal .input-field-btn.clear {
   margin-right: 0.8rem;
   height: auto;
   padding: 0.4rem;
   border-radius: 50%;
 }
-.modal02 .ico-clear.ico-normal {
+.guest-modal .ico-clear.ico-normal {
   width: 1.5rem;
   height: 1.5rem;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath stroke='rgba(0, 0, 0, 0.4509803922)' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 18 18 6m0 12L6 6'/%3E%3C/svg%3E");
 }
-.modal02 .password-state {
+.guest-modal .password-state {
   background-color: transparent;
 }
-.modal02 .password-state [class^=ico-] {
+.guest-modal .password-state [class^=ico-] {
   width: 1.8rem;
   height: 1.8rem;
 }
-.modal02 .btn-submit {
+.guest-modal .btn-submit {
   margin-top: 1rem;
   color: rgb(33, 34, 36);
   box-shadow: none;
@@ -6468,7 +6516,7 @@ button,
   border: initial;
   border-radius: 0.6rem;
 }
-.modal02 .btn-submit:disabled {
+.guest-modal .btn-submit:disabled {
   cursor: not-allowed;
   border-color: #d9d9d9;
   color: rgba(0, 0, 0, 0.25);
@@ -6476,23 +6524,61 @@ button,
   box-shadow: none;
 }
 
-.component-modal.modal03 .modal-container {
+.component-modal.gallery-modal .modal-container {
   max-height: 90%;
 }
-.component-modal.modal03 .modal-container .modal-content {
+.component-modal.gallery-modal .modal-container .modal-content {
   max-height: none;
   max-height: initial;
 }
-.component-modal.modal03 .modal-container .modal-content .swiper-slide,.component-modal.modal03 .modal-container .modal-content .swiper-slide .img-box {
+.component-modal.gallery-modal .modal-container .modal-content .gallery-wrap.type02 {
+  padding-bottom: 0;
+}
+.component-modal.gallery-modal .modal-container .modal-content .gallery-wrap.type02 .swiper-slide {
+  padding: 0;
+}
+.component-modal.gallery-modal .modal-container .modal-content .gallery-swiper02 .pagination-custom {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 1rem 0rem;
+}
+.component-modal.gallery-modal .modal-container .modal-content .gallery-swiper02 .pagination-custom .progress__bar {
+  width: 100px;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.component-modal.gallery-modal .modal-container .modal-content .gallery-swiper02 .pagination-custom .progress__bar .progress__fill {
+  display: block;
+  height: 100%;
+  background: #000;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+.component-modal.gallery-modal .modal-container .modal-content .gallery-swiper02 .pagination-custom span {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: #666;
+}
+.component-modal.gallery-modal .modal-container .modal-content .swiper-slide,.component-modal.gallery-modal .modal-container .modal-content .swiper-slide .img-box {
   width: 100%;
 }
-.component-modal.modal03 .modal-container .modal-content .swiper-slide .img {
+.component-modal.gallery-modal .modal-container .modal-content .swiper-slide .img {
   height: 0;
   width: 100%;
   padding-bottom: 130%;
   position: relative;
 }
-.component-modal.modal03 .modal-container .modal-content .swiper-slide .img img {
+.component-modal.gallery-modal .modal-container .modal-content .swiper-slide .img img {
   position: absolute;
   top: 0;
   left: 0;

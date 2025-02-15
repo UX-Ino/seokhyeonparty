@@ -23,28 +23,29 @@
   <!-- <script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
   <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=937a6e2254897fcfacb4449b6fbe0fc1&libraries=services"></script> -->
   <script type="text/javascript">
-    ! function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
+    !(function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s);
       js.id = id;
       js.src = "https://developers.kakao.com/sdk/js/kakao.min.js";
       fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'kakao-js-sdk');
+    })(document, "script", "kakao-js-sdk");
 
   </script>
   <!-- 카카오 SDK 스크립트를 이렇게 변경 -->
   <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"></script>
   <script>
     // 카카오 SDK 초기화
-    Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
+    Kakao.init("937a6e2254897fcfacb4449b6fbe0fc1");
 
   </script>
 </head>
 
 <body>
   <div id="wrap">
-    <div class="loading-wrap" style="display: none;">
+    <div class="loading-wrap" style="display: none">
       <div class="loding-txt">
         <span class="desc">석현이의</span>
         <span class="desc">첫 번째 생일에</span>
@@ -59,14 +60,14 @@
               <img src="../../assets/images/first-birthday.webp" alt="" />
             </div>
             <div class="photo">
-              <img src="../../assets/images/img-main-top.png" alt="" />
+              <img src="../../assets/images/img-main-top02.jpeg" alt="" />
             </div>
             <div class="point">
               <img src="../../assets/images/img-ribbon.png" alt="" />
             </div>
           </div>
           <div class="info-wrap">
-            <div class="name"> 정석현 </div>
+            <div class="name">정석현</div>
             <div class="parent">
               <div class="dad"><span>Dad</span>정인호</div>
               <div class="mon"><span>Mom</span>박선미</div>
@@ -86,9 +87,22 @@
         <div class="contents-layer-wrap">
           <div class="txt-wrap">
             <div class="tit">석현이의 첫 생일에 초대합니다</div>
-            <div class="txt"> 석현이가 태어나 밝고 건강하게 자라 나도록 함께 해주신 여러분들께 감사의 마음을 담아 작은 자리를 마련 했습니다. 바쁘시겠지만 부디 참석해 주시어 석현이의 첫 생일을 축하해 주세요. </div>
+            <div class="txt">
+              24년 3월 19일 오전 9시 42분. <br />
+              38주 만에 빛을 본 석현이가 아낌없는 관심과 사랑을 보내주신
+              덕분에 이쁘고 건강하게 자라 어느덧 일 년이라는 시간을 맞이하게
+              되었습니다. <br />
+              감사드리는 마음으로 약소하게나마 작은 자리를 마련하고자 합니다.
+              <br />
+              석현이와 함께한 감동의 열두 달. <br />
+              마지막 날을 소중한 분들과 함께 시간을 나누고 싶습니다. <br />
+              바쁘시겠지만 부디 참석해 주시어 석현이의 첫 생일을 축하해
+              주세요.
+            </div>
           </div>
-          <button type="button" class="btn-call btn-modal01" data-testid="btn-modal01">연락하기</button>
+          <button type="button" class="btn-call btn-call-modal" data-testid="btn-call-modal">
+            연락하기
+          </button>
         </div>
         <div class="contents-layer-wrap">
           <div class="parent-wrap">
@@ -98,18 +112,24 @@
             <div class="dad-box">
               <!-- <div class="img">
                 </div> -->
+              <div class="txt"><span>아빠</span> 정인호</div>
               <div class="txt">
-                <span>아빠</span> 정인호
+                석현이가 씩씩하고 <br />
+                현명한 아이가 되도록 <br />
+                항상 옆에서 응원하는 <br />
+                아빠가 되겠습니다.
               </div>
-              <div class="txt"> 석현이가 씩씩하고 <br> 현명한 아이가 되도록 <br> 항상 옆에서 응원하는 <br> 아빠가 되겠습니다. </div>
             </div>
             <div class="mom-box">
               <!-- <div class="img">
                 </div> -->
+              <div class="txt"><span>엄마</span> 박선미</div>
               <div class="txt">
-                <span>엄마</span> 박선미
+                석현이가 건강하고 밝은 아이<br />
+                똑똑하고 바른 아이로<br />
+                자랄 수 있도록 <br />
+                사랑으로 키우겠습니다.
               </div>
-              <div class="txt"> 석현이가 행복한 아이로 <br> 자랄 수 있도록 <br> 축복해주신 모든 분들 <br> 감사합니다 💕 </div>
             </div>
           </div>
         </div>
@@ -117,17 +137,17 @@
           <div class="calendar-wrap">
             <div class="tit">행사일</div>
             <div class="calendar-img">
-              <img src="../../assets/images/img-main-top.png" alt="" />
+              <img src="../../assets/images/img-calendar01.jpeg" alt="" />
             </div>
-            <div class="txt">2025년 3월 16일 일요일 오후 3시 </div>
+            <div class="txt">2025년 3월 16일 일요일 오후 3시</div>
             <div class="calendar">
-              <span class="day">Su</span>
-              <span class="day">Mo</span>
-              <span class="day">Tu</span>
-              <span class="day">We</span>
-              <span class="day">Th</span>
-              <span class="day">Fr</span>
-              <span class="day">Sa</span>
+              <span class="day sun">SUN</span>
+              <span class="day">MON</span>
+              <span class="day">TUE</span>
+              <span class="day">WED</span>
+              <span class="day">THU</span>
+              <span class="day">FRI</span>
+              <span class="day sat">SAT</span>
               <span class="date faded"></span>
               <span class="date faded"></span>
               <span class="date faded"></span>
@@ -142,7 +162,7 @@
               <span class="date">6</span>
               <span class="date">7</span>
               <span class="date">8</span>
-              <span class="date ">9</span>
+              <span class="date">9</span>
               <span class="date">10</span>
               <span class="date">11</span>
               <span class="date">12</span>
@@ -152,7 +172,7 @@
               <span class="date current-day">16</span>
               <span class="date">17</span>
               <span class="date">18</span>
-              <span class="date ">19</span>
+              <span class="date">19</span>
               <span class="date">20</span>
               <span class="date">21</span>
               <span class="date">22</span>
@@ -191,13 +211,18 @@
                 <span class="tit">seconds</span>
               </div>
             </div>
-            <div class="dday-desc">석현이의 첫번째 생일이 <span class="count">00일</span> 남았습니다.</div>
+            <div class="dday-desc">
+              석현이의 첫번째 생일이
+              <span class="count">00일</span> 남았습니다.
+            </div>
           </div>
         </div>
         <div class="contents-layer-wrap">
           <div class="tit-group">
             <div class="tit">오시는 길</div>
-            <div class="txt">서울 동작구 보라매로5길 15 전문건설회관 29층 플로렌스 보라매점</div>
+            <div class="txt">
+              서울 동작구 보라매로5길 15 전문건설회관 29층 플로렌스 보라매점
+            </div>
           </div>
           <div class="map-wrap">
             <div class="map">
@@ -211,11 +236,11 @@
               <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
               <!-- 3. 실행 스크립트 -->
               <script charset="UTF-8">
-                window.addEventListener('load', function() {
+                window.addEventListener("load", function() {
                   setTimeout(function() {
                     new daum.roughmap.Lander({
-                      "timestamp": "1739380881789",
-                      "key": "2n235",
+                      timestamp: "1739380881789",
+                      key: "2n235",
                     }).render();
                   }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
                 });
@@ -234,72 +259,273 @@
             </div>
             <div class="info-txt">
               <div class="tit">지하철</div>
-              <div class="txt"><em>신림</em> 보라매병원역 2번 출구에서 26m</div>
+              <div class="txt">
+                <em>신림</em> 보라매병원역 2번 출구에서 26m
+              </div>
             </div>
           </div>
         </div>
         <div class="contents-layer-wrap">
           <div class="tit">갤러리</div>
           <div class="gallery-wrap type01">
-            <div class="component-swiper gallery-swiper01" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="3" data-props-slides-per-group="3" data-props-speed="700" data-props-space-between="8" data-props-loop="false">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-01.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-02.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-03.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-04.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-05.jpeg" alt="" /></button>
-                </div>
-                <div class="swiper-slide">
-                  <button type="button" class="btn-gallery"><img src="../../assets/images/gallery-01-06.jpeg" alt="" /></button>
-                </div>
-              </div>
-            </div>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-01.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-02.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-03.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-04.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-05.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-06.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-07.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-08.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-09.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-10.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-11.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-12.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-13.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-14.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-15.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-16.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-17.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-18.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-19.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-20.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-21.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-22.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-23.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-24.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-25.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-26.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-27.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-28.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-29.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-30.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-31.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-32.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-33.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-34.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-35.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-36.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-37.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-38.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-39.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-40.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-41.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-42.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-43.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-44.jpeg" alt="" />
+            </button>
+
+            <button type="button" class="btn-more">더보기</button>
           </div>
         </div>
         <div class="contents-layer-wrap">
           <div class="tit">석현이의 성장기록</div>
           <div class="gallery-wrap type02">
-            <div class="component-swiper" data-component="swiper" data-props-initial-slide="1" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="1" data-props-speed="700" data-props-space-between="8">
+            <div class="component-swiper" data-component="swiper" data-props-initial-slide="0" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="1" data-props-speed="700" data-props-space-between="8">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="img-box">
                     <div class="img">
-                      <img src="../../assets/images/img-main-top.png" alt="" />
+                      <img src="../../assets/images/img-diary01.jpeg" alt="" />
                     </div>
                     <div class="txt-box">
-                      <div class="date">2024.03.19</div>
-                      <div class="desc">석현이 탄신일</div>
+                      <div class="desc">탄생일</div>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="img-box">
                     <div class="img">
-                      <img src="../../assets/images/img-main-top.png" alt="" />
+                      <img src="../../assets/images/img-diary02.jpeg" alt="" />
                     </div>
                     <div class="txt-box">
-                      <div class="date">2024.03.19</div>
-                      <div class="desc">석현이 탄신일</div>
+                      <div class="desc">탄생일</div>
                     </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="img-box">
                     <div class="img">
-                      <img src="../../assets/images/img-main-top.png" alt="" />
+                      <img src="../../assets/images/img-diary03.jpeg" alt="" />
                     </div>
                     <div class="txt-box">
-                      <div class="date">2024.03.19</div>
-                      <div class="desc">석현이 탄신일</div>
+                      <div class="desc">50일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary04.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">50일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary05.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">50일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary06.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">100일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary07.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">100일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary08.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">100일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary09.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">200일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary10.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">200일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary11.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">300일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary12.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">300일</div>
                     </div>
                   </div>
                 </div>
@@ -347,7 +573,7 @@
                   <i class="ico ico-del"></i>
                 </button>
               </div>
-              <div class="bottom"> 축하인사 타임~~~~ </div>
+              <div class="bottom">축하인사 타임~~~~</div>
             </div>
             <div class="messages-box">
               <div class="top">
@@ -358,7 +584,7 @@
                   <i class="ico ico-del"></i>
                 </button>
               </div>
-              <div class="bottom"> 축하인사 타임~~~~ </div>
+              <div class="bottom">축하인사 타임~~~~</div>
             </div>
             <div class="messages-box">
               <div class="top">
@@ -369,7 +595,7 @@
                   <i class="ico ico-del"></i>
                 </button>
               </div>
-              <div class="bottom"> 축하인사 타임~~~~ </div>
+              <div class="bottom">축하인사 타임~~~~</div>
             </div>
           </div>
           <div class="messages-btn-box">
@@ -387,15 +613,18 @@
               <span>링크 복사하기</span>
             </button>
           </div>
-          <div class="tit02">IH ❤️ SM</div>
-          <div class="copyright">Copyright(C) seokhyeon. All Rights Reserved. </div>
+          <!-- <div class="tit02">IH ❤️ SM</div> -->
+          <div class="copyright">
+            Copyright(C) seokhyeon. All Rights Reserved.
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="layer-wrap">
     <!-- 연락하기 -->
-    <div class="component-modal modal01">
+
+    <div class="component-modal call-modal">
       <div class="modal-dimm"></div>
       <div class="modal-frame">
         <div class="modal-container">
@@ -428,7 +657,8 @@
     </div>
     <!-- //연락하기 -->
     <!-- 방명록 -->
-    <div class="component-modal modal02">
+
+    <div class="component-modal guest-modal">
       <div class="modal-dimm"></div>
       <div class="modal-frame">
         <div class="modal-container">
@@ -439,7 +669,7 @@
             <form class="comment-form">
               <div class="component-input">
                 <div class="input-field">
-                  <input class="input" type="text" id="author" placeholder="작성자" required>
+                  <input class="input" type="text" id="author" placeholder="작성자" required />
                   <button type="button" class="input-field-btn clear">
                     <span class="hide-txt">내용 지우기</span>
                     <i class="ico-clear ico-normal" aria-hidden="true"></i>
@@ -448,7 +678,7 @@
               </div>
               <div class="component-input">
                 <div class="input-field">
-                  <input class="input" type="password" id="password" placeholder="비밀번호" required>
+                  <input class="input" type="password" id="password" placeholder="비밀번호" required />
                   <button type="button" class="input-field-btn clear">
                     <span class="hide-txt">내용 지우기</span>
                     <i class="ico-clear ico-normal" aria-hidden="true"></i>
@@ -462,7 +692,12 @@
               </div>
               <div class="component-input">
                 <div class="input-textarea-field">
-                  <textarea id="comment" class="textarea" placeholder="내용을 입력해주세요." required></textarea>
+                  <textarea
+                      id="comment"
+                      class="textarea"
+                      placeholder="내용을 입력해주세요."
+                      required
+                    ></textarea>
                 </div>
               </div>
               <button type="submit" class="btn-submit" disabled>저장</button>
@@ -472,12 +707,15 @@
         </div>
       </div>
     </div>
+
     <!-- //방명록 -->
     <!-- 갤러리 -->
-    <div class="component-modal modal03">
+    <!-- prettier-ignore -->
+
+    <div class="component-modal gallery-modal">
       <div class="modal-dimm"></div>
       <div class="modal-frame">
-        <div class="modal-container ">
+        <div class="modal-container">
           <div class="modal-header">
             <h3 class="modal-tit">갤러리</h3>
           </div>
@@ -490,65 +728,6 @@
                       <div class="img">
                         <img src="../../assets/images/gallery-01-01.jpeg" alt="" />
                       </div>
-                      <div class="txt-box">
-                        <div class="date">2024.03.19</div>
-                        <div class="desc">석현이 탄신일</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-box">
-                      <div class="img">
-                        <img src="../../assets/images/gallery-01-02.jpeg" alt="" />
-                      </div>
-                      <div class="txt-box">
-                        <div class="date">2024.03.19</div>
-                        <div class="desc">석현이 탄신일</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-box">
-                      <div class="img">
-                        <img src="../../assets/images/gallery-01-03.jpeg" alt="" />
-                      </div>
-                      <div class="txt-box">
-                        <div class="date">2024.03.19</div>
-                        <div class="desc">석현이 탄신일</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-box">
-                      <div class="img">
-                        <img src="../../assets/images/gallery-01-04.jpeg" alt="" />
-                      </div>
-                      <div class="txt-box">
-                        <div class="date">2024.03.19</div>
-                        <div class="desc">석현이 탄신일</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-box">
-                      <div class="img">
-                        <img src="../../assets/images/gallery-01-05.jpeg" alt="" />
-                      </div>
-                      <div class="txt-box">
-                        <div class="date">2024.03.19</div>
-                        <div class="desc">석현이 탄신일</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide">
-                    <div class="img-box">
-                      <div class="img">
-                        <img src="../../assets/images/gallery-01-06.jpeg" alt="" />
-                      </div>
-                      <div class="txt-box">
-                        <div class="date">2024.03.19</div>
-                        <div class="desc">석현이 탄신일</div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -559,29 +738,30 @@
         </div>
       </div>
     </div>
+
     <!-- //갤러리 -->
   </div>
   <div class="dimm"></div>
   <script>
     window.onload = function() {
       // // 진입 이벤트
-      const loadingWrap = document.querySelector('.loading-wrap');
-      const pageClassMain = document.querySelector('.pageClassMain');
+      const loadingWrap = document.querySelector(".loading-wrap");
+      const pageClassMain = document.querySelector(".pageClassMain");
       // Show loading screen
-      loadingWrap.style.display = 'block';
-      loadingWrap.style.opacity = '1';
-      pageClassMain.style.display = 'none';
+      loadingWrap.style.display = "block";
+      loadingWrap.style.opacity = "1";
+      pageClassMain.style.display = "none";
       // Initialize loading sequence
       const LOADING_DURATION = 2500;
       const FADE_DURATION = 1000;
       setTimeout(() => {
-        loadingWrap.style.opacity = '0';
+        loadingWrap.style.opacity = "0";
         loadingWrap.style.transition = `opacity ${FADE_DURATION}ms ease-out`;
         setTimeout(() => {
-          loadingWrap.style.display = 'none';
-          pageClassMain.style.display = 'block';
+          loadingWrap.style.display = "none";
+          pageClassMain.style.display = "block";
           requestAnimationFrame(() => {
-            pageClassMain.classList.add('show');
+            pageClassMain.classList.add("show");
           });
         }, FADE_DURATION);
       }, LOADING_DURATION);
@@ -595,14 +775,16 @@
         var distance = countDownDate - now;
         // Time calculations for days, hours, minutes and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.querySelector('.days .num').innerHTML = days;
-        document.querySelector('.hours .num').innerHTML = hours;
-        document.querySelector('.minutes .num').innerHTML = minutes;
-        document.querySelector('.seconds .num').innerHTML = seconds;
-        document.querySelector('.dday-desc .count').innerHTML = days + "일";
+        document.querySelector(".days .num").innerHTML = days;
+        document.querySelector(".hours .num").innerHTML = hours;
+        document.querySelector(".minutes .num").innerHTML = minutes;
+        document.querySelector(".seconds .num").innerHTML = seconds;
+        document.querySelector(".dday-desc .count").innerHTML = days + "일";
         if (distance < 0) {
           clearInterval(x);
           document.getElementById("demo").innerHTML = "EXPIRED";
@@ -612,80 +794,86 @@
 
   </script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener("DOMContentLoaded", function() {
       // 연락하기 모달
-      const $btnModal01 = document.querySelector('.btn-modal01');
-      const modal01 = document.querySelector('.modal01').ui;
-      $btnModal01.addEventListener('click', function() {
-        modal01.open();
+      const $btnCallModal = document.querySelector(".btn-call-modal");
+      const callModal = document.querySelector(".call-modal").ui;
+      $btnCallModal.addEventListener("click", function() {
+        callModal.open();
       });
       // 방명록 모달
-      const $btnModal02 = document.querySelector('.btn-messages');
-      const modal02 = document.querySelector('.modal02').ui;
-      $btnModal02.addEventListener('click', function() {
-        modal02.open();
-        setTimeout(() => {
-          document.querySelector('.modal02').ui.open();
-        }, 1000)
+      const $btnGuestModal = document.querySelector(".btn-messages");
+      const guestModal = document.querySelector(".guest-modal").ui;
+      $btnGuestModal.addEventListener("click", function() {
+        guestModal.open();
       });
+
       // 갤러리 모달
-      const $btnModal03 = document.querySelectorAll('.btn-gallery');
-      const modal03 = document.querySelector('.modal03').ui;
+      const $btnGallery = document.querySelectorAll(".btn-gallery");
+      const galleryModal = document.querySelector(".gallery-modal").ui;
+      const $btnMore = document.querySelector(".btn-more");
       // swiper 인스턴스 가져오기
-      const swiper01 = document.querySelector('.gallery-swiper01').swiper;
-      const swiper02 = document.querySelector('.gallery-swiper02').swiper;
-      $btnModal03.forEach((btn, index) => {
-        btn.addEventListener('click', function() {
-          modal03.open();
-          // 모달이 열릴 때 클릭한 이미지의 인덱스로 swiper02 초기화
-          // 모달이 열릴 때 클릭한 이미지의 인덱스로 swiper02 초기화
+      const swiper02 = document.querySelector(".gallery-swiper02").swiper;
+      $btnGallery.forEach((btn, index) => {
+        console.log(btn, index);
+        if (index >= 16) {
+          btn.classList.add("hide");
+        }
+        btn.addEventListener("click", function() {
+          galleryModal.open();
           if (swiper02) {
-            // console.log(Math.floor(index / 3) * 3);
             swiper02.slideTo(index);
           }
-          setTimeout(() => {
-            document.querySelector('.modal03').ui.open();
-          }, 1000)
         });
       });
-      // 모달 닫기 이벤트
-      const modalCloseBtn = document.querySelector('.modal03 .modal-close');
-      modalCloseBtn.addEventListener('click', function() {
-        // 모달이 닫힐 때 swiper01의 인덱스를 swiper02와 동기화
-        if (swiper01 && swiper02) {
-          const currentIndex = swiper02.activeIndex;
-          // console.log(Math.floor(currentIndex / 3) * 3);
-          swiper01.slideTo(currentIndex);
-        }
+      let isExpanded = false;
+      $btnMore.addEventListener("click", function() {
+        isExpanded = !isExpanded; // 토글 상태 변경
+
+        $btnGallery.forEach((btn, index) => {
+          if (index >= 16) {
+            btn.classList.toggle("hide", !isExpanded);
+          }
+        });
+
+        // 더보기 버튼 텍스트 변경
+        $btnMore.textContent = isExpanded ? "접기" : "더보기";
       });
+
       // 입력시 버튼 활성화
-      const inputFields = document.querySelectorAll(".modal02 input, .modal02 textarea");
-      const submitButton = document.querySelector(".modal02 .btn-submit");
+      const inputFields = document.querySelectorAll(
+        ".guest-modal input, .guest-modal textarea",
+      );
+      const submitButton = document.querySelector(".guest-modal .btn-submit");
 
       function checkInputs() {
-        const allFilled = Array.from(inputFields).every(input => input.value && input.value.trim() !== "");
+        const allFilled = Array.from(inputFields).every(
+          (input) => input.value && input.value.trim() !== "",
+        );
         submitButton.disabled = !allFilled;
         if (allFilled) {
-          submitButton.addEventListener('click', closeModal);
+          submitButton.addEventListener("click", closeModal);
         } else {
-          submitButton.removeEventListener('click', closeModal);
+          submitButton.removeEventListener("click", closeModal);
         }
       }
 
       function closeModal() {
-        modal02.close();
+        guestModal.close();
         resetInputs();
       }
 
       function resetInputs() {
-        inputFields.forEach(input => input.value = ""); // 모든 입력 필드 초기화
+        inputFields.forEach((input) => (input.value = "")); // 모든 입력 필드 초기화
         submitButton.disabled = true; // 버튼 비활성화
       }
-      inputFields.forEach(input => {
+      inputFields.forEach((input) => {
         input.addEventListener("input", checkInputs);
         input.addEventListener("blur", checkInputs); // 입력 필드 포커스 해제 시도 체크
       });
-      const inputClearBtn = document.querySelectorAll('.input-field-btn.clear');
+      const inputClearBtn = document.querySelectorAll(
+        ".input-field-btn.clear",
+      );
       inputClearBtn.forEach((button, index) => {
         button.addEventListener("click", function() {
           inputFields[index].value = ""; // 해당 인덱스의 input 값 지우기
@@ -702,16 +890,18 @@
         var distance = countDownDate - now;
         // Time calculations for days, hours, minutes and seconds
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         // Output the result in an element with id="demo"
         // document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-        document.querySelector('.days .num').innerHTML = days;
-        document.querySelector('.hours .num').innerHTML = hours;
-        document.querySelector('.minutes .num').innerHTML = minutes;
-        document.querySelector('.seconds .num').innerHTML = seconds;
-        document.querySelector('.dday-desc .count').innerHTML = days + "일";
+        document.querySelector(".days .num").innerHTML = days;
+        document.querySelector(".hours .num").innerHTML = hours;
+        document.querySelector(".minutes .num").innerHTML = minutes;
+        document.querySelector(".seconds .num").innerHTML = seconds;
+        document.querySelector(".dday-desc .count").innerHTML = days + "일";
         // If the count down is over, write some text
         if (distance < 0) {
           clearInterval(x);
@@ -719,224 +909,208 @@
         }
       }, 1000);
       // 네이버 지도 연결
-      document.querySelector(".btn-naver").addEventListener("click", function(e) {
-        e.preventDefault();
-        // 플로렌스 보라매점 정보
-        const placeName = "플로렌스 보라매점";
-        const placeX = "126.9179"; // 경도
-        const placeY = "37.4933"; // 위도
-        // 모바일 기기 체크
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        const isAndroid = /Android/i.test(navigator.userAgent);
-        const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-        if (isMobile) {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              const currentLat = position.coords.latitude;
-              const currentLng = position.coords.longitude;
-              // Android와 iOS 모두 동일한 내비게이션 URL 스키마 사용
-              if (isAndroid || isIOS) {
-                // 네이버 지도 앱 내비게이션 URL
-                const naverAppUrl = `nmap://navigation?slat=${currentLat}&slng=${currentLng}&sname=현재위치&dlat=${placeY}&dlng=${placeX}&dname=${encodeURIComponent(placeName)}&appname=com.example.myapp`;
-                window.location.href = naverAppUrl;
-                // 앱이 없을 경우 스토어로 이동
-                setTimeout(() => {
-                  if (isAndroid) {
-                    window.location.href = 'market://details?id=com.nhn.android.nmap';
-                  } else {
-                    window.location.href = 'http://itunes.apple.com/app/id311867728';
-                  }
-                }, 1000);
+      document
+        .querySelector(".btn-naver")
+        .addEventListener("click", function(e) {
+          e.preventDefault();
+          // 플로렌스 보라매점 정보
+          const placeName = "플로렌스 보라매점";
+          // 모바일 기기 체크
+          const isMobile =
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              navigator.userAgent,
+            );
+          if (isMobile) {
+            // 모바일 기기에서는 네이버 지도 앱으로 장소 검색
+            const naverAppUrl = `nmap://search?query=${encodeURIComponent(
+                placeName,
+              )}`;
+            window.location.href = naverAppUrl;
+            // 앱이 없을 경우 스토어로 이동
+            setTimeout(() => {
+              if (/Android/i.test(navigator.userAgent)) {
+                window.location.href =
+                  "market://details?id=com.nhn.android.nmap";
               } else {
-                // 기타 모바일 기기는 모바일 웹으로
-                window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
+                window.location.href =
+                  "http://itunes.apple.com/app/id311867728";
               }
-            }, function(error) {
-              console.error("위치 정보 오류:", error);
-              // 위치 정보 실패시 일반 검색
-              if (isAndroid || isIOS) {
-                window.location.href = `nmap://search?query=${encodeURIComponent(placeName)}`;
-              } else {
-                window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
-              }
-            }, {
-              enableHighAccuracy: true,
-              timeout: 5000,
-              maximumAge: 0
-            });
+            }, 1000);
           } else {
-            // 위치 정보를 지원하지 않는 경우
-            if (isAndroid || isIOS) {
-              window.location.href = `nmap://search?query=${encodeURIComponent(placeName)}`;
+            // PC 버전에서는 네이버 지도 웹으로 장소 검색
+            window.open(
+              `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`,
+              "_blank",
+            );
+          }
+        });
+      // 카카오 내비 연결
+      document
+        .querySelector(".btn-kakao")
+        .addEventListener("click", function() {
+          const placeName = "플로렌스파티하우스 보라매점";
+
+          // 모바일 기기 확인
+          const isMobile =
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+              navigator.userAgent,
+            );
+
+          try {
+            // 카카오맵 검색 URL
+            const kakaoMapUrl = `https://map.kakao.com/link/search/${encodeURIComponent(placeName)}`;
+
+            if (isMobile) {
+              // 모바일에서는 현재 창에서 열기
+              window.location.href = kakaoMapUrl;
             } else {
-              window.location.href = `https://map.naver.com/v5/search/${encodeURIComponent(placeName)}`;
+              // 데스크톱에서는 새 창에서 열기
+              window.open(kakaoMapUrl, "_blank");
+            }
+          } catch (e) {
+            console.error("카카오맵 실행 중 오류:", e);
+            alert("카카오맵 연결 중 오류가 발생했습니다.");
+          }
+        });
+      //카카오뱅크 송금하기
+      document
+        .querySelector(".btn-kakaopay")
+        .addEventListener("click", async function() {
+          const accountNumber =
+            document.querySelector(".account-num").textContent;
+          const userChoice = confirm(
+            "계좌번호를 복사하고 카카오뱅크 송금 화면으로 이동하시겠습니까?",
+          );
+          if (userChoice) {
+            const copySuccess = await copyAccountNumber();
+            if (copySuccess) {
+              alert(
+                "계좌번호가 클립보드에 복사되었습니다. 카카오뱅크 앱으로 이동합니다.",
+              );
+              openKakaoBank(accountNumber.replace(/[^0-9]/g, "")); // 숫자만 추출
+            } else {
+              alert(
+                "계좌번호 복사에 실패했습니다. 카카오뱅크 앱으로만 이동합니다.",
+              );
+              openKakaoBank("");
             }
           }
-        } else {
-          // PC 버전 코드는 이전과 동일
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-              const currentLat = position.coords.latitude;
-              const currentLng = position.coords.longitude;
-              const naverMapUrl = `https://map.naver.com/p/directions/${currentLng},${currentLat},현재위치,,LOCATION/${placeX},${placeY},${encodeURIComponent(placeName)},PLACE_POI/-/walk`;
-              window.open(naverMapUrl, '_blank');
-            }, function(error) {
-              console.error("위치 정보 오류:", error);
-              window.open(`https://map.naver.com/p/search/${encodeURIComponent(placeName)}`, '_blank');
-            });
-          } else {
-            window.open(`https://map.naver.com/p/search/${encodeURIComponent(placeName)}`, '_blank');
-          }
-        }
-      });
-      // 카카오 내비 연결
-      document.querySelector(".btn-kakao").addEventListener("click", function() {
-        const placeName = "플로렌스파티하우스 보라매점";
-        const placeId = "86427304";
-        const mapX = "483257";
-        const mapY = "1109096";
-        // 모바일 기기 확인
-        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        try {
-          // 카카오맵 URL (모바일과 데스크톱 모두 동일하게 적용)
-          const kakaoMapUrl = `https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,${mapX},${mapY}&rt1=&rt2=${encodeURIComponent(placeName)}&rtIds=,${placeId}`;
-          if (isMobile) {
-            // 모바일에서는 현재 창에서 열기
-            window.location.href = kakaoMapUrl;
-          } else {
-            // 데스크톱에서는 새 창에서 열기
-            window.open(kakaoMapUrl, '_blank');
-          }
-        } catch (e) {
-          console.error('카카오맵 실행 중 오류:', e);
-          // 에러 발생 시 기본 검색 URL로 폴백
-          const searchUrl = `https://map.kakao.com/link/search/${encodeURIComponent(placeName)}`;
-          if (isMobile) {
-            window.location.href = searchUrl;
-          } else {
-            window.open(searchUrl, '_blank');
-          }
-        }
-      });
-      //카카오뱅크 송금하기
-      document.querySelector(".btn-kakaopay").addEventListener("click", async function() {
-        const accountNumber = document.querySelector(".account-num").textContent;
-        const userChoice = confirm("계좌번호를 복사하고 카카오뱅크 송금 화면으로 이동하시겠습니까?");
-        if (userChoice) {
+        });
+      // 계좌번호 복사
+      document
+        .querySelector(".btn-copy")
+        .addEventListener("click", async function() {
           const copySuccess = await copyAccountNumber();
           if (copySuccess) {
-            alert('계좌번호가 클립보드에 복사되었습니다. 카카오뱅크 앱으로 이동합니다.');
-            openKakaoBank(accountNumber.replace(/[^0-9]/g, '')); // 숫자만 추출
+            const moveToBank = confirm(
+              "계좌번호가 복사되었습니다. 카카오뱅크 송금 화면으로 이동하시겠습니까?",
+            );
+            if (moveToBank) {
+              const accountNumber =
+                document.querySelector(".account-num").textContent;
+              openKakaoBank(accountNumber.replace(/[^0-9]/g, "")); // 숫자만 추출
+            }
           } else {
-            alert('계좌번호 복사에 실패했습니다. 카카오뱅크 앱으로만 이동합니다.');
-            openKakaoBank('');
+            alert("계좌번호 복사에 실패했습니다.");
           }
-        }
-      });
-      // 계좌번호 복사
-      document.querySelector(".btn-copy").addEventListener("click", async function() {
-        const copySuccess = await copyAccountNumber();
-        if (copySuccess) {
-          const moveToBank = confirm('계좌번호가 복사되었습니다. 카카오뱅크 송금 화면으로 이동하시겠습니까?');
-          if (moveToBank) {
-            const accountNumber = document.querySelector(".account-num").textContent;
-            openKakaoBank(accountNumber.replace(/[^0-9]/g, '')); // 숫자만 추출
-          }
-        } else {
-          alert('계좌번호 복사에 실패했습니다.');
-        }
-      });
+        });
       // 카카오 초기화 및 공유하기 설정
       // console.log('DOM Content Loaded');
       // 카카오 SDK 초기화
       try {
         if (!Kakao.isInitialized()) {
-          Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
+          Kakao.init("937a6e2254897fcfacb4449b6fbe0fc1");
           // console.log('Kakao SDK 초기화 상태:', Kakao.isInitialized());
         }
       } catch (e) {
         // console.error('Kakao init error:', e);
       }
-      const shareButton = document.querySelector('.btn-kakaoshare');
+      const shareButton = document.querySelector(".btn-kakaoshare");
       // console.log('Share button found:', shareButton);
-      shareButton.addEventListener('click', function(e) {
+      shareButton.addEventListener("click", function(e) {
         e.preventDefault();
-        console.log('Share button clicked');
+        console.log("Share button clicked");
         // SDK가 로드되었는지 확인
-        if (typeof Kakao === 'undefined') {
-          console.error('Kakao SDK가 로드되지 않았습니다.');
-          alert('카카오 SDK를 불러올 수 없습니다.');
+        if (typeof Kakao === "undefined") {
+          console.error("Kakao SDK가 로드되지 않았습니다.");
+          alert("카카오 SDK를 불러올 수 없습니다.");
           return;
         }
         // SDK 초기화 재시도
         if (!Kakao.isInitialized()) {
           try {
-            Kakao.init('937a6e2254897fcfacb4449b6fbe0fc1');
+            Kakao.init("937a6e2254897fcfacb4449b6fbe0fc1");
           } catch (error) {
-            console.error('Kakao 재초기화 실패:', error);
-            alert('카카오 기능을 사용할 수 없습니다.');
+            console.error("Kakao 재초기화 실패:", error);
+            alert("카카오 기능을 사용할 수 없습니다.");
             return;
           }
         }
         try {
-          console.log('공유하기 시도...');
+          console.log("공유하기 시도...");
           Kakao.Share.sendDefault({
-            objectType: 'feed',
+            objectType: "feed",
             content: {
-              title: '석현이의 돌잔치에 초대합니다',
-              description: '2025년 3월 16일 일요일 오후 3시\n플로렌스파티하우스 보라매점 29층',
-              imageUrl: 'https://seokhyeonparty.netlify.app/assets/images/img-main-top.png',
+              title: "석현이의 돌잔치에 초대합니다",
+              description: "2025년 3월 16일 일요일 오후 3시\n플로렌스파티하우스 보라매점 29층",
+              imageUrl: "https://seokhyeonparty.netlify.app/assets/images/img-intro.jpeg",
               link: {
-                webUrl: 'https://seokhyeonparty.netlify.app',
-                mobileWebUrl: 'https://seokhyeonparty.netlify.app'
-              }
-            }
+                webUrl: "https://seokhyeonparty.netlify.app",
+                mobileWebUrl: "https://seokhyeonparty.netlify.app",
+              },
+            },
           });
         } catch (error) {
-          console.error('카카오 공유하기 에러:', error);
-          alert('카카오톡 공유하기를 사용할 수 없습니다.');
+          console.error("카카오 공유하기 에러:", error);
+          alert("카카오톡 공유하기를 사용할 수 없습니다.");
         }
       });
       // 링크 복사
-      document.querySelector('.btn-link').addEventListener('click', function() {
-        const currentUrl = window.location.href; // 현재 페이지의 URL을 가져옵니다.
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(currentUrl).then(function() {
-            alert('링크가 클립보드에 복사되었습니다.');
-          }).catch(function(err) {
-            console.error('링크 복사 실패:', err);
-          });
-        } else {
-          // Clipboard API를 지원하지 않는 경우
-          var tempInput2 = document.createElement('input');
-          tempInput2.readOnly = true;
-          tempInput2.value = currentUrl;
-          document.body.appendChild(tempInput2);
-          tempInput2.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput2);
-          alert('링크가 클립보드에 복사되었습니다.');
-        }
-      });
-      // 스크롤 이벤트
-      document.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('.contents-layer-wrap');
-        const scrollPosition = window.scrollY + window.innerHeight;
-        sections.forEach(section => {
-          if (section.offsetTop < scrollPosition) {
-            section.classList.add('fade-in');
+      document
+        .querySelector(".btn-link")
+        .addEventListener("click", function() {
+          const currentUrl = window.location.href; // 현재 페이지의 URL을 가져옵니다.
+          if (navigator.clipboard) {
+            navigator.clipboard
+              .writeText(currentUrl)
+              .then(function() {
+                alert("링크가 클립보드에 복사되었습니다.");
+              })
+              .catch(function(err) {
+                console.error("링크 복사 실패:", err);
+              });
           } else {
-            section.classList.remove('fade-in');
+            // Clipboard API를 지원하지 않는 경우
+            var tempInput2 = document.createElement("input");
+            tempInput2.readOnly = true;
+            tempInput2.value = currentUrl;
+            document.body.appendChild(tempInput2);
+            tempInput2.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput2);
+            alert("링크가 클립보드에 복사되었습니다.");
+          }
+        });
+      // 스크롤 이벤트
+      document.addEventListener("scroll", () => {
+        const sections = document.querySelectorAll(".contents-layer-wrap");
+        const scrollPosition = window.scrollY + window.innerHeight;
+        sections.forEach((section) => {
+          if (section.offsetTop < scrollPosition) {
+            section.classList.add("fade-in");
+          } else {
+            section.classList.remove("fade-in");
           }
         });
       });
-    })
+    });
 
   </script>
   <script>
     // Supabase 클라이언트 설정
-    const supabaseUrl = 'https://cnimbijddrxtbqkljwml.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI';
+    const supabaseUrl = "https://cnimbijddrxtbqkljwml.supabase.co";
+    const supabaseKey =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI";
     const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
     // 댓글 로드 함수
     async function loadComments() {
@@ -944,34 +1118,39 @@
         const {
           data,
           error
-        } = await supabaseClient.from('seokhyeonpartyDb').select('*').order('date', {
-          ascending: false
-        });
+        } = await supabaseClient
+          .from("seokhyeonpartyDb")
+          .select("*")
+          .order("date", {
+            ascending: false,
+          });
         if (error) throw error;
-        const commentList = document.querySelector('.messages-wrap');
+        const commentList = document.querySelector(".messages-wrap");
         if (!commentList) {
-          console.error('댓글 목록 컨테이너를 찾을 수 없습니다');
+          console.error("댓글 목록 컨테이너를 찾을 수 없습니다");
           return;
         }
         if (!data || data.length === 0) {
-          commentList.innerHTML = '<p>아직 댓글이 없습니다.</p>';
+          commentList.innerHTML = "<p>아직 댓글이 없습니다.</p>";
           return;
         }
-        commentList.innerHTML = '';
-        data.forEach(comment => {
+        commentList.innerHTML = "";
+        data.forEach((comment) => {
           const commentDate = new Date(comment.date);
           // 한국 시간대로 변환
-          const kstDate = new Date(commentDate.getTime() + (9 * 60 * 60 * 1000)); // UTC+9 (한국 시간)
-          const formattedDate = kstDate.toLocaleString('ko-KR', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
+          const kstDate = new Date(
+            commentDate.getTime() + 9 * 60 * 60 * 1000,
+          ); // UTC+9 (한국 시간)
+          const formattedDate = kstDate.toLocaleString("ko-KR", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
             hour12: false,
-            timeZone: 'Asia/Seoul' // 명시적으로 한국 시간대 지정
+            timeZone: "Asia/Seoul", // 명시적으로 한국 시간대 지정
           });
-          const div = document.createElement('div');
+          const div = document.createElement("div");
           div.innerHTML = `
               <div class="messages-box">
                 <div class="top">
@@ -987,106 +1166,119 @@
             `;
           commentList.appendChild(div);
           // 삭제 버튼에 이벤트 리스너 추가
-          const deleteButton = div.querySelector('.btn-del');
-          deleteButton.addEventListener('click', async () => {
-            const password = prompt('비밀번호를 입력하세요:');
+          const deleteButton = div.querySelector(".btn-del");
+          deleteButton.addEventListener("click", async () => {
+            const password = prompt("비밀번호를 입력하세요:");
             if (!password) return; // 취소를 누른 경우
             try {
               // 비밀번호 확인을 위해 해당 댓글 데이터 조회
               const {
                 data: commentData,
                 error: commentError
-              } = await supabaseClient.from('seokhyeonpartyDb').select('password').eq('id', comment.id).single();
+              } =
+              await supabaseClient
+                .from("seokhyeonpartyDb")
+                .select("password")
+                .eq("id", comment.id)
+                .single();
               if (commentError) throw commentError;
               // 비밀번호 검증
               if (commentData.password === password) {
                 // 비밀번호가 일치하면 삭제 실행
                 const {
                   error: deleteError
-                } = await supabaseClient.from('seokhyeonpartyDb').delete().eq('id', comment.id);
+                } = await supabaseClient
+                  .from("seokhyeonpartyDb")
+                  .delete()
+                  .eq("id", comment.id);
                 if (deleteError) throw deleteError;
-                alert('댓글이 삭제되었습니다.');
+                alert("댓글이 삭제되었습니다.");
                 // 댓글 목록 새로고침
                 loadComments();
               } else {
-                alert('비밀번호가 일치하지 않습니다.');
+                alert("비밀번호가 일치하지 않습니다.");
               }
             } catch (error) {
-              console.error('댓글 삭제 중 오류 발생:', error);
-              alert('댓글 삭제에 실패했습니다.');
+              console.error("댓글 삭제 중 오류 발생:", error);
+              alert("댓글 삭제에 실패했습니다.");
             }
           });
         });
       } catch (error) {
-        console.error('댓글 로딩 에러:', error);
+        console.error("댓글 로딩 에러:", error);
       }
     }
     // 페이지 로드 시 실행
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.querySelector('.comment-form');
-      const submitButton = form ? form.querySelector('.btn-submit') : null;
+    document.addEventListener("DOMContentLoaded", function() {
+      const form = document.querySelector(".comment-form");
+      const submitButton = form ? form.querySelector(".btn-submit") : null;
       if (form && submitButton) {
         // clear 버튼 이벤트
-        form.querySelectorAll('.input-field-btn.clear').forEach(button => {
-          button.addEventListener('click', (e) => {
+        form.querySelectorAll(".input-field-btn.clear").forEach((button) => {
+          button.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
-            const input = button.closest('.input-field').querySelector('.input, .textarea');
+            const input = button
+              .closest(".input-field")
+              .querySelector(".input, .textarea");
             if (input) {
-              input.value = '';
+              input.value = "";
               checkFormValidity();
             }
           });
         });
         // 비밀번호 토글 버튼 이벤트
-        const passwordToggle = form.querySelector('.password-state');
+        const passwordToggle = form.querySelector(".password-state");
         if (passwordToggle) {
-          passwordToggle.addEventListener('click', (e) => {
+          passwordToggle.addEventListener("click", (e) => {
             e.preventDefault();
             e.stopPropagation();
-            const passwordInput = document.getElementById('password');
+            const passwordInput = document.getElementById("password");
             if (passwordInput) {
-              console.log(passwordInput)
-              passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
-              passwordToggle.classList.toggle('show');
+              console.log(passwordInput);
+              passwordInput.type =
+                passwordInput.type === "password" ? "text" : "password";
+              passwordToggle.classList.toggle("show");
             }
           });
         }
         // 입력 필드 변경 감지
         function checkFormValidity() {
-          const author = document.getElementById('author').value.trim();
-          const password = document.getElementById('password').value.trim();
-          const comment = document.getElementById('comment').value.trim();
+          const author = document.getElementById("author").value.trim();
+          const password = document.getElementById("password").value.trim();
+          const comment = document.getElementById("comment").value.trim();
           submitButton.disabled = !(author && password && comment);
         }
-        form.querySelectorAll('input, textarea').forEach(input => {
-          input.addEventListener('input', checkFormValidity);
+        form.querySelectorAll("input, textarea").forEach((input) => {
+          input.addEventListener("input", checkFormValidity);
         });
         // submit 버튼 이벤트
-        submitButton.addEventListener('click', async (e) => {
+        submitButton.addEventListener("click", async (e) => {
           e.preventDefault();
           e.stopPropagation();
           if (!submitButton.disabled) {
-            const author = document.getElementById('author').value.trim();
-            const password = document.getElementById('password').value.trim();
-            const comment = document.getElementById('comment').value.trim();
+            const author = document.getElementById("author").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const comment = document.getElementById("comment").value.trim();
             try {
               const {
                 error
-              } = await supabaseClient.from('seokhyeonpartyDb').insert([{
-                author,
-                password,
-                comment,
-                date: new Date().toISOString()
-              }]);
+              } = await supabaseClient
+                .from("seokhyeonpartyDb")
+                .insert([{
+                  author,
+                  password,
+                  comment,
+                  date: new Date().toISOString(),
+                }, ]);
               if (error) throw error;
-              alert('댓글이 작성되었습니다!');
+              alert("댓글이 작성되었습니다!");
               form.reset();
               submitButton.disabled = true;
               loadComments();
             } catch (error) {
-              console.error('에러:', error);
-              alert('댓글 작성 실패: ' + error.message);
+              console.error("에러:", error);
+              alert("댓글 작성 실패: " + error.message);
             }
           }
         });
@@ -1099,24 +1291,25 @@
   <script>
     // 계좌번호 복사 함수
     async function copyAccountNumber() {
-      const accountNumber = document.querySelector(".account-num").textContent;
+      const accountNumber =
+        document.querySelector(".account-num").textContent;
       try {
         if (navigator.clipboard) {
           await navigator.clipboard.writeText(accountNumber);
           return true;
         } else {
           // Clipboard API를 지원하지 않는 경우
-          const tempInput = document.createElement('input');
+          const tempInput = document.createElement("input");
           tempInput.readOnly = true;
           tempInput.value = accountNumber;
           document.body.appendChild(tempInput);
           tempInput.select();
-          document.execCommand('copy');
+          document.execCommand("copy");
           document.body.removeChild(tempInput);
           return true;
         }
       } catch (err) {
-        console.error('복사 실패:', err);
+        console.error("복사 실패:", err);
         return false;
       }
     }
@@ -1128,39 +1321,6 @@
     }
 
   </script>
-  <!-- <script>
-      // 전역 에러 핸들러 추가
-      window.onerror = function (msg, url, line, col, error) {
-        console.error('Global error:', {
-          msg,
-          url,
-          line,
-          col,
-          error
-        });
-        return false;
-      };
-    </script> -->
-  <!-- 여기서부터 지도 관련 스크립트만 body 끝으로 이동 -->
-  <!-- <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-    <script charset="UTF-8">
-      window.addEventListener('load', function () {
-        setTimeout(function () {
-          new daum.roughmap.Lander({
-            "timestamp": "1739380252194",
-            "key": "2n234",
-            "level": "3", // 확대 레벨 (1: 가장 확대, 14: 가장 축소)
-            "mapWidth": "100%",
-            "position": {
-              "lat": 37.4933, // 위도
-              "lng": 126.9179, // 경도
-              "zoom": true // 자동 중심점 조정
-            },
-            "sizeMode": "fill" // 지도 크기 모드
-          }).render();
-        }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
-      });
-    </script> -->
 </body>
 
 </html>

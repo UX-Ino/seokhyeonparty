@@ -37,7 +37,7 @@ function Modal() {
   function disableScroll() {
     const scrollStyle = {
       overflow: "hidden",
-      height: "100vh",
+      // height: "100vh",
     };
     applyStyles(document.body, scrollStyle);
     applyStyles($html, scrollStyle);
@@ -47,7 +47,7 @@ function Modal() {
   function enableScroll() {
     const defaultStyle = {
       overflow: "",
-      height: "auto",
+      // height: "auto",
     };
     applyStyles(document.body, defaultStyle);
     applyStyles($html, defaultStyle);

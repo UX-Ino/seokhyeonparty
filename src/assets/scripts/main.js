@@ -331,10 +331,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Supabase 클라이언트 설정
-const supabaseUrl = "https://cnimbijddrxtbqkljwml.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI";
-const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+const supabaseClient = supabase.createClient(window.supabaseUrl, supwindow.supabaseKeyabaseKey);
 
 // 댓글 로드 함수
 async function loadComments() {

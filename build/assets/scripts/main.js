@@ -1,3 +1,7 @@
+window.kakaoKey = window.APP_CONFIG.KAKAO_KEY;
+window.supabaseUrl = window.APP_CONFIG.SUPABASE_URL;
+window.supabaseKey = window.APP_CONFIG.SUPABASE_KEY;
+
 // Kakao SDK 스크립트 동적 로드
 function loadKakaoSDK(callback) {
   const script = document.createElement("script");
@@ -9,7 +13,7 @@ function loadKakaoSDK(callback) {
 // 카카오 SDK 초기화
 window.onload = function () {
   loadKakaoSDK(() => {
-    Kakao.init("937a6e2254897fcfacb4449b6fbe0fc1");
+    Kakao.init(window.kakaoKey);
 
     // 진입 이벤트
     const loadingWrap = document.querySelector(".loading-wrap");
@@ -243,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 카카오 초기화 및 공유하기 설정
     try {
       if (!Kakao.isInitialized()) {
-        Kakao.init("937a6e2254897fcfacb4449b6fbe0fc1");
+        Kakao.init(window.kakaoKey);
       }
     } catch (e) {
       console.error("Kakao init error:", e);
@@ -259,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (!Kakao.isInitialized()) {
         try {
-          Kakao.init("937a6e2254897fcfacb4449b6fbe0fc1");
+          Kakao.init(window.kakaoKey);
         } catch (error) {
           console.error("Kakao 재초기화 실패:", error);
           alert("카카오 기능을 사용할 수 없습니다.");
@@ -327,10 +331,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Supabase 클라이언트 설정
-const supabaseUrl = "https://cnimbijddrxtbqkljwml.supabase.co";
-const supabaseKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNuaW1iaWpkZHJ4dGJxa2xqd21sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzg0MzA3OTQsImV4cCI6MjA1NDAwNjc5NH0.c2wSz6JvkAqW_k6Cui5ygvUPWu-NydXdZaAC1JVsMYI";
-const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+const supabaseClient = supabase.createClient(window.supabaseUrl, supwindow.supabaseKeyabaseKey);
 
 // 댓글 로드 함수
 async function loadComments() {

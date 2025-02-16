@@ -24,7 +24,7 @@ window.onload = function () {
       loadingWrap.style.opacity = "0";
       loadingWrap.style.transition = `opacity ${FADE_DURATION}ms ease-out`;
       setTimeout(() => {
-        loadingWrap.style.display = "none";
+        loadingWrap.remove();
         pageClassMain.style.display = "block";
         requestAnimationFrame(() => {
           pageClassMain.classList.add("show");
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const $btnMore = document.querySelector(".btn-more");
 
     const gallerySwiper = new Swiper(".gallery-swiper02", {
-      effect: "fade",
+      // effect: "fade",
       autoplay: false,
       loop: false,
       slidesPerView: 1,

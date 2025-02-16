@@ -1,6 +1,13 @@
 import gulp from "gulp";
 import chokidar from "chokidar";
-import { __dirname, isBuild, destFolder, srcFolder, projectPaths } from "./gulp/config/paths.js";
+import javascriptObfuscator from "gulp-javascript-obfuscator";
+import {
+  __dirname,
+  isBuild,
+  destFolder,
+  srcFolder,
+  projectPaths,
+} from "./gulp/config/paths.js";
 
 /**
  * 작업 가져오기
@@ -70,9 +77,12 @@ function watcher() {
     gulp.series(handleHTML)();
   });
 
-  const htmlIncludeWatcher = createWatcher(projectPaths.pagesIncludeWatch, () => {
-    gulp.series(handleHtmlInclude)();
-  });
+  const htmlIncludeWatcher = createWatcher(
+    projectPaths.pagesIncludeWatch,
+    () => {
+      gulp.series(handleHtmlInclude)();
+    },
+  );
 
   const scssWatcher = createWatcher(projectPaths.stylesSrc, () => {
     gulp.series(handleSCSS)();
@@ -93,14 +103,35 @@ function watcher() {
   // 여기에 추가적인 watch 로직을 구현하세요.
 }
 
+// JavaScript 난독화 작업
+function obfuscateJS() {
+  return gulp
+    .src("dist/assets/scripts/**/*.js") // 난독화할 파일 경로
+    .pipe(javascriptObfuscator())
+    .pipe(gulp.dest("dist/assets/scripts")); // 난독화된 파일 저장 경로
+}
+
 /**
  * 개발 모드의 병렬 작업
  * */
-const devTasks = gulp.parallel(copy, handleSCSS, handleJS, handleImages, handleFonts);
+const devTasks = gulp.parallel(
+  copy,
+  handleSCSS,
+  handleJS,
+  handleImages,
+  handleFonts,
+);
 /**
  * 빌드 모드의 병렬 작업
  * */
-const buildTasks = gulp.parallel(copy, handleSCSS, handleJS, handleImages, handleFonts);
+const buildTasks = gulp.parallel(
+  copy,
+  handleSCSS,
+  handleJS,
+  handleImages,
+  handleFonts,
+  obfuscateJS,
+);
 
 /**
  * 주요 목표
@@ -129,4 +160,13 @@ gulp.task("default", dev);
 /**
  * 스크립트 내보내기
  * */
-export { dev, build, backupZIP, deployFTP, deploySFTP, checkhtml, checkstyle, svg };
+export {
+  dev,
+  build,
+  backupZIP,
+  deployFTP,
+  deploySFTP,
+  checkhtml,
+  checkstyle,
+  svg,
+};

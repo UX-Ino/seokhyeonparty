@@ -1,3 +1,7 @@
+window.kakaoKey = window.APP_CONFIG.KAKAO_KEY;
+window.supabaseUrl = window.APP_CONFIG.SUPABASE_URL;
+window.supabaseKey = window.APP_CONFIG.SUPABASE_KEY;
+
 // Kakao SDK 스크립트 동적 로드
 function loadKakaoSDK(callback) {
   const script = document.createElement("script");
@@ -9,7 +13,7 @@ function loadKakaoSDK(callback) {
 // 카카오 SDK 초기화
 window.onload = function () {
   loadKakaoSDK(() => {
-    Kakao.init("937a6e2254897fcfacb4449b6fbe0fc1");
+    Kakao.init(window.kakaoKey);
 
     // 진입 이벤트
     const loadingWrap = document.querySelector(".loading-wrap");
@@ -243,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // 카카오 초기화 및 공유하기 설정
     try {
       if (!Kakao.isInitialized()) {
-        Kakao.init("937a6e2254897fcfacb4449b6fbe0fc1");
+        Kakao.init(window.kakaoKey);
       }
     } catch (e) {
       console.error("Kakao init error:", e);
@@ -259,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       if (!Kakao.isInitialized()) {
         try {
-          Kakao.init("937a6e2254897fcfacb4449b6fbe0fc1");
+          Kakao.init(window.kakaoKey);
         } catch (error) {
           console.error("Kakao 재초기화 실패:", error);
           alert("카카오 기능을 사용할 수 없습니다.");

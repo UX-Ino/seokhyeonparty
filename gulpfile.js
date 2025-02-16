@@ -8,6 +8,10 @@ import {
   srcFolder,
   projectPaths,
 } from "./gulp/config/paths.js";
+import replace from "gulp-replace";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 /**
  * 작업 가져오기
@@ -49,6 +53,14 @@ const handleFonts = fonts.bind(null, isBuild);
 //   gulp.watch(projectPaths.fontsSrc, handleFonts);
 // }
 
+function processConfig() {
+  return gulp
+    .src("src/assets/scripts/config.js")
+    .pipe(replace("your_kakao_key_here", process.env.KAKAO_API_KEY))
+    .pipe(replace("your_supabase_url_here", process.env.SUPABASE_URL))
+    .pipe(replace("your_supabase_key_here", process.env.SUPABASE_KEY))
+    .pipe(gulp.dest("dist/assets/scripts"));
+}
 /**
  * 파일 변경 관찰자 - choliker 사용
  */
@@ -143,7 +155,12 @@ const productTasks = gulp.series(buildTasks, handleHtmlInclude, handleHTML);
  * 작업 실행 시나리오 구축
  * */
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
-const build = gulp.series(reset, productTasks, handleHtmlPrettier);
+const build = gulp.series(
+  reset,
+  productTasks,
+  handleHtmlPrettier,
+  processConfig,
+);
 
 const checkhtml = gulp.series(validateHtml);
 const checkstyle = gulp.series(validateStyle);

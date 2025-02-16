@@ -1157,13 +1157,6 @@ button::-moz-focus-inner,
 /*
  * Restore the focus styles unset by the previous rule.
  */
-button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
 /*
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
  */
@@ -3483,11 +3476,9 @@ button.swiper-pagination-bullet {
   width: 1.5rem;
   height: 1.5rem;
 }
-.btn:focus, .btn:hover {
-  border-color: blue;
-}
-.btn:focus .btn-txt, .btn:hover .btn-txt {
-  color: blue;
+.btn:focus, .btn:focus-visible, .btn:hover {
+  border: none;
+  outline: none;
 }
 .btn.btn-full {
   width: 100%;
@@ -3502,13 +3493,6 @@ button.swiper-pagination-bullet {
 .btn.btn-primary .btn-txt {
   color: #ffffff;
 }
-.btn.btn-primary:focus, .btn.btn-primary:hover {
-  background: #ffffff;
-}
-.btn.btn-primary:focus .btn-txt, .btn.btn-primary:hover .btn-txt {
-  color: blue;
-}
-
 /* component button Group */
 .component-btns .btns-row {
   -webkit-box-pack: center;
@@ -5865,12 +5849,14 @@ button,
   width: 100%;
   margin-bottom: 1.6rem;
   height: auto;
-  background-color: rgb(244, 241, 238);
   overflow: hidden;
   font-size: 0;
+  border: none;
 }
 .parent-wrap .img img {
-  width: 100%;
+  margin: 0 -2px;
+  width: -webkit-calc(100% + 4px);
+  width: calc(100% + 4px);
   height: auto;
   object-fit: cover;
 }
@@ -5895,6 +5881,7 @@ button,
   overflow: hidden;
   position: relative;
   width: 100%;
+  border-radius: 1rem;
 }
 .calendar-img img {
   position: absolute;
@@ -6195,7 +6182,6 @@ button,
 .gallery-wrap.type02 .swiper-slide .img {
   height: auto;
   width: 100%;
-  border: 1px solid rgb(233, 236, 239);
   border-radius: 1rem;
   overflow: hidden;
   font-size: 0;
@@ -6557,6 +6543,7 @@ button,
 }
 .component-modal.gallery-modal .modal-container .modal-content .gallery-wrap.type02 {
   padding-bottom: 0;
+  border: none;
 }
 .component-modal.gallery-modal .modal-container .modal-content .gallery-wrap.type02 .swiper-slide {
   padding: 0;

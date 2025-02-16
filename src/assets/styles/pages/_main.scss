@@ -374,12 +374,13 @@ button,
     width: 100%;
     @include rem(margin-bottom, 16);
     height: auto;
-    background-color: rgb(244, 241, 238);
     overflow: hidden;
     font-size: 0;
+    border: none;
 
     img {
-      width: 100%;
+      margin: 0 -2px;
+      width: calc(100% + 4px);
       height: auto;
       object-fit: cover;
     }
@@ -399,6 +400,7 @@ button,
   overflow: hidden;
   position: relative;
   width: 100%;
+  @include rem(border-radius, 10);
 
   img {
     position: absolute;
@@ -693,7 +695,7 @@ button,
       .img {
         height: auto;
         width: 100%;
-        border: 1px solid rgb(233, 236, 239);
+        // border: 1px solid rgb(233, 236, 239);
         @include rem(border-radius, 10);
         overflow: hidden;
         font-size: 0;
@@ -1043,6 +1045,7 @@ button,
 
       .gallery-wrap.type02 {
         padding-bottom: 0;
+        border: none;
 
         .swiper-slide {
           // @include rem(padding, 20 20 40 20);

@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use "../abstracts"as *;
 
 /* component button */
 .btn {
@@ -25,10 +25,14 @@
 
   // button 공통 - Hover, Focus
   &:focus,
+  &:focus-visible,
   &:hover {
-    border-color: blue;
+    border: none;
+    outline: none;
+
+    // border-color: blue;
     .btn-txt {
-      color: blue;
+      // color: blue;
     }
   }
 
@@ -42,14 +46,17 @@
   &.btn-primary {
     border-color: blue;
     background: blue;
+
     .btn-txt {
       color: $font-ffffff;
     }
+
     &:focus,
     &:hover {
-      background: $font-ffffff;
+
+      // background: $font-ffffff;
       .btn-txt {
-        color: blue;
+        // color: blue;
       }
     }
   }
@@ -80,7 +87,7 @@
     }
 
     // 버튼 간격 조정
-    .btn + .btn {
+    .btn+.btn {
       @include rem(margin-left, 10);
     }
   }

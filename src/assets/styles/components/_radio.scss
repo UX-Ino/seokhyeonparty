@@ -1,4 +1,4 @@
-@use "../abstracts" as *;
+@use "../abstracts"as *;
 
 /* component radio */
 .component-radio {
@@ -34,7 +34,8 @@
       background-size: 100% 100%;
       background-color: blue;
       border: 1px solid blue;
-      & + .radio-item {
+
+      &+.radio-item {
         .radio-txt {
           color: blue;
         }
@@ -45,7 +46,8 @@
       background-color: gray;
       border: 1px solid gray;
       cursor: not-allowed;
-      & + .radio-item {
+
+      &+.radio-item {
         .radio-txt {
           color: gray;
           cursor: not-allowed;

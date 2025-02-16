@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta charset="utf-8" />
+  <title>프로젝트타이틀</title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta property="og:title" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:description" content="" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+  <link href="../../assets/styles/style.css" type="text/css" rel="stylesheet" />
+  <!-- 기존 스크립트들 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../../assets/scripts/common.ui.plugin.js" data-init></script>
+  <script src="../../assets/scripts/common.ui.js" data-init></script>
+
+  <script src="../../assets/scripts/config.js"></script>
+  <script src="../../assets/scripts/main.js"></script>
+  <script src="../../assets/scripts/common.js"></script>
+  <script type="text/javascript">
+    !(function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://developers.kakao.com/sdk/js/kakao.min.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "kakao-js-sdk");
+
+  </script>
+  <!-- 카카오 SDK 스크립트를 이렇게 변경 -->
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.6.0/kakao.min.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <div class="loading-wrap" style="display: none">
+      <div class="loding-txt">
+        <span class="desc">석현이의</span>
+        <span class="desc">첫 번째 생일에</span>
+        <span class="desc">초대합니다.</span>
+      </div>
+    </div>
+    <div class="pageClassMain uxg-page-container-main" id="container">
+      <div id="content" role="main">
+        <div class="main-wrap">
+          <div class="top-img-wrap">
+            <div class="badge">
+              <img src="../../assets/images/first-birthday.webp" alt="" />
+            </div>
+            <div class="photo">
+              <img src="../../assets/images/img-main-top02.jpeg" alt="" />
+            </div>
+            <div class="point">
+              <img src="../../assets/images/img-ribbon.png" alt="" />
+            </div>
+          </div>
+          <div class="info-wrap">
+            <div class="name">정석현</div>
+            <div class="parent">
+              <div class="dad"><span>Dad</span>정인호</div>
+              <div class="mon"><span>Mom</span>박선미</div>
+            </div>
+            <div class="date">3월 16일 일요일 오후 3시</div>
+            <div class="palce">플로렌스파티하우스 보라매점 29층</div>
+          </div>
+          <div class="bg-area">
+            <div class="bg-item01">
+              <img src="../../assets/images/img-animal01.webp" alt="" />
+            </div>
+            <div class="bg-item02">
+              <img src="../../assets/images/img-animal02.webp" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="contents-layer-wrap">
+          <div class="txt-wrap">
+            <div class="tit">석현이의 첫 생일에 초대합니다</div>
+            <div class="txt">
+              24년 3월 19일 오전 9시 42분. <br />
+              38주 만에 빛을 본 석현이가 아낌없는 관심과 사랑을 보내주신
+              덕분에 이쁘고 건강하게 자라 어느덧 일 년이라는 시간을 맞이하게
+              되었습니다. <br />
+              감사드리는 마음으로 약소하게나마 작은 자리를 마련하고자 합니다.
+              <br />
+              석현이와 함께한 감동의 열두 달. <br />
+              마지막 날을 소중한 분들과 함께 시간을 나누고 싶습니다. <br />
+              바쁘시겠지만 부디 참석해 주시어 석현이의 첫 생일을 축하해
+              주세요.
+            </div>
+          </div>
+          <button type="button" class="btn-call btn-call-modal" data-testid="btn-call-modal">
+            연락하기
+          </button>
+        </div>
+        <div class="contents-layer-wrap">
+          <div class="parent-wrap">
+            <div class="img">
+              <img src="../../assets/images/parent-01.jpeg" alt="" />
+            </div>
+            <div class="dad-box">
+              <!-- <div class="img">
+                </div> -->
+              <div class="txt"><span>아빠</span> 정인호</div>
+              <div class="txt">
+                석현이가 씩씩하고 <br />
+                현명한 아이가 되도록 <br />
+                항상 옆에서 응원하는 <br />
+                아빠가 되겠습니다.
+              </div>
+            </div>
+            <div class="mom-box">
+              <!-- <div class="img">
+                </div> -->
+              <div class="txt"><span>엄마</span> 박선미</div>
+              <div class="txt">
+                건강하고 밝은 아이<br />
+                똑똑하고 바른 아이로<br />
+                자랄 수 있도록 <br />
+                사랑으로 키우겠습니다.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contents-layer-wrap">
+          <div class="calendar-wrap">
+            <div class="tit">행사일</div>
+            <div class="calendar-img">
+              <img src="../../assets/images/img-calendar01.jpeg" alt="" />
+            </div>
+            <div class="txt">2025년 3월 16일 일요일 오후 3시</div>
+            <div class="calendar">
+              <span class="day sun">SUN</span>
+              <span class="day">MON</span>
+              <span class="day">TUE</span>
+              <span class="day">WED</span>
+              <span class="day">THU</span>
+              <span class="day">FRI</span>
+              <span class="day sat">SAT</span>
+              <span class="date faded"></span>
+              <span class="date faded"></span>
+              <span class="date faded"></span>
+              <span class="date faded"></span>
+              <span class="date faded"></span>
+              <span class="date faded"></span>
+              <span class="date">1</span>
+              <span class="date">2</span>
+              <span class="date">3</span>
+              <span class="date">4</span>
+              <span class="date">5</span>
+              <span class="date">6</span>
+              <span class="date">7</span>
+              <span class="date">8</span>
+              <span class="date">9</span>
+              <span class="date">10</span>
+              <span class="date">11</span>
+              <span class="date">12</span>
+              <span class="date">13</span>
+              <span class="date">14</span>
+              <span class="date">15</span>
+              <span class="date current-day">16</span>
+              <span class="date">17</span>
+              <span class="date">18</span>
+              <span class="date">19</span>
+              <span class="date">20</span>
+              <span class="date">21</span>
+              <span class="date">22</span>
+              <span class="date">23</span>
+              <span class="date">24</span>
+              <span class="date">25</span>
+              <span class="date">26</span>
+              <span class="date">27</span>
+              <span class="date">28</span>
+              <span class="date">29</span>
+              <span class="date">30</span>
+              <span class="date">31</span>
+              <span class="date faded"></span>
+              <span class="date faded"></span>
+              <span class="date faded"></span>
+              <span class="date faded"></span>
+              <span class="date faded"></span>
+            </div>
+          </div>
+          <div class="dday-wrap">
+            <div class="dday-box">
+              <div class="days">
+                <span class="num">00</span>
+                <span class="tit">Days</span>
+              </div>
+              <div class="hours">
+                <span class="num">00</span>
+                <span class="tit">Hours</span>
+              </div>
+              <div class="minutes">
+                <span class="num">00</span>
+                <span class="tit">minutes</span>
+              </div>
+              <div class="seconds">
+                <span class="num">00</span>
+                <span class="tit">seconds</span>
+              </div>
+            </div>
+            <div class="dday-desc">
+              석현이의 첫번째 생일이
+              <span class="count">00일</span> 남았습니다.
+            </div>
+          </div>
+        </div>
+        <div class="contents-layer-wrap">
+          <div class="tit-group">
+            <div class="tit">오시는 길</div>
+            <div class="txt">
+              서울 동작구 보라매로5길 15 전문건설회관 29층 플로렌스 보라매점
+            </div>
+            <div class="txt">지하철 : 신림 보라매병원역 2번 출구에서 26m</div>
+          </div>
+          <div class="map-wrap">
+            <div class="map">
+              <!-- * 카카오맵 - 지도퍼가기 -->
+              <!-- 1. 지도 노드 -->
+              <div id="daumRoughmapContainer1739380881789" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+              <!--
+                  2. 설치 스크립트
+                  * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+                -->
+              <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+              <!-- 3. 실행 스크립트 -->
+              <script charset="UTF-8">
+                window.addEventListener("load", function() {
+                  setTimeout(function() {
+                    new daum.roughmap.Lander({
+                      timestamp: "1739380881789",
+                      key: "2n235",
+                    }).render();
+                  }, 3500); // 약간의 지연을 주어 DOM이 완전히 준비되도록 함
+                });
+
+              </script>
+            </div>
+            <div class="btn-box">
+              <button class="btn btn-naver">
+                <i class="ico ico-naver"></i>
+                <span>네이버지도</span>
+              </button>
+              <button class="btn btn-kakao">
+                <i class="ico ico-kakao"></i>
+                <span>카카오맵</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="contents-layer-wrap">
+          <div class="tit">갤러리</div>
+          <div class="gallery-wrap type01">
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-01.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-03.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-04.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-05.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-07.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-08.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-09.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-10.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-11.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-13.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-14.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-17.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-18.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-21.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-22.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-25.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-26.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-27.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-28.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-31.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-32.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-34.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-35.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-36.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-37.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-38.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-39.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-40.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-42.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-43.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-44.jpeg" alt="" />
+            </button>
+            <button type="button" class="btn-gallery">
+              <img src="../../assets/images/gallery-01-45.jpeg" alt="" />
+            </button>
+          </div>
+          <button type="button" class="btn-more">더보기</button>
+        </div>
+        <div class="contents-layer-wrap">
+          <div class="tit">석현이의 성장기록</div>
+          <div class="gallery-wrap type02">
+            <div class="component-swiper" data-component="swiper" data-props-initial-slide="0" data-props-navigation="false" data-props-pagination="true" data-props-autoplay="false" data-props-slides-per-view="1" data-props-speed="700" data-props-space-between="8">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary01.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">탄생일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary02.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">탄생일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary05.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">30일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary03.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">30일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary04.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">50일</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary06.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">50일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary07.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">100일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary08.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">100일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary09.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">200일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary10.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">200일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary11.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">300일</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <div class="img">
+                      <img src="../../assets/images/img-diary12.jpeg" alt="" />
+                    </div>
+                    <div class="txt-box">
+                      <div class="desc">300일</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contents-layer-wrap">
+          <div class="tit">마음 전하실 곳</div>
+          <div class="component-accordion" data-orientation="vertical">
+            <div class="accordion-item" data-state="open" data-type="multiple">
+              <button type="button" class="accordion-tit">계좌번호</button>
+              <div class="accordion-content">
+                <div class="bank-account-wrap">
+                  <div class="flex-box">
+                    <div class="txt">주인공</div>
+                    <div class="txt">정석현</div>
+                    <button type="button" class="btn btn-kakaopay">
+                      <span>송금하기</span>
+                      <i class="ico ico-kakaopay"></i>
+                    </button>
+                  </div>
+                  <div class="flex-box">
+                    <div class="txt">MG새마을금고</div>
+                    <div class="txt account-num">9003-2929-3475-7</div>
+                    <button type="button" class="btn btn-copy">
+                      <span>복사</span>
+                      <i class="ico ico-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contents-layer-wrap">
+          <div class="tit">축하인사 전하기</div>
+          <div class="messages-wrap">
+            <div class="messages-box">
+              <div class="top">
+                <span class="name">홍길동</span>
+                <span class="time">0000.00.00 00:00</span>
+                <button type="button" class="btn-del">
+                  <span class="hide-txt">삭제</span>
+                  <i class="ico ico-del"></i>
+                </button>
+              </div>
+              <div class="bottom">축하인사 타임~~~~</div>
+            </div>
+            <div class="messages-box">
+              <div class="top">
+                <span class="name">홍길동</span>
+                <span class="time">0000.00.00 00:00</span>
+                <button type="button" class="btn-del">
+                  <span class="hide-txt">삭제</span>
+                  <i class="ico ico-del"></i>
+                </button>
+              </div>
+              <div class="bottom">축하인사 타임~~~~</div>
+            </div>
+            <div class="messages-box">
+              <div class="top">
+                <span class="name">홍길동</span>
+                <span class="time">0000.00.00 00:00</span>
+                <button type="button" class="btn-del">
+                  <span class="hide-txt">삭제</span>
+                  <i class="ico ico-del"></i>
+                </button>
+              </div>
+              <div class="bottom">축하인사 타임~~~~</div>
+            </div>
+          </div>
+          <div class="messages-btn-box">
+            <button type="button" class="btn-messages">작성하기</button>
+          </div>
+        </div>
+        <div class="contents-layer-wrap">
+          <div class="share-wrap">
+            <button type="button" class="btn-kakaoshare">
+              <i class="ico ico-kakao"></i>
+              <span>카카오톡 공유하기</span>
+            </button>
+            <button type="button" class="btn-link">
+              <i class="ico ico-link"></i>
+              <span>링크 복사하기</span>
+            </button>
+          </div>
+          <!-- <div class="tit02">IH ❤️ SM</div> -->
+          <div class="copyright">
+            Copyright(C) seokhyeon. All Rights Reserved.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="layer-wrap">
+    <!-- 연락하기 -->
+
+    <div class="component-modal call-modal">
+      <div class="modal-dimm"></div>
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 class="modal-tit">연락하기</h3>
+          </div>
+          <div class="modal-content">
+            <div class="phone-box">
+              <span class="phone-tit">아빠 정인호</span>
+              <a href="tel: 01076684200" class="btn-tel">
+                <i class="ico ico-tel"></i>
+              </a>
+              <!-- <button type="button" class="btn-message">
+                  <i class="ico ico-message"></i>
+                </button> -->
+            </div>
+            <div class="phone-box">
+              <span class="phone-tit">엄마 박선미</span>
+              <a href="tel: 01057301066" class="btn-tel">
+                <i class="ico ico-tel"></i>
+              </a>
+              <!-- <button type="button" class="btn-message">
+                  <i class="ico ico-message"></i>
+                </button> -->
+            </div>
+          </div>
+          <button class="modal-close btn"></button>
+        </div>
+      </div>
+    </div>
+    <!-- //연락하기 -->
+    <!-- 방명록 -->
+
+    <div class="component-modal guest-modal">
+      <div class="modal-dimm"></div>
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 class="modal-tit">방명록 작성</h3>
+          </div>
+          <div class="modal-content">
+            <form class="comment-form">
+              <div class="component-input">
+                <div class="input-field">
+                  <input class="input" type="text" id="author" placeholder="작성자" required />
+                  <button type="button" class="input-field-btn clear">
+                    <span class="hide-txt">내용 지우기</span>
+                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="component-input">
+                <div class="input-field">
+                  <input class="input" type="password" id="password" placeholder="비밀번호" required />
+                  <button type="button" class="input-field-btn clear">
+                    <span class="hide-txt">내용 지우기</span>
+                    <i class="ico-clear ico-normal" aria-hidden="true"></i>
+                  </button>
+                  <button type="button" class="input-field-btn password-state">
+                    <span class="hide-txt hide">비밀번호 숨기기</span>
+                    <span class="hide-txt show">비밀번호 표시</span>
+                    <i class="ico-password-state ico-normal" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="component-input">
+                <div class="input-textarea-field">
+                  <textarea
+                      id="comment"
+                      class="textarea"
+                      placeholder="내용을 입력해주세요."
+                      required
+                    ></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn-submit" disabled>저장</button>
+            </form>
+          </div>
+          <button class="modal-close btn"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- //방명록 -->
+    <!-- 갤러리 -->
+    <!-- prettier-ignore -->
+
+    <div class="component-modal gallery-modal">
+      <div class="modal-dimm"></div>
+      <div class="modal-frame">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 class="modal-tit">갤러리</h3>
+          </div>
+          <div class="modal-content">
+            <div class="gallery-wrap type02">
+              <div class="component-swiper gallery-swiper02">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-01.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-03.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-04.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-05.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-07.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-08.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-09.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-10.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-11.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-13.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-14.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-17.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-18.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-21.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-22.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-25.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-26.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-27.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-28.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-31.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-32.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-34.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-35.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-36.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-37.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-38.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-39.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-40.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-42.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-43.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-44.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="img-box">
+                      <div class="img">
+                        <img src="../../assets/images/gallery-01-45.jpeg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 페이지네이션 컨테이너들 추가 -->
+                <div class="custom-pagination"></div>
+              </div>
+            </div>
+          </div>
+          <button class="modal-close btn"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- //갤러리 -->
+  </div>
+  <div class="dimm"></div>
+</body>
+
+</html>

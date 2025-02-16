@@ -6138,11 +6138,11 @@ button,
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   justify-content: space-between;
-  gap: 0.6rem;
+  gap: 0.3rem;
 }
 .gallery-wrap.type01 .btn-gallery {
-  width: -webkit-calc(25% - 6px);
-  width: calc(25% - 6px);
+  width: -webkit-calc(25% - 3px);
+  width: calc(25% - 3px);
   padding-bottom: 25%;
   position: relative;
   overflow: hidden;

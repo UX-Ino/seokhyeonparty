@@ -332,7 +332,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Supabase 클라이언트 설정
 
-const supabaseClient = supabase.createClient(window.supabaseUrl, supwindow.supabaseKeyabaseKey);
+const supabaseClient = supabase.createClient(
+  window.supabaseUrl,
+  window.supabaseKey,
+);
 
 // 댓글 로드 함수
 async function loadComments() {
